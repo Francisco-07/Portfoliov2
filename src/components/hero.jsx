@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 import vars from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
