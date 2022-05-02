@@ -1,12 +1,9 @@
-import React, { Suspense } from 'react'
-const Main = React.lazy(() => import('./layout/main'))
+import Main from './layout/main'
 
 function App() {
   return (
     <>
-      <Suspense fallback={<div></div>}>
-        <Main />
-      </Suspense>
+      <Main />
     </>
   )
 }
