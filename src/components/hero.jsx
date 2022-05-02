@@ -4,7 +4,6 @@ import vars from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
 
 function Hero() {
-  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
       <Container>
@@ -20,7 +19,7 @@ function Hero() {
               <FiArrowDownRight />
               <h3>FRONT-END DEVELOPER</h3>
             </CenterIcon>
-            <Block isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
+            <Block />
           </TextContainer>
           <ImgContainer>
             <Img src='/assets/asd.png' alt='Imgn generica' />
@@ -52,7 +51,6 @@ const Block = styled.div`
   animation-name: ${apear};
   animation-duration: 2.2s;
   animation-iteration-count: 1;
-  animation-delay: 0.6s;
 `
 
 const Wrapper = styled.div`
