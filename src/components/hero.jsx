@@ -48,7 +48,7 @@ const Block = styled.div`
   position: absolute;
   z-index: 5;
   animation-name: ${apear};
-  animation-duration: 0.8s;
+  animation-duration: 1.5s;
   animation-iteration-count: 1;
 `
 
@@ -93,10 +93,10 @@ const TextContainer = styled.div`
       font-size: ${vars.px.px9};
     }
     h3 {
-      font-size: ${vars.px.px8};
+      font-size: ${vars.px.px7};
     }
     svg {
-      font-size: ${vars.px.px8};
+      font-size: ${vars.px.px7};
     }
   }
 `
