@@ -68,35 +68,35 @@ const TextContainer = styled.div`
   margin-top: 80px;
 
   h1 {
-    font-size: 50px;
+    font-size: ${vars.px.px13};
     margin: 0;
   }
   h2 {
-    font-size: 40px;
+    font-size: ${vars.px.px11};
     margin: 0;
   }
   h3 {
-    font-size: 30px;
+    font-size: ${vars.px.px9};
     margin: 0;
   }
   svg {
-    font-size: 30px;
+    font-size: ${vars.px.px9};
   }
   @media (max-width: 900px) {
     flex-direction: column;
     flex: 0;
     margin-top: 30px;
     h1 {
-      font-size: 35px;
+      font-size: ${vars.px.px10};
     }
     h2 {
-      font-size: 30px;
+      font-size: ${vars.px.px9};
     }
     h3 {
-      font-size: 22px;
+      font-size: ${vars.px.px8};
     }
     svg {
-      font-size: 30px;
+      font-size: ${vars.px.px8};
     }
   }
 `
@@ -105,7 +105,6 @@ const CenterIcon = styled.div`
   align-items: center;
   margin-left: 70px;
   @media (max-width: 900px) {
-    margin-top: 17px;
     margin-left: -4px;
   }
 `

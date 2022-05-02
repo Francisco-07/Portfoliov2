@@ -18,6 +18,9 @@ const px = {
   px9: '30px',
   px10: '35px',
   px11: '40px',
+  px12: '45px',
+  px13: '50px',
+  px14: '55px',
 }
 
 const vars = {

@@ -82,10 +82,10 @@ const Blur = styled.div`
 
 const Items = styled.a`
   cursor: pointer;
-  border-left: 1px solid transparent;
-  padding-left: 10px;
+  border-left: ${vars.px.px1} solid transparent;
+  padding-left: ${vars.px.px5};
   &:hover {
-    border-left: 1px solid white;
+    border-left: ${vars.px.px1} solid white;
   }
 `
 const Hamburger = styled.div`

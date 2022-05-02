@@ -1,10 +1,8 @@
-// librerias
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-
-// hooks
 import React, { useEffect } from 'react'
-
+import data from '../../data'
+import vars from '../../utils'
 // notas hacer un array con la data y mapearla para no repetir tanto codigo ya con las props en el array
 
 function Stats() {
@@ -33,60 +31,21 @@ function Stats() {
             </Text>
           </About>
 
-          <Estadisticas inView={inView}>
-            <OuterBar>
-              <Tech>CSS</Tech>
-              <BarEmpty>
-                <BarFilled percent={85} delay={0.5} ref={ref} inView={inView}>
-                  <Percent>85%</Percent>
-                </BarFilled>
-              </BarEmpty>
-            </OuterBar>
-
-            <OuterBar>
-              <Tech>HTML</Tech>
-              <BarEmpty>
-                <BarFilled percent={85} delay={0.7} inView={inView}>
-                  <Percent>85%</Percent>
-                </BarFilled>
-              </BarEmpty>
-            </OuterBar>
-
-            <OuterBar>
-              <Tech>JavaScript</Tech>
-              <BarEmpty>
-                <BarFilled percent={75} delay={0.9} inView={inView}>
-                  <Percent>75%</Percent>
-                </BarFilled>
-              </BarEmpty>
-            </OuterBar>
-
-            <OuterBar>
-              <Tech>React</Tech>
-              <BarEmpty>
-                <BarFilled percent={70} delay={1.1} inView={inView}>
-                  <Percent>70%</Percent>
-                </BarFilled>
-              </BarEmpty>
-            </OuterBar>
-
-            <OuterBar>
-              <Tech>Node JS</Tech>
-              <BarEmpty>
-                <BarFilled percent={70} delay={1.3} inView={inView}>
-                  <Percent>70%</Percent>
-                </BarFilled>
-              </BarEmpty>
-            </OuterBar>
-
-            <OuterBar>
-              <Tech>Mongo DB</Tech>
-              <BarEmpty>
-                <BarFilled percent={50} delay={1.5} inView={inView}>
-                  <Percent>50%</Percent>
-                </BarFilled>
-              </BarEmpty>
-            </OuterBar>
+          <Estadisticas ref={ref} inView={inView}>
+            {data.estadisticas.map((stats) => (
+              <OuterBar>
+                <Tech>{stats.tech}</Tech>
+                <BarEmpty>
+                  <BarFilled
+                    percent={stats.percent}
+                    delay={stats.delay}
+                    inView={inView}
+                  >
+                    <Percent>{stats.percent + '%'}</Percent>
+                  </BarFilled>
+                </BarEmpty>
+              </OuterBar>
+            ))}
           </Estadisticas>
         </Wrapper>
       </Container>
@@ -98,11 +57,11 @@ export default Stats
 
 const OuterBar = styled.div`
   width: 50vw;
-  background-color: white;
-  color: #0a192f;
+  background-color: ${vars.colors.primary};
+  color: ${vars.colors.secondary};
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: ${vars.px.px7};
   position: relative;
   @media (max-width: 900px) {
     width: 90vw;
@@ -110,8 +69,8 @@ const OuterBar = styled.div`
 `
 
 const BarEmpty = styled.div`
-  width: 86%;
-  background: white;
+  width: 82%;
+  background: ${vars.colors.primary};
   display: flex;
   @media (max-width: 900px) {
     width: 76%;
@@ -120,15 +79,15 @@ const BarEmpty = styled.div`
 const BarFilled = styled.div`
   width: ${({ inView, percent }) => (inView ? `${percent}%` : '0%')};
   transition: all 2.7s;
-  background: #f08f30;
+  background: ${vars.colors.lightOrange};
   transition-delay: ${(props) => props.delay}s;
 `
 
 const Tech = styled.div`
-  width: 14%;
+  width: 18%;
   text-align: center;
-  color: white;
-  background-color: #f06a42;
+  color: ${vars.colors.primary};
+  background-color: ${vars.colors.darkOrange};
   @media (max-width: 900px) {
     width: 24%;
   }
@@ -143,13 +102,12 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 55px;
+  margin-top: ${vars.px.px14};
 `
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
-
   align-items: center;
   width: 80vw;
   @media (max-width: 900px) {
@@ -187,17 +145,17 @@ const Text = styled.p`
 `
 const Title = styled.h2`
   text-align: center;
-  font-size: 30px;
+  font-size: ${vars.px.px9};
   margin: 0;
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-bottom: ${vars.px.px5};
+  margin-top: ${vars.px.px7};
 `
 
 const Estadisticas = styled.div`
-  margin-top: 35px;
+  margin-top: ${vars.px.px10};
   transition: all 1s;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   @media (max-width: 900px) {
-    margin-top: 35px;
+    margin-top: ${vars.px.px10};
   }
 `
