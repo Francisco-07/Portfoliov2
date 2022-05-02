@@ -35,7 +35,7 @@ const LineaLeft = styled.div`
   position: absolute;
   background: ${vars.colors.primary};
   height: 4px;
-  width: 50px;
+  width: 30px;
   left: ${({ inView }) => (inView ? '50%' : '0')};
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
@@ -46,7 +46,7 @@ const LineaRight = styled.div`
   position: absolute;
   background: ${vars.colors.primary};
   height: 4px;
-  width: 50px;
+  width: 30px;
   right: ${({ inView }) => (inView ? '50%' : '0')};
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
