@@ -1,7 +1,14 @@
-import Main from './layout/main'
+import React, { Suspense } from 'react'
+const Main = React.lazy(() => import('./layout/main'))
 
 function App() {
-  return <Main />
+  return (
+    <>
+      <Suspense fallback={<div></div>}>
+        <Main />
+      </Suspense>
+    </>
+  )
 }
 
 export default App
