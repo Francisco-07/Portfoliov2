@@ -11,39 +11,55 @@ function SectionsTitle(props) {
     console.log(inView)
   }, [inView])
   return (
-    <>
+    <Container>
       <Title ref={ref} inView={inView}>
         {props.children}
       </Title>
-      <Linea inView={inView} />
-    </>
+
+      <LineaLeft inView={inView} />
+      <LineaRight inView={inView} />
+    </Container>
   )
 }
 
-const Linea = styled.div`
+const Container = styled.div`
+  position: relative;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+`
+
+const LineaLeft = styled.div`
+  position: absolute;
   background: ${vars.colors.primary};
-  margin: auto;
-  margin-bottom: 65px;
   height: 4px;
-  width: 70px;
+  width: 50px;
+  left: ${({ inView }) => (inView ? '50%' : '0')};
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transform: ${({ inView }) =>
-    inView ? 'translateX(0)' : 'translateX(-300px)'};
   transition: all 0.4s;
   transition-delay: 0.3s;
-
-  @media (max-width: 900px) {
-    margin-bottom: 0px;
-  }
+  margin-top: 50px;
+`
+const LineaRight = styled.div`
+  position: absolute;
+  background: ${vars.colors.primary};
+  height: 4px;
+  width: 50px;
+  right: ${({ inView }) => (inView ? '50%' : '0')};
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 0.4s;
+  transition-delay: 0.3s;
+  margin-top: 50px;
 `
 const Title = styled.h2`
+  position: absolute;
   color: ${vars.colors.primary};
   text-align: center;
   z-index: 100;
   font-size: ${vars.px.px9};
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transform: ${({ inView }) =>
-    inView ? 'translateX(0)' : 'translateX(300px)'};
   transition: all 0.8s;
 `
 

@@ -33,7 +33,7 @@ function Stats() {
 
           <Estadisticas ref={ref} inView={inView}>
             {data.estadisticas.map((stats) => (
-              <OuterBar>
+              <OuterBar key={stats.key}>
                 <Tech>{stats.tech}</Tech>
                 <BarEmpty>
                   <BarFilled
@@ -69,6 +69,7 @@ const OuterBar = styled.div`
 `
 
 const BarEmpty = styled.div`
+  margin-left: 1px;
   width: 80%;
   background: ${vars.colors.primary};
   display: flex;
