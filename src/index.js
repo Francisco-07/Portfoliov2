@@ -5,8 +5,10 @@ import App from './App'
 import './unhide.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+document.addEventListener('DOMContentLoaded', function (event) {
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  )
+})
