@@ -20,7 +20,7 @@ const fadeIn = keyframes`
 `
 
 const Fade = styled.div`
-  animation: 0.7s ${fadeIn} ease-out;
+  animation: 1.1s ${fadeIn} ease-out;
 `
 
 export default App
