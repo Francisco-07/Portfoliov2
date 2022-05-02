@@ -84,7 +84,6 @@ const TextContainer = styled.div`
   svg {
     font-size: 30px;
   }
-
   @media (max-width: 900px) {
     flex-direction: column;
     flex: 0;
@@ -118,7 +117,6 @@ const ImgContainer = styled.div`
   display: flex;
   justify-content: center;
   z-index: 6;
-
   @media (max-width: 900px) {
     flex: 0;
   }

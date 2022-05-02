@@ -35,6 +35,7 @@ const Container = styled.div`
   padding: 0 ${vars.px.px10};
   height: 50px;
   background-color: ${vars.colors.secondary};
+  z-index: 999;
   @media (max-width: 900px) {
     padding: 0 ${vars.px.px8};
   }
@@ -53,6 +54,7 @@ const Menu = styled.div`
     padding: 0;
     margin: 0;
     gap: 0;
+    z-index: 10;
   }
 `
 const MenuWrapper = styled.div`
@@ -66,7 +68,6 @@ const MenuWrapper = styled.div`
     background-color: ${vars.colors.secondary};
     width: 70vw;
     height: 100vh;
-    z-index: 10;
   }
 `
 const Blur = styled.div`
