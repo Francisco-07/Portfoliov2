@@ -1,5 +1,5 @@
 // librerias
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 
 // hooks

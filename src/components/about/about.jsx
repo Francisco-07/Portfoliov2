@@ -3,7 +3,6 @@ import AboutInfo from './about-info'
 import Stats from './about-stats'
 
 // librerias
-import { useInView } from 'react-intersection-observer'
 import styled from 'styled-components'
 import SectionsTitle from '../titles'
 
