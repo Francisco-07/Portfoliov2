@@ -121,6 +121,9 @@ const ImgContainer = styled.div`
 const Img = styled.img`
   width: 400px;
   height: auto;
+  @media (max-width: 900px) {
+    width: 330px;
+  }
 `
 const Orange = styled.span`
   color: ${vars.colors.lightOrange};
