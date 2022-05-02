@@ -20,4 +20,9 @@ const px = {
   px11: '40px',
 }
 
-export default { colors, px }
+const vars = {
+  colors,
+  px,
+}
+
+export default vars

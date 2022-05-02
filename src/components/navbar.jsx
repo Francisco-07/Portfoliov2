@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
-import utils from '../utils'
+import vars from '../utils'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { ImCross } from 'react-icons/im'
 
@@ -32,11 +32,11 @@ const Container = styled.div`
   width: 100vw;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 ${utils.px.px10};
+  padding: 0 ${vars.px.px10};
   height: 50px;
-  background-color: ${utils.colors.secondary};
+  background-color: ${vars.colors.secondary};
   @media (max-width: 900px) {
-    padding: 0 ${utils.px.px8};
+    padding: 0 ${vars.px.px8};
   }
 `
 
@@ -58,12 +58,12 @@ const Menu = styled.div`
 const MenuWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: ${utils.px.px8};
+  gap: ${vars.px.px8};
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: ${utils.colors.secondary};
+    background-color: ${vars.colors.secondary};
     width: 70vw;
     height: 100vh;
     z-index: 10;
@@ -93,7 +93,7 @@ const Hamburger = styled.div`
     display: flex;
     z-index: 11;
     & svg {
-      font-size: ${utils.px.px8};
+      font-size: ${vars.px.px8};
     }
   }
 `

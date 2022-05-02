@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 import { FiGithub, FiMail } from 'react-icons/fi'
-import utils from '../utils'
+import vars from '../utils'
 
 function Redes() {
   return (
@@ -46,14 +46,14 @@ const RedesList = styled.ul`
   margin: 0;
   padding: 0;
   li {
-    margin-bottom: ${utils.px.px8};
+    margin-bottom: ${vars.px.px8};
   }
   & svg {
-    font-size: ${utils.px.px8};
+    font-size: ${vars.px.px8};
     transition: all 0.5s;
     &:hover {
       cursor: pointer;
-      color: ${utils.colors.lightOrange};
+      color: ${vars.colors.lightOrange};
       transform: translateY(-3px);
     }
   }
@@ -63,7 +63,7 @@ const RedesList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${utils.colors.primary};
+    background-color: ${vars.colors.primary};
   }
 `
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
-import utils from '../utils'
+import vars from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
 
 function Hero() {
@@ -128,5 +128,5 @@ const Img = styled.img`
   height: auto;
 `
 const Orange = styled.span`
-  color: ${utils.colors.lightOrange};
+  color: ${vars.colors.lightOrange};
 `
