@@ -32,8 +32,8 @@ function Hero() {
 export default Hero
 
 const apear = keyframes`
- 0% { top:0; }
- 100% {  top:40%; display: none; }
+ 0% { transform: translate(0px, -200px); }
+ 100% {  transform: translate(0px, 0px); display:none;}
 `
 
 const Container = styled.div`
@@ -48,7 +48,7 @@ const Block = styled.div`
   position: absolute;
   z-index: 5;
   animation-name: ${apear};
-  animation-duration: 2.2s;
+  animation-duration: 0.8s;
   animation-iteration-count: 1;
 `
 

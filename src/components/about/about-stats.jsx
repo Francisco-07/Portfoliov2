@@ -69,11 +69,11 @@ const OuterBar = styled.div`
 `
 
 const BarEmpty = styled.div`
-  width: 82%;
+  width: 80%;
   background: ${vars.colors.primary};
   display: flex;
   @media (max-width: 900px) {
-    width: 76%;
+    width: 70%;
   }
 `
 const BarFilled = styled.div`
@@ -84,12 +84,12 @@ const BarFilled = styled.div`
 `
 
 const Tech = styled.div`
-  width: 18%;
+  width: 20%;
   text-align: center;
   color: ${vars.colors.primary};
   background-color: ${vars.colors.darkOrange};
   @media (max-width: 900px) {
-    width: 24%;
+    width: 30%;
   }
 `
 const Percent = styled.span`
