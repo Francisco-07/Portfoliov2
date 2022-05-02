@@ -69,6 +69,7 @@ const TextContainer = styled.div`
   flex: 1;
   position: relative;
   margin-top: 80px;
+
   h1 {
     font-size: 50px;
     margin: 0;
