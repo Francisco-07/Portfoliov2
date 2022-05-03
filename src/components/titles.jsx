@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import React, { useEffect } from 'react'
 import vars from '../utils'
 
 function SectionsTitle(props) {
   const { ref, inView } = useInView({
     triggerOnce: true,
   })
-  useEffect(() => {
-    console.log(inView)
-  }, [inView])
   return (
     <Container>
       <Title ref={ref} inView={inView}>
@@ -40,7 +36,7 @@ const LineaLeft = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
   transition-delay: 0.3s;
-  margin-top: 50px;
+  margin-top: 80px;
 `
 const LineaRight = styled.div`
   position: absolute;
@@ -51,14 +47,14 @@ const LineaRight = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
   transition-delay: 0.3s;
-  margin-top: 50px;
+  margin-top: 80px;
 `
 const Title = styled.h2`
   position: absolute;
   color: ${vars.colors.primary};
   text-align: center;
   z-index: 100;
-  font-size: ${vars.px.px9};
+  font-size: 2em;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.8s;
 `

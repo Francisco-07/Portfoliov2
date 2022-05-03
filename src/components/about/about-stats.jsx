@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import React, { useEffect } from 'react'
 import data from '../../data'
 import vars from '../../utils'
 // notas hacer un array con la data y mapearla para no repetir tanto codigo ya con las props en el array
@@ -10,19 +9,16 @@ function Stats() {
     /* Optional options */
     triggerOnce: true,
   })
-  useEffect(() => {
-    console.log(inView)
-  }, [inView])
   return (
     <>
-      <Container>
+      <Container id='about'>
         <Wrapper>
-          <About>
+          <About inView={inView}>
             <Image
               alt='me'
               src='https://images.unsplash.com/photo-1497993950456-cdb57afd1cf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
             />
-            <Title>Quien soy?</Title>
+            <Title ref={ref}>Quien soy?</Title>
             <Text>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus quia voluptatem quo eum labore suscipit laboriosam
@@ -31,7 +27,7 @@ function Stats() {
             </Text>
           </About>
 
-          <Estadisticas ref={ref} inView={inView}>
+          <Estadisticas inView={inView}>
             {data.estadisticas.map((stats) => (
               <OuterBar key={stats.key}>
                 <Tech>{stats.tech}</Tech>
@@ -61,8 +57,9 @@ const OuterBar = styled.div`
   color: ${vars.colors.secondary};
   display: flex;
   justify-content: space-between;
-  margin-bottom: ${vars.px.px7};
+  margin-bottom: 1.25rem;
   position: relative;
+  font-size: 1.25em;
   @media (max-width: 900px) {
     width: 90vw;
   }
@@ -102,7 +99,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: ${vars.px.px14};
+  margin-top: 2.2rem;
 `
 
 const Wrapper = styled.div`
@@ -135,27 +132,27 @@ const About = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: all 1s;
+  opacity: ${({ inView }) => (inView ? `1` : '0')};
 `
 const Text = styled.p`
   width: 65%;
   text-align: center;
+  font-size: 1.1em;
   @media (max-width: 900px) {
     width: 90%;
   }
 `
 const Title = styled.h2`
   text-align: center;
-  font-size: ${vars.px.px9};
+  font-size: 2em;
   margin: 0;
-  margin-bottom: ${vars.px.px5};
-  margin-top: ${vars.px.px7};
+  margin-bottom: 0.7rem;
+  margin-top: 1.25rem;
 `
 
 const Estadisticas = styled.div`
-  margin-top: ${vars.px.px10};
+  margin-top: 2rem;
   transition: all 1s;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  @media (max-width: 900px) {
-    margin-top: ${vars.px.px10};
-  }
 `

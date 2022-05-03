@@ -1,8 +1,11 @@
 import styled, { keyframes } from 'styled-components'
 import vars from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
+import { AiOutlineArrowDown } from 'react-icons/ai'
+import { useInView } from 'react-intersection-observer'
 
 function Hero() {
+  const { ref, inView } = useInView({ triggerOnce: false })
   return (
     <>
       <Container>
@@ -22,6 +25,11 @@ function Hero() {
           </TextContainer>
           <ImgContainer>
             <Img src='/assets/asd.png' alt='Imgn generica' />
+            <Arrow ref={ref} inView={inView}>
+              <a href='#about'>
+                <AiOutlineArrowDown />
+              </a>
+            </Arrow>
           </ImgContainer>
         </Wrapper>
       </Container>
@@ -31,9 +39,9 @@ function Hero() {
 
 export default Hero
 
-const apear = keyframes`
+const block = keyframes`
  0% { transform: translate(0px, -200px); }
- 100% {  transform: translate(0px, 0px); display:none;}
+ 100% {  transform: translate(0px, 0px);}
 `
 
 const Container = styled.div`
@@ -41,13 +49,33 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
 `
+const Arrow = styled.div`
+  display: none;
+  @media (max-width: 900px) {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    height: 40px;
+    z-index: 30;
+    & svg {
+      font-size: 50px;
+      opacity: ${({ inView }) => (inView ? '1' : '0')};
+      transform: ${({ inView }) =>
+        inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
+      transition: all 0.4s;
+      transition-delay: 1.3s;
+    }
+  }
+`
+
 const Block = styled.div`
   background-color: #0a192f;
   width: 100%;
   height: 200px;
   position: absolute;
   z-index: 5;
-  animation-name: ${apear};
+  animation-name: ${block};
   animation-duration: 1.5s;
   animation-iteration-count: 1;
 `
@@ -68,36 +96,24 @@ const TextContainer = styled.div`
   margin-top: 80px;
 
   h1 {
-    font-size: ${vars.px.px13};
+    font-size: 2.65em;
     margin: 0;
   }
   h2 {
-    font-size: ${vars.px.px11};
+    font-size: 2.25em;
     margin: 0;
   }
   h3 {
-    font-size: ${vars.px.px9};
+    font-size: 1.65em;
     margin: 0;
   }
   svg {
-    font-size: ${vars.px.px9};
+    font-size: 2em;
   }
   @media (max-width: 900px) {
     flex-direction: column;
     flex: 0;
     margin-top: 30px;
-    h1 {
-      font-size: ${vars.px.px10};
-    }
-    h2 {
-      font-size: ${vars.px.px9};
-    }
-    h3 {
-      font-size: ${vars.px.px7};
-    }
-    svg {
-      font-size: ${vars.px.px7};
-    }
   }
 `
 const CenterIcon = styled.div`
@@ -105,7 +121,7 @@ const CenterIcon = styled.div`
   align-items: center;
   margin-left: 70px;
   @media (max-width: 900px) {
-    margin-left: -4px;
+    margin-left: -2px;
   }
 `
 
@@ -116,13 +132,16 @@ const ImgContainer = styled.div`
   z-index: 6;
   @media (max-width: 900px) {
     flex: 0;
+    flex-direction: column;
+    align-items: center;
   }
 `
 const Img = styled.img`
   width: 400px;
   height: auto;
-  @media (max-width: 900px) {
-    width: 330px;
+  @media (max-width: 700px) {
+    width: 100%;
+    height: 430px;
   }
 `
 const Orange = styled.span`

@@ -32,16 +32,14 @@ const Container = styled.div`
   width: 100vw;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 ${vars.px.px10};
+  padding: 0 2rem;
   height: 50px;
   background-color: ${vars.colors.secondary};
   z-index: 999;
-  @media (max-width: 900px) {
-    padding: 0 ${vars.px.px8};
-  }
 `
 
 const Menu = styled.div`
+  font-size: 1.2em;
   @media (max-width: 900px) {
     display: flex;
     position: fixed;
@@ -60,7 +58,7 @@ const Menu = styled.div`
 const MenuWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: ${vars.px.px8};
+  gap: 1.5rem;
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
@@ -82,10 +80,10 @@ const Blur = styled.div`
 
 const Items = styled.a`
   cursor: pointer;
-  border-left: ${vars.px.px1} solid transparent;
-  padding-left: ${vars.px.px5};
+  border-left: 1px solid transparent;
+  padding-left: 0.6rem;
   &:hover {
-    border-left: ${vars.px.px1} solid white;
+    border-left: 1px solid white;
   }
 `
 const Hamburger = styled.div`
@@ -94,7 +92,7 @@ const Hamburger = styled.div`
     display: flex;
     z-index: 11;
     & svg {
-      font-size: ${vars.px.px8};
+      font-size: 1.5em;
     }
   }
 `

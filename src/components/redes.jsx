@@ -46,10 +46,10 @@ const RedesList = styled.ul`
   margin: 0;
   padding: 0;
   li {
-    margin-bottom: ${vars.px.px8};
+    margin-bottom: 1.5rem;
   }
   & svg {
-    font-size: ${vars.px.px8};
+    font-size: 1.5em;
     transition: all 0.5s;
     &:hover {
       cursor: pointer;

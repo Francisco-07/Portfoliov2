@@ -6,26 +6,8 @@ const colors = {
   black: '#111111',
 }
 
-const px = {
-  px1: '1px',
-  px2: '2px',
-  px3: '3px',
-  px4: '5px',
-  px5: '10px',
-  px6: '15px',
-  px7: '20px',
-  px8: '25px',
-  px9: '30px',
-  px10: '35px',
-  px11: '40px',
-  px12: '45px',
-  px13: '50px',
-  px14: '55px',
-}
-
 const vars = {
   colors,
-  px,
 }
 
 export default vars

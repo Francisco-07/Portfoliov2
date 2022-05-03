@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import React, { useEffect } from 'react'
 import vars from '../../utils'
 // iconos
 import { FiMonitor } from 'react-icons/fi'
@@ -15,9 +14,6 @@ function AboutInfo() {
     triggerOnce: true,
   })
 
-  useEffect(() => {
-    console.log(inView)
-  }, [inView])
   return (
     <Container>
       <Wrapper>
@@ -77,9 +73,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${vars.px.px7};
+  gap: 1.25rem;
   & svg {
-    font-size: 50px;
+    font-size: 3em;
     color: ${vars.colors.secondary};
   }
   @media (max-width: 900px) {
@@ -102,13 +98,13 @@ const IconTextContainer = styled.div`
 const Title = styled.p`
   text-align: center;
   color: ${vars.colors.primary};
-  font-size: ${vars.px.px7};
+  font-size: 1.2em;
 `
 
 const Text = styled.p`
   text-align: center;
   color: ${vars.colors.primary};
-  font-size: ${vars.px.px6};
+  font-size: 1em;
   margin-top: 0;
   margin-bottom: 1px;
   @media (max-width: 1000px) {
@@ -152,6 +148,6 @@ const Responsive = styled.div`
   justify-content: center;
   align-items: center;
   & svg {
-    ${vars.px.px10}
+    font-size: 1.8em;
   }
 `
