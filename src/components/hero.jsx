@@ -51,7 +51,7 @@ const Container = styled.div`
 `
 const Arrow = styled.div`
   display: none;
-  @media (max-width: 900px) {
+  @media (min-height: 800px) and (max-height: 900px) and (max-width: 500px) {
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -66,6 +66,8 @@ const Arrow = styled.div`
       transition: all 0.4s;
       transition-delay: 1.3s;
     }
+  }
+  @media (max-width: 900px) {
   }
 `
 
@@ -141,7 +143,8 @@ const Img = styled.img`
   height: auto;
   @media (max-width: 700px) {
     width: 100%;
-    height: 430px;
+    height: 400px;
+    object-fit: cover;
   }
 `
 const Orange = styled.span`
