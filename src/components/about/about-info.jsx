@@ -58,7 +58,6 @@ function AboutInfo() {
   )
 }
 
-export default AboutInfo
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -75,7 +74,7 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 1.25rem;
   & svg {
-    font-size: 3em;
+    font-size: 3rem;
     color: ${vars.colors.secondary};
   }
   @media (max-width: 900px) {
@@ -98,13 +97,13 @@ const IconTextContainer = styled.div`
 const Title = styled.p`
   text-align: center;
   color: ${vars.colors.primary};
-  font-size: 1.2em;
+  font-size: 1.2rem;
 `
 
 const Text = styled.p`
   text-align: center;
   color: ${vars.colors.primary};
-  font-size: 1em;
+  font-size: 1rem;
   margin-top: 0;
   margin-bottom: 1px;
   @media (max-width: 1000px) {
@@ -148,6 +147,8 @@ const Responsive = styled.div`
   justify-content: center;
   align-items: center;
   & svg {
-    font-size: 1.8em;
+    font-size: 1.8rem;
   }
 `
+
+export default AboutInfo

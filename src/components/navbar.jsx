@@ -23,8 +23,6 @@ function Navbar() {
   )
 }
 
-export default Navbar
-
 const Container = styled.div`
   position: fixed;
   display: flex;
@@ -39,7 +37,7 @@ const Container = styled.div`
 `
 
 const Menu = styled.div`
-  font-size: 1.2em;
+  font-size: 1.2rem;
   @media (max-width: 900px) {
     display: flex;
     position: fixed;
@@ -92,7 +90,9 @@ const Hamburger = styled.div`
     display: flex;
     z-index: 11;
     & svg {
-      font-size: 1.5em;
+      font-size: 1.5rem;
     }
   }
 `
+
+export default Navbar

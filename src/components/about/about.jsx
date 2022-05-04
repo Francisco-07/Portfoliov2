@@ -9,7 +9,7 @@ import SectionsTitle from '../titles'
 function About() {
   return (
     <>
-      <Container>
+      <Container id='about'>
         <SectionsTitle>SOBRE MI</SectionsTitle>
         <AboutInfo />
         <Stats />

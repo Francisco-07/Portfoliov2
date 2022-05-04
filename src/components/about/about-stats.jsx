@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import data from '../../data'
 import vars from '../../utils'
-// notas hacer un array con la data y mapearla para no repetir tanto codigo ya con las props en el array
 
 function Stats() {
   const { ref, inView } = useInView({
@@ -11,7 +10,7 @@ function Stats() {
   })
   return (
     <>
-      <Container id='about'>
+      <Container>
         <Wrapper>
           <About inView={inView}>
             <Image
@@ -49,8 +48,6 @@ function Stats() {
   )
 }
 
-export default Stats
-
 const OuterBar = styled.div`
   width: 50vw;
   background-color: ${vars.colors.primary};
@@ -59,7 +56,7 @@ const OuterBar = styled.div`
   justify-content: space-between;
   margin-bottom: 1.25rem;
   position: relative;
-  font-size: 1.25em;
+  font-size: 1.25rem;
   @media (max-width: 900px) {
     width: 90vw;
   }
@@ -138,14 +135,14 @@ const About = styled.div`
 const Text = styled.p`
   width: 65%;
   text-align: center;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   @media (max-width: 900px) {
     width: 90%;
   }
 `
 const Title = styled.h2`
   text-align: center;
-  font-size: 2em;
+  font-size: 2rem;
   margin: 0;
   margin-bottom: 0.7rem;
   margin-top: 1.25rem;
@@ -156,3 +153,5 @@ const Estadisticas = styled.div`
   transition: all 1s;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
 `
+
+export default Stats

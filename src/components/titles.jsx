@@ -54,7 +54,7 @@ const Title = styled.h2`
   color: ${vars.colors.primary};
   text-align: center;
   z-index: 100;
-  font-size: 2em;
+  font-size: 2rem;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.8s;
 `

@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 import { FiGithub, FiMail } from 'react-icons/fi'
-import vars from '../utils'
 
-function Redes() {
+function RedesAndroid() {
   return (
     <>
       <Container>
@@ -27,44 +26,34 @@ function Redes() {
 }
 
 const Container = styled.div`
-  width: 40px;
-  position: fixed;
-  bottom: 0;
-  left: 40px;
-  right: auto;
-  z-index: 11;
+  display: none;
   @media (max-width: 900px) {
-    display: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
   }
 `
 
 const RedesList = styled.ul`
+  width: 60vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
   list-style: none;
   margin: 0;
   padding: 0;
   li {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
   & svg {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
     transition: all 0.5s;
     &:hover {
       cursor: pointer;
-      color: ${vars.colors.lightOrange};
+      color: orange;
       transform: translateY(-3px);
     }
   }
-  &::after {
-    content: '';
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0 auto;
-    background-color: ${vars.colors.primary};
-  }
 `
 
-export default Redes
+export default RedesAndroid

@@ -37,12 +37,10 @@ function Hero() {
   )
 }
 
-export default Hero
-
 const block = keyframes`
  0% { transform: translate(0px, -200px); }
  100% {  transform: translate(0px, 0px);}
-`
+ `
 
 const Container = styled.div`
   display: flex;
@@ -66,8 +64,6 @@ const Arrow = styled.div`
       transition: all 0.4s;
       transition-delay: 1.3s;
     }
-  }
-  @media (max-width: 900px) {
   }
 `
 
@@ -98,19 +94,19 @@ const TextContainer = styled.div`
   margin-top: 80px;
 
   h1 {
-    font-size: 2.65em;
+    font-size: 2.65rem;
     margin: 0;
   }
   h2 {
-    font-size: 2.25em;
+    font-size: 2.25rem;
     margin: 0;
   }
   h3 {
-    font-size: 1.65em;
+    font-size: 1.65rem;
     margin: 0;
   }
   svg {
-    font-size: 2em;
+    font-size: 2rem;
   }
   @media (max-width: 900px) {
     flex-direction: column;
@@ -140,7 +136,7 @@ const ImgContainer = styled.div`
 `
 const Img = styled.img`
   width: 400px;
-  height: auto;
+  height: 100%;
   @media (max-width: 700px) {
     width: 100%;
     height: 400px;
@@ -150,3 +146,5 @@ const Img = styled.img`
 const Orange = styled.span`
   color: ${vars.colors.lightOrange};
 `
+
+export default Hero

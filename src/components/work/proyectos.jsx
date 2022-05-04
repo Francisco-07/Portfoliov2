@@ -1,0 +1,155 @@
+import styled from 'styled-components'
+import { BsBoxArrowUpRight } from 'react-icons/bs'
+import { FiGithub } from 'react-icons/fi'
+import data from '../../data'
+import vars from '../../utils'
+import { useInView } from 'react-intersection-observer'
+
+function Proyectos() {
+  const [ref, inView] = useInView({ triggerOnce: true })
+  const [ref1, inView1] = useInView({ triggerOnce: true })
+  const [ref2, inView2] = useInView({ triggerOnce: true })
+  const [ref3, inView3] = useInView({ triggerOnce: true })
+
+  const inViewOrder = (i) => {
+    if (i === 1) {
+      return inView1
+    } else if (i === 2) {
+      return inView2
+    } else {
+      return inView3
+    }
+  }
+  const refOrder = (i) => {
+    if (i === 1) {
+      return ref1
+    } else if (i === 2) {
+      return ref2
+    } else {
+      return ref3
+    }
+  }
+
+  return (
+    <>
+      <Container ref={ref} inView={inView}>
+        {data.proyectos.map((info, i) => (
+          <Wrapper ref={refOrder(i)} key={info.key} direction={info.direction}>
+            <BoxOne inView={inViewOrder(i)}>
+              <Title directionTitle={info.directionTitle}>{info.title}</Title>
+              <Info
+                inView={inViewOrder(i)}
+                boxLeft={info.directionBoxLeft}
+                boxRight={info.directionBoxRight}
+              >
+                {info.text}
+              </Info>
+              <Tech directionTech={info.directionTech}>
+                <div>{info.tech1}</div>
+                <div>{info.tech2}</div>
+                <div>{info.tech3}</div>
+                <div>{info.tech4}</div>
+              </Tech>
+              <Icons directionIcons={info.icons}>
+                <FiGithub />
+                <BsBoxArrowUpRight />
+              </Icons>
+            </BoxOne>
+            <BoxTwo inView={inViewOrder(i)}>
+              <Img alt={info.alt} src={info.img} />
+            </BoxTwo>
+          </Wrapper>
+        ))}
+      </Container>
+    </>
+  )
+}
+
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: ${(props) => props.directionIcons};
+  width: 100%;
+  margin-top: 1rem;
+  column-gap: 0.8rem;
+  & svg {
+    cursor: pointer;
+    font-size: 1.2rem;
+    &:hover {
+      color: ${vars.colors.lightOrange};
+    }
+  }
+`
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 70px;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 0.5s;
+  @media (max-width: 900px) {
+    display: none;
+  }
+`
+
+const Wrapper = styled.div`
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-direction: ${(props) => props.direction};
+  margin-bottom: 25px;
+`
+
+const BoxOne = styled.div`
+  width: 50%;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 1s;
+  z-index: 5;
+`
+const BoxTwo = styled.div`
+  width: 50%;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 1s;
+  z-index: 2;
+`
+
+const Title = styled.h2`
+  text-align: ${(props) => props.directionTitle};
+`
+const Info = styled.p`
+  background-color: #f08f30;
+  padding: 20px;
+  width: 550px;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  position: absolute;
+  z-index: 100;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transform: ${({ inView }) =>
+    inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
+  transition: all 0.4s;
+  transition-delay: 0.5s;
+  left: ${(props) => props.boxLeft}px;
+  right: ${(props) => props.boxRight}px;
+`
+const Tech = styled.div`
+  display: flex;
+  column-gap: 20px;
+  margin-top: 180px;
+  flex-direction: ${(props) => props.directionTech};
+  justify-content: ${(props) => props.directionTech};
+`
+
+const Img = styled.img`
+  width: 100%;
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  filter: grayscale(52%) sepia(56%) brightness(46%) hue-rotate(215deg);
+  &:hover {
+    filter: none;
+  }
+`
+export default Proyectos
