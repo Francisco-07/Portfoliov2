@@ -14,9 +14,16 @@ function Navbar() {
       <Menu isOpen={isOpen}>
         <Blur />
         <MenuWrapper>
-          <Items>Resume</Items>
-          <Items>Proyectos</Items>
-          <Items>Contacto</Items>
+          {/* <Resume>Curriculum</Resume> */}
+          <Items href='#about' onClick={() => setIsOpen(!isOpen)}>
+            Sobre mi
+          </Items>
+          <Items href='#proyectos' onClick={() => setIsOpen(!isOpen)}>
+            Proyectos
+          </Items>
+          <Items href='#contacto' onClick={() => setIsOpen(!isOpen)}>
+            Contacto
+          </Items>
         </MenuWrapper>
       </Menu>
     </Container>
@@ -75,6 +82,14 @@ const Blur = styled.div`
     height: 100vh;
   }
 `
+
+// const Resume = styled.a`
+//   cursor: pointer;
+//   padding: 0.2rem;
+//   margin-left: 0.6rem;
+//   background-color: white;
+//   color: ${vars.colors.secondary};
+// `
 
 const Items = styled.a`
   cursor: pointer;

@@ -3,12 +3,36 @@ import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 import vars from '../../utils'
 import data from '../../data'
+import { useInView } from 'react-intersection-observer'
 
 function ProyectosAndroid() {
+  const [ref1, inView1] = useInView({ triggerOnce: true })
+  const [ref2, inView2] = useInView({ triggerOnce: true })
+  const [ref3, inView3] = useInView({ triggerOnce: true })
+
+  const inViewOrder = (i) => {
+    if (i === 1) {
+      return inView1
+    } else if (i === 2) {
+      return inView2
+    } else {
+      return inView3
+    }
+  }
+  const refOrder = (i) => {
+    if (i === 1) {
+      return ref1
+    } else if (i === 2) {
+      return ref2
+    } else {
+      return ref3
+    }
+  }
+
   return (
     <>
-      {data.proyectos.map((info) => (
-        <Container>
+      {data.proyectos.map((info, i) => (
+        <Container key={info.key} inView={inViewOrder(i)} ref={refOrder(i)}>
           <AndroidBox>
             <AndroidTitle>{info.title}</AndroidTitle>
             <AndroidText>{info.text}</AndroidText>
@@ -32,6 +56,8 @@ const Container = styled.div`
   display: none;
 
   @media (max-width: 900px) {
+    opacity: ${({ inView }) => (inView ? '1' : '0')};
+    transition: all 0.5s;
     margin-top: 1.25rem;
     display: flex;
     justify-content: center;

@@ -50,7 +50,7 @@ const Container = styled.div`
 const Arrow = styled.div`
   display: none;
   @media (min-height: 800px) and (max-height: 900px) and (max-width: 500px) {
-    margin-top: 50px;
+    margin-top: 70px;
     display: flex;
     justify-content: center;
     width: 200px;
@@ -62,7 +62,7 @@ const Arrow = styled.div`
       transform: ${({ inView }) =>
         inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
       transition: all 0.4s;
-      transition-delay: 1.3s;
+      transition-delay: 0.3s;
     }
   }
 `

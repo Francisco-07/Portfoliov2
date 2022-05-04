@@ -1,12 +1,16 @@
 import styled from 'styled-components'
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import RedesAndroid from './redes-android'
+import RedesAndroid from './redes/redes-android'
+import Contacto from './contact'
+import { useInView } from 'react-intersection-observer'
 
 function Footer() {
+  const [ref, inView] = useInView({ triggerOnce: true })
   return (
-    <>
-      <RedesAndroid />
-      <Author id='Contacto'>
+    <Container ref={ref} inView={inView} id='contacto'>
+      <Contacto inView={inView} />
+      <RedesAndroid inView={inView} />
+      <Author id='Contacto' inView={inView}>
         Desarrollo
         <a
           target='_blank'
@@ -17,10 +21,14 @@ function Footer() {
           <MdKeyboardArrowRight /> Francisco Garciarena
         </a>
       </Author>
-    </>
+    </Container>
   )
 }
 
+const Container = styled.div`
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 1s;
+`
 const Author = styled.p`
   padding: 40px;
   margin-bottom: 0;
