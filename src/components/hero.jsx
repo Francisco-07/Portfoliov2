@@ -142,6 +142,10 @@ const Img = styled.img`
     height: 400px;
     object-fit: cover;
   }
+  @media (max-width: 450px) {
+    width: 330px;
+    height: 330px;
+  }
 `
 const Orange = styled.span`
   color: ${vars.colors.lightOrange};
