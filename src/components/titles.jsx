@@ -23,11 +23,8 @@ const Container = styled.div`
   height: 200px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  @media (min-height: 1100px) and (min-width: 1000px) {
-    height: 200px;
-  }
 `
 
 const LineaLeft = styled.div`
