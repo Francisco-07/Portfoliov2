@@ -6,8 +6,8 @@ import SectionsTitle from '../titles'
 function About() {
   return (
     <>
-      <Container>
-        <SectionsTitle id='about'>SOBRE MI</SectionsTitle>
+      <Container id='about'>
+        <SectionsTitle>SOBRE MI</SectionsTitle>
         <AboutInfo />
         <Stats />
       </Container>
