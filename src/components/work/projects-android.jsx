@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import { BsBoxArrowUpRight } from 'react-icons/bs'
-import { FiGithub } from 'react-icons/fi'
 import vars from '../../utils'
 import data from '../../data'
 import { useInView } from 'react-intersection-observer'
+
+// ICONOS
+import { BsBoxArrowUpRight } from 'react-icons/bs'
+import { FiGithub } from 'react-icons/fi'
 
 function ProjectsAndroid() {
   const [ref1, inView1] = useInView({ triggerOnce: true })
@@ -41,6 +43,8 @@ const Container = styled.div`
 
   @media (max-width: 900px) {
     opacity: ${({ inView }) => (inView ? '1' : '0')};
+    transform: ${({ inView }) =>
+      inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
     transition: all 0.5s;
     margin-top: 1.25rem;
     display: flex;
@@ -51,19 +55,6 @@ const Container = styled.div`
   }
 `
 
-const Icons = styled.div`
-  display: flex;
-  align-items: center;
-  margin-left: 1rem;
-  column-gap: 1.2rem;
-  & svg {
-    cursor: pointer;
-    font-size: 1.7rem;
-    &:hover {
-      color: ${vars.colors.secondary};
-    }
-  }
-`
 const AndroidBox = styled.div`
   background: linear-gradient(rgba(235, 63, 5, 0.8), rgba(235, 63, 5, 0.8)),
     url('https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
@@ -97,5 +88,17 @@ const AndroidText = styled.div`
   font-size: 1.2rem;
   margin-left: 1rem;
 `
-
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+  column-gap: 1.2rem;
+  & svg {
+    cursor: pointer;
+    font-size: 1.7rem;
+    &:hover {
+      color: ${vars.colors.secondary};
+    }
+  }
+`
 export default ProjectsAndroid

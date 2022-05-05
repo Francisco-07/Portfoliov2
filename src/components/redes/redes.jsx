@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+import vars from '../../utils'
+
+// ICONOS
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 import { FiGithub } from 'react-icons/fi'
-import vars from '../../utils'
 
 function Redes() {
   return (
@@ -9,13 +11,31 @@ function Redes() {
       <Container>
         <RedesList>
           <li>
-            <AiOutlineLinkedin />
+            <a
+              rel='noreferrer'
+              href='https://www.linkedin.com/in/francisco-garciarena/'
+              target='_blank'
+            >
+              <AiOutlineLinkedin />
+            </a>
           </li>
           <li>
-            <FiGithub />
+            <a
+              rel='noreferrer'
+              href='https://github.com/Francisco-07/'
+              target='_blank'
+            >
+              <FiGithub />
+            </a>
           </li>
           <li>
-            <AiOutlineInstagram />
+            <a
+              rel='noreferrer'
+              href='https://www.instagram.com/fran_garciarena/'
+              target='_blank'
+            >
+              <AiOutlineInstagram />
+            </a>
           </li>
         </RedesList>
       </Container>

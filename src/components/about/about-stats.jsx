@@ -48,6 +48,23 @@ function Stats() {
   )
 }
 
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.2rem;
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+`
+
 const OuterBar = styled.div`
   width: 50vw;
   background-color: ${vars.colors.primary};
@@ -92,23 +109,6 @@ const Percent = styled.span`
   font-size: 1.1rem;
   right: 0;
   color: #575757;
-`
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2.2rem;
-`
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 80vw;
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
 `
 
 const Image = styled.img`

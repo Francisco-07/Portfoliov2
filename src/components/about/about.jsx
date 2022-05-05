@@ -1,8 +1,5 @@
-// components
 import AboutInfo from './about-info'
 import Stats from './about-stats'
-
-// librerias
 import styled from 'styled-components'
 import SectionsTitle from '../titles'
 

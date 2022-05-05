@@ -1,21 +1,43 @@
 import styled from 'styled-components'
+import vars from '../../utils'
+import { useInView } from 'react-intersection-observer'
+
+// ICONOS
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 import { FiGithub } from 'react-icons/fi'
-import vars from '../../utils'
 
 function RedesAndroid() {
+  const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <>
-      <Container>
+      <Container ref={ref} inView={inView}>
         <RedesList>
           <li>
-            <AiOutlineLinkedin />
+            <a
+              rel='noreferrer'
+              href='https://www.linkedin.com/in/francisco-garciarena/'
+              target='_blank'
+            >
+              <AiOutlineLinkedin />
+            </a>
           </li>
           <li>
-            <FiGithub />
+            <a
+              rel='noreferrer'
+              href='https://github.com/Francisco-07/'
+              target='_blank'
+            >
+              <FiGithub />
+            </a>
           </li>
           <li>
-            <AiOutlineInstagram />
+            <a
+              rel='noreferrer'
+              href='https://www.instagram.com/fran_garciarena/'
+              target='_blank'
+            >
+              <AiOutlineInstagram />
+            </a>
           </li>
         </RedesList>
       </Container>
@@ -29,6 +51,8 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     margin-top: 4rem;
+    opacity: ${({ inView }) => (inView ? '1' : '0')};
+    transition: all 1s;
   }
 `
 

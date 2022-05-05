@@ -159,24 +159,28 @@ const Img = styled.img`
   @media (max-width: 900px) {
     width: 400px;
     height: 400px;
-    top: 120px;
-    right: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   @media (max-width: 450px) {
     width: 300px;
     height: 300px;
-    top: 140px;
-    right: 0;
-    left: 0;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
-  @media (min-height: 1200px) and (min-width: 760px) {
+  /* @media (min-height: 1200px) and (min-width: 760px) {
     width: 550px;
     height: 550px;
-    top: 100px;
-    right: 0;
-    left: none;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
+  @media (min-height: 1200px) and (min-width: 1000px) {
+    width: 650px;
+    height: 650px;
+  } */
 `
 const Orange = styled.span`
   color: ${vars.colors.lightOrange};

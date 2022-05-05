@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import { BsBoxArrowUpRight } from 'react-icons/bs'
-import { FiGithub } from 'react-icons/fi'
 import data from '../../data'
 import vars from '../../utils'
 import { useInView } from 'react-intersection-observer'
+
+// ICONOS
+import { BsBoxArrowUpRight } from 'react-icons/bs'
+import { FiGithub } from 'react-icons/fi'
 
 function Projects() {
   const [ref1, inView1] = useInView({ triggerOnce: true })
@@ -47,22 +49,6 @@ function Projects() {
     </>
   )
 }
-
-const Icons = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: ${(props) => props.directionIcons};
-  width: 100%;
-  margin-top: 1rem;
-  column-gap: 0.8rem;
-  & svg {
-    cursor: pointer;
-    font-size: 1.2rem;
-    &:hover {
-      color: ${vars.colors.lightOrange};
-    }
-  }
-`
 
 const Container = styled.div`
   display: flex;
@@ -133,6 +119,21 @@ const Img = styled.img`
   filter: grayscale(52%) sepia(56%) brightness(46%) hue-rotate(215deg);
   &:hover {
     filter: none;
+  }
+`
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: ${(props) => props.directionIcons};
+  width: 100%;
+  margin-top: 1rem;
+  column-gap: 0.8rem;
+  & svg {
+    cursor: pointer;
+    font-size: 1.2rem;
+    &:hover {
+      color: ${vars.colors.lightOrange};
+    }
   }
 `
 export default Projects
