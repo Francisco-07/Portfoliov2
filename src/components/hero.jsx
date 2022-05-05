@@ -121,15 +121,15 @@ const Block = styled.div`
 const TextContainer = styled.div`
   margin-left: 10px;
   h1 {
-    font-size: 2.65rem;
+    font-size: 2.4;
     margin: 0;
   }
   h2 {
-    font-size: 2.25rem;
+    font-size: 2rem;
     margin: 0;
   }
   h3 {
-    font-size: 1.65rem;
+    font-size: 1.4rem;
     margin: 0;
   }
   svg {
