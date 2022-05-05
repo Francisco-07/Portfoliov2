@@ -156,43 +156,6 @@ const TextContainer = styled.div`
       margin-left: -2px;
     }
   }
-  @media (min-height: 1200px) and (min-width: 760px) {
-    h1 {
-      font-size: 3.4rem;
-      margin: 0;
-    }
-    h2 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    h3 {
-      font-size: 2.4rem;
-      margin: 0;
-    }
-    svg {
-      font-size: 2.4rem;
-      margin-left: 0px;
-    }
-  }
-
-  @media (min-height: 1200px) and (min-width: 1000px) {
-    h1 {
-      font-size: 5.1rem;
-      margin: 0;
-    }
-    h2 {
-      font-size: 3.6rem;
-      margin: 0;
-    }
-    h3 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    svg {
-      font-size: 3rem;
-      margin-left: 0px;
-    }
-  }
 `
 const CenterIcon = styled.div`
   display: flex;

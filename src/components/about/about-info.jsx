@@ -23,8 +23,8 @@ function AboutInfo() {
             <GiSmartphone />
           </Responsive>
           <Title>Responsive</Title>
-          <Text>Mis interfaces funcionan</Text>
-          <Text>en cualquier dispositivo</Text>
+          <Text>Funcionan en</Text>
+          <Text> cualquier dispositivo</Text>
         </IconTextContainer>
 
         <IconTextContainer inView={inView} delay={0.4}>
@@ -41,7 +41,7 @@ function AboutInfo() {
             <BiRocket />
           </Shape>
           <Title>Dinamico</Title>
-          <Text>Para una mayor interaccion </Text>
+          <Text>Una mayor interaccion </Text>
           <Text>y mejor experiencia</Text>
         </IconTextContainer>
 
@@ -50,8 +50,8 @@ function AboutInfo() {
             <MdLightbulbOutline />
           </Shape>
           <Title>Intuitivo</Title>
-          <Text>Preferencia por interfaces</Text>
-          <Text>simples de usar e intuitivas</Text>
+          <Text>Interfaces simples de</Text>
+          <Text> usar e intuitivas</Text>
         </IconTextContainer>
       </Wrapper>
     </Container>
@@ -106,8 +106,11 @@ const Text = styled.p`
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: 1px;
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     display: none;
+  }
+  @media (min-height: 1200px) and (min-width: 1200px) {
+    width: 320px;
   }
 `
 
