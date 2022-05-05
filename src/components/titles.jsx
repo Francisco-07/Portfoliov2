@@ -25,6 +25,9 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @media (min-height: 1100px) and (min-width: 1000px) {
+    height: 200px;
+  }
 `
 
 const LineaLeft = styled.div`
@@ -37,6 +40,9 @@ const LineaLeft = styled.div`
   transition: all 0.4s;
   transition-delay: 0.3s;
   margin-top: 80px;
+  @media (min-height: 1100px) and (min-width: 1000px) {
+    margin-top: 120px;
+  }
 `
 const LineaRight = styled.div`
   position: absolute;
@@ -48,6 +54,9 @@ const LineaRight = styled.div`
   transition: all 0.4s;
   transition-delay: 0.3s;
   margin-top: 80px;
+  @media (min-height: 1100px) and (min-width: 1000px) {
+    margin-top: 120px;
+  }
 `
 const Title = styled.h2`
   position: absolute;

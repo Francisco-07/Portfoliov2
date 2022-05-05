@@ -73,7 +73,7 @@ const Wrapper = styled.div`
     width: 65%;
   }
   @media (min-height: 1200px) and (min-width: 2200px) {
-    width: 40%;
+    width: 55%;
   }
 `
 
