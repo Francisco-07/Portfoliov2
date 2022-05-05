@@ -51,16 +51,18 @@ const Container = styled.div`
   @media screen and (max-width: 1000px) and (orientation: landscape) {
     margin-top: 0;
   }
+  @media (max-width: 900px) {
+    margin-top: 60px;
+  }
 `
 
 const Wrapper = styled.div`
   width: 80%;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   justify-content: flex-start;
   @media (max-width: 900px) {
-    flex-direction: column;
-    align-items: center;
+    height: 80vh;
   }
   @media (max-width: 1100px) {
     flex-direction: column;

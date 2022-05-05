@@ -131,7 +131,7 @@ const About = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  transition: all 1s;
+  transition: all 0.4s;
   opacity: ${({ inView }) => (inView ? `1` : '0')};
 `
 const Text = styled.p`
