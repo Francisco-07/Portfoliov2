@@ -109,8 +109,13 @@ const Text = styled.p`
   @media (max-width: 1100px) {
     display: none;
   }
-  @media (min-height: 1200px) and (min-width: 1200px) {
+  @media (min-height: 1200px) and (min-width: 1000px) {
+    display: none;
+  }
+
+  @media (min-height: 1200px) and (min-width: 1500px) {
     width: 320px;
+    display: block;
   }
 `
 

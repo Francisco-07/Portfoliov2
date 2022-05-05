@@ -116,6 +116,7 @@ const Arrow = styled.div`
       transition-delay: 0.3s;
     }
   }
+
   @media (min-height: 1200px) and (min-width: 1000px) {
     display: none;
   }
@@ -184,6 +185,13 @@ const Img = styled.img`
     width: 300px;
     height: 300px;
     top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  @media (max-width: 300px) {
+    width: 250px;
+    height: 250px;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
