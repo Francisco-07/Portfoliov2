@@ -64,6 +64,17 @@ const Wrapper = styled.div`
   @media (min-height: 1200px) and (min-width: 760px) {
     flex-direction: column;
   }
+
+  @media (min-height: 1200px) and (min-width: 760px) {
+    width: 60%;
+    height: 80%;
+    flex-direction: column;
+  }
+  @media (min-height: 1200px) and (min-width: 1000px) {
+    width: 60%;
+    height: 70%;
+    flex-direction: row;
+  }
 `
 const Arrow = styled.div`
   display: none;
@@ -72,7 +83,7 @@ const Arrow = styled.div`
     justify-content: center;
     align-items: flex-end;
     position: absolute;
-    bottom: 300px;
+    bottom: 10px;
     left: 0;
     right: 0;
     height: 40px;
@@ -105,6 +116,9 @@ const Arrow = styled.div`
       transition-delay: 0.3s;
     }
   }
+  @media (min-height: 1200px) and (min-width: 1000px) {
+    display: none;
+  }
 `
 
 const Block = styled.div`
@@ -121,7 +135,7 @@ const Block = styled.div`
 const TextContainer = styled.div`
   margin-left: 10px;
   h1 {
-    font-size: 2.4;
+    font-size: 2.4rem;
     margin: 0;
   }
   h2 {
@@ -134,15 +148,55 @@ const TextContainer = styled.div`
   }
   svg {
     font-size: 2rem;
+    margin-left: 70px;
+  }
+
+  @media (max-width: 900px) {
+    svg {
+      margin-left: -2px;
+    }
+  }
+  @media (min-height: 1200px) and (min-width: 760px) {
+    h1 {
+      font-size: 3.4rem;
+      margin: 0;
+    }
+    h2 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    h3 {
+      font-size: 2.4rem;
+      margin: 0;
+    }
+    svg {
+      font-size: 2.4rem;
+      margin-left: 0px;
+    }
+  }
+
+  @media (min-height: 1200px) and (min-width: 1000px) {
+    h1 {
+      font-size: 5.1rem;
+      margin: 0;
+    }
+    h2 {
+      font-size: 3.6rem;
+      margin: 0;
+    }
+    h3 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    svg {
+      font-size: 3rem;
+      margin-left: 0px;
+    }
   }
 `
 const CenterIcon = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 70px;
-  @media (max-width: 900px) {
-    margin-left: -2px;
-  }
 `
 
 const ImgContainer = styled.div`
@@ -170,17 +224,20 @@ const Img = styled.img`
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  /* @media (min-height: 1200px) and (min-width: 760px) {
+  @media (min-height: 1200px) and (min-width: 760px) {
     width: 550px;
     height: 550px;
-    top: 35%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
   @media (min-height: 1200px) and (min-width: 1000px) {
     width: 650px;
     height: 650px;
-  } */
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `
 const Orange = styled.span`
   color: ${vars.colors.lightOrange};

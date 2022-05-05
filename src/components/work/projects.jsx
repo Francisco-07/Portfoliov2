@@ -68,6 +68,13 @@ const Wrapper = styled.div`
   position: relative;
   flex-direction: ${(props) => props.direction};
   margin-bottom: 25px;
+
+  @media (min-height: 1200px) and (min-width: 1200px) {
+    width: 65%;
+  }
+  @media (min-height: 1200px) and (min-width: 2200px) {
+    width: 40%;
+  }
 `
 
 const BoxOne = styled.div`
