@@ -20,7 +20,7 @@ function SectionsTitle(props) {
 
 const Container = styled.div`
   position: relative;
-  height: 130px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
