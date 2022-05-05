@@ -37,7 +37,7 @@ const estadisticas = [
   },
 ]
 
-const proyectos = [
+const projects = [
   {
     key: 1,
     direction: 'row',
@@ -100,6 +100,6 @@ const proyectos = [
   },
 ]
 
-const data = { estadisticas, proyectos }
+const data = { estadisticas, projects }
 
 export default data

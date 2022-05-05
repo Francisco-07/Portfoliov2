@@ -5,34 +5,18 @@ import vars from '../../utils'
 import data from '../../data'
 import { useInView } from 'react-intersection-observer'
 
-function ProyectosAndroid() {
+function ProjectsAndroid() {
   const [ref1, inView1] = useInView({ triggerOnce: true })
   const [ref2, inView2] = useInView({ triggerOnce: true })
   const [ref3, inView3] = useInView({ triggerOnce: true })
 
-  const inViewOrder = (i) => {
-    if (i === 1) {
-      return inView1
-    } else if (i === 2) {
-      return inView2
-    } else {
-      return inView3
-    }
-  }
-  const refOrder = (i) => {
-    if (i === 1) {
-      return ref1
-    } else if (i === 2) {
-      return ref2
-    } else {
-      return ref3
-    }
-  }
+  const refArray = [ref1, ref2, ref3]
+  const viewArray = [inView1, inView2, inView3]
 
   return (
     <>
-      {data.proyectos.map((info, i) => (
-        <Container key={info.key} inView={inViewOrder(i)} ref={refOrder(i)}>
+      {data.projects.map((info, i) => (
+        <Container key={info.key} ref={refArray[i]} inView={viewArray[i]}>
           <AndroidBox>
             <AndroidTitle>{info.title}</AndroidTitle>
             <AndroidText>{info.text}</AndroidText>
@@ -81,8 +65,8 @@ const Icons = styled.div`
   }
 `
 const AndroidBox = styled.div`
-  background: linear-gradient(rgba(221, 82, 18, 0.5), rgba(221, 82, 18, 0.5)),
-    url('/assets/asd.png');
+  background: linear-gradient(rgba(235, 63, 5, 0.8), rgba(235, 63, 5, 0.8)),
+    url('https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
@@ -114,4 +98,4 @@ const AndroidText = styled.div`
   margin-left: 1rem;
 `
 
-export default ProyectosAndroid
+export default ProjectsAndroid

@@ -81,6 +81,7 @@ const Tech = styled.div`
   flex: 0.25;
   text-align: center;
   color: ${vars.colors.primary};
+  font-size: 1.1rem;
   background-color: ${vars.colors.darkOrange};
   @media (max-width: 900px) {
     flex: 0.3;
@@ -88,6 +89,7 @@ const Tech = styled.div`
 `
 const Percent = styled.span`
   position: absolute;
+  font-size: 1.1rem;
   right: 0;
   color: #575757;
 `

@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import RedesAndroid from './redes/redes-android'
-import Contacto from './contact'
+import Contact from './contact'
 import { useInView } from 'react-intersection-observer'
 
 function Footer() {
   const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <Container ref={ref} inView={inView} id='contacto'>
-      <Contacto inView={inView} />
+      <Contact inView={inView} />
       <RedesAndroid inView={inView} />
       <Author id='Contacto' inView={inView}>
         Desarrollo

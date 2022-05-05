@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
-import { FiGithub, FiMail } from 'react-icons/fi'
+import { FiGithub } from 'react-icons/fi'
 import vars from '../../utils'
 
 function Redes() {
@@ -10,9 +10,6 @@ function Redes() {
         <RedesList>
           <li>
             <AiOutlineLinkedin />
-          </li>
-          <li>
-            <FiMail />
           </li>
           <li>
             <FiGithub />

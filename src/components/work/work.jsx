@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 import SectionsTitle from '../titles'
-import Proyectos from './proyectos'
-import ProyectosAndroid from './proyectos-android'
+import Projects from './projects'
+import ProjectsAndroid from './projects-android'
 
 function Work() {
   return (
     <>
       <Container id='proyectos'>
-        <SectionsTitle>Proyectos</SectionsTitle>
-        <Proyectos />
-        <ProyectosAndroid />
+        <SectionsTitle>PROYECTOS</SectionsTitle>
+        <Projects />
+        <ProjectsAndroid />
       </Container>
     </>
   )

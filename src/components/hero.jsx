@@ -43,17 +43,57 @@ const block = keyframes`
  `
 
 const Container = styled.div`
+  margin-top: 60px;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
+`
+
+const Wrapper = styled.div`
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  @media (min-height: 1200px) and (min-width: 760px) {
+    flex-direction: column;
+  }
 `
 const Arrow = styled.div`
   display: none;
-  @media (min-height: 800px) and (max-height: 900px) and (max-width: 500px) {
-    margin-top: 70px;
+  @media (min-height: 1200px) and (min-width: 760px) {
     display: flex;
     justify-content: center;
-    width: 200px;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    z-index: 30;
+    & svg {
+      font-size: 50px;
+      opacity: ${({ inView }) => (inView ? '1' : '0')};
+      transform: ${({ inView }) =>
+        inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
+      transition: all 0.4s;
+      transition-delay: 0.3s;
+    }
+  }
+  @media (min-height: 800px) and (max-height: 900px) and (max-width: 500px) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    bottom: 200px;
+    left: 0;
+    right: 0;
     height: 40px;
     z-index: 30;
     & svg {
@@ -78,21 +118,8 @@ const Block = styled.div`
   animation-iteration-count: 1;
 `
 
-const Wrapper = styled.div`
-  padding-top: 50px;
-  width: 80%;
-  height: 100vh;
-  display: flex;
-  @media (max-width: 1160px) {
-    flex-direction: column;
-  }
-`
-
 const TextContainer = styled.div`
-  flex: 1;
-  position: relative;
-  margin-top: 80px;
-
+  margin-left: 10px;
   h1 {
     font-size: 2.65rem;
     margin: 0;
@@ -108,11 +135,6 @@ const TextContainer = styled.div`
   svg {
     font-size: 2rem;
   }
-  @media (max-width: 900px) {
-    flex-direction: column;
-    flex: 0;
-    margin-top: 30px;
-  }
 `
 const CenterIcon = styled.div`
   display: flex;
@@ -124,27 +146,36 @@ const CenterIcon = styled.div`
 `
 
 const ImgContainer = styled.div`
-  flex: 1;
+  z-index: 6;
   display: flex;
   justify-content: center;
-  z-index: 6;
-  @media (max-width: 900px) {
-    flex: 0;
-    flex-direction: column;
-    align-items: center;
-  }
+  align-items: center;
 `
 const Img = styled.img`
-  width: 400px;
-  height: 100%;
-  @media (max-width: 700px) {
-    width: 100%;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  right: 0;
+  @media (max-width: 900px) {
+    width: 400px;
     height: 400px;
-    object-fit: cover;
+    top: 120px;
+    right: 0;
+    left: 0;
   }
   @media (max-width: 450px) {
-    width: 330px;
-    height: 330px;
+    width: 300px;
+    height: 300px;
+    top: 140px;
+    right: 0;
+    left: 0;
+  }
+  @media (min-height: 1200px) and (min-width: 760px) {
+    width: 550px;
+    height: 550px;
+    top: 100px;
+    right: 0;
+    left: none;
   }
 `
 const Orange = styled.span`

@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
-import { FiGithub, FiMail } from 'react-icons/fi'
+import { FiGithub } from 'react-icons/fi'
+import vars from '../../utils'
 
 function RedesAndroid() {
   return (
@@ -9,9 +10,6 @@ function RedesAndroid() {
         <RedesList>
           <li>
             <AiOutlineLinkedin />
-          </li>
-          <li>
-            <FiMail />
           </li>
           <li>
             <FiGithub />
@@ -35,7 +33,7 @@ const Container = styled.div`
 `
 
 const RedesList = styled.ul`
-  width: 60vw;
+  width: 40vw;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -47,11 +45,9 @@ const RedesList = styled.ul`
   }
   & svg {
     font-size: 2.8rem;
-    transition: all 0.5s;
     &:hover {
       cursor: pointer;
-      color: orange;
-      transform: translateY(-3px);
+      color: ${vars.colors.lightOrange};
     }
   }
 `

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import SectionsTitle from './titles'
 import vars from '../utils'
 
-function Contacto() {
+function Contact() {
   return (
     <>
-      <SectionsTitle>Contacto</SectionsTitle>
+      <SectionsTitle>CONTACTO</SectionsTitle>
       <Container>
         <Wrapper name='contact' method='POST' data-netlify='true' action='/'>
           <input type='hidden' name='form-name' value='contact' />
@@ -27,7 +27,7 @@ function Contacto() {
     </>
   )
 }
-export default Contacto
+export default Contact
 
 const Btn = styled.button`
   padding: 0.7rem;

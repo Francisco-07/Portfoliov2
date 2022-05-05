@@ -5,40 +5,23 @@ import data from '../../data'
 import vars from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
-function Proyectos() {
-  const [ref, inView] = useInView({ triggerOnce: true })
+function Projects() {
   const [ref1, inView1] = useInView({ triggerOnce: true })
   const [ref2, inView2] = useInView({ triggerOnce: true })
   const [ref3, inView3] = useInView({ triggerOnce: true })
 
-  const inViewOrder = (i) => {
-    if (i === 1) {
-      return inView1
-    } else if (i === 2) {
-      return inView2
-    } else {
-      return inView3
-    }
-  }
-  const refOrder = (i) => {
-    if (i === 1) {
-      return ref1
-    } else if (i === 2) {
-      return ref2
-    } else {
-      return ref3
-    }
-  }
+  const refArray = [ref1, ref2, ref3]
+  const viewArray = [inView1, inView2, inView3]
 
   return (
     <>
-      <Container ref={ref} inView={inView}>
-        {data.proyectos.map((info, i) => (
-          <Wrapper ref={refOrder(i)} key={info.key} direction={info.direction}>
-            <BoxOne inView={inViewOrder(i)}>
+      <Container>
+        {data.projects.map((info, i) => (
+          <Wrapper ref={refArray[i]} key={info.key} direction={info.direction}>
+            <BoxOne inView={viewArray[i]}>
               <Title directionTitle={info.directionTitle}>{info.title}</Title>
               <Info
-                inView={inViewOrder(i)}
+                inView={viewArray[i]}
                 boxLeft={info.directionBoxLeft}
                 boxRight={info.directionBoxRight}
               >
@@ -55,7 +38,7 @@ function Proyectos() {
                 <BsBoxArrowUpRight />
               </Icons>
             </BoxOne>
-            <BoxTwo inView={inViewOrder(i)}>
+            <BoxTwo inView={viewArray[i]}>
               <Img alt={info.alt} src={info.img} />
             </BoxTwo>
           </Wrapper>
@@ -87,8 +70,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 70px;
-  opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transition: all 0.5s;
   @media (max-width: 900px) {
     display: none;
   }
@@ -145,6 +126,8 @@ const Tech = styled.div`
 
 const Img = styled.img`
   width: 100%;
+  height: 300px;
+  object-fit: cover;
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   filter: grayscale(52%) sepia(56%) brightness(46%) hue-rotate(215deg);
@@ -152,4 +135,4 @@ const Img = styled.img`
     filter: none;
   }
 `
-export default Proyectos
+export default Projects
