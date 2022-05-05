@@ -144,8 +144,7 @@ const Block = styled.div`
 
 const TextContainer = styled.div`
   flex: 1;
-  margin-top: 60px;
-  margin-left: 10px;
+  margin-top: 50px;
   position: relative;
   h1 {
     font-size: 2.4rem;
@@ -166,6 +165,7 @@ const TextContainer = styled.div`
   @media (max-width: 1100px) {
     flex: 0;
   }
+
   @media (max-width: 900px) {
     svg {
       margin-left: -2px;
@@ -190,6 +190,7 @@ const ImgContainer = styled.div`
   @media (max-width: 1100px) {
     flex: 0;
   }
+
   @media screen and (max-width: 1000px) and (orientation: landscape) {
     flex: 1;
   }
@@ -197,6 +198,10 @@ const ImgContainer = styled.div`
 const Img = styled.img`
   width: 500px;
   height: 500px;
+  @media (max-width: 1100px) {
+    width: 400px;
+    height: 400px;
+  }
   @media (max-width: 900px) {
     width: 400px;
     height: 400px;
@@ -218,8 +223,8 @@ const Img = styled.img`
     height: 650px;
   }
   @media screen and (max-width: 1000px) and (orientation: landscape) {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
 `
 const Orange = styled.span`
