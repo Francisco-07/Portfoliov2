@@ -57,6 +57,9 @@ const DataInputs = styled.input`
   @media (max-width: 450px) {
     width: 280px;
   }
+  @media (max-width: 300px) {
+    width: 250px;
+  }
 `
 const Text = styled.textarea`
   width: 350px;
@@ -65,6 +68,9 @@ const Text = styled.textarea`
   outline: none;
   @media (max-width: 450px) {
     width: 280px;
+  }
+  @media (max-width: 300px) {
+    width: 250px;
   }
 `
 const Btn = styled.button`

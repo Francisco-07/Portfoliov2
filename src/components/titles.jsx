@@ -20,9 +20,9 @@ function SectionsTitle(props) {
 
 const Container = styled.div`
   position: relative;
-  height: 200px;
   display: flex;
   flex-direction: column;
+  height: 200px;
   justify-content: center;
   align-items: center;
 `
@@ -32,13 +32,14 @@ const LineaLeft = styled.div`
   background: ${vars.colors.primary};
   height: 4px;
   width: 30px;
+  margin-right: -1px;
   left: ${({ inView }) => (inView ? '50%' : '0')};
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
   transition-delay: 0.3s;
-  margin-top: 80px;
+  bottom: 50px;
   @media (min-height: 1100px) and (min-width: 1000px) {
-    margin-top: 120px;
+    top: 120px;
   }
 `
 const LineaRight = styled.div`
@@ -50,19 +51,19 @@ const LineaRight = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
   transition-delay: 0.3s;
-  margin-top: 80px;
+  bottom: 50px;
+  margin-left: -1px;
   @media (min-height: 1100px) and (min-width: 1000px) {
-    margin-top: 120px;
+    top: 120px;
   }
 `
 const Title = styled.h2`
-  position: absolute;
   color: ${vars.colors.primary};
   text-align: center;
   z-index: 100;
   font-size: 2rem;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transition: all 0.8s;
+  transition: all 0.5s;
 `
 
 export default SectionsTitle

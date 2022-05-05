@@ -48,18 +48,24 @@ const Container = styled.div`
   justify-content: center;
   width: 100vw;
   height: 100vh;
+  @media screen and (max-width: 1000px) and (orientation: landscape) {
+    margin-top: 0;
+  }
 `
 
 const Wrapper = styled.div`
   width: 80%;
   height: 100vh;
   display: flex;
-  position: relative;
   justify-content: flex-start;
-
   @media (max-width: 900px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+  }
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
   }
   @media (min-height: 1200px) and (min-width: 760px) {
     flex-direction: column;
@@ -73,6 +79,9 @@ const Wrapper = styled.div`
   @media (min-height: 1200px) and (min-width: 1000px) {
     width: 60%;
     height: 70%;
+    flex-direction: row;
+  }
+  @media (max-height: 400px) and (max-width: 1000px) {
     flex-direction: row;
   }
 `
@@ -134,7 +143,10 @@ const Block = styled.div`
 `
 
 const TextContainer = styled.div`
+  flex: 1;
+  margin-top: 60px;
   margin-left: 10px;
+  position: relative;
   h1 {
     font-size: 2.4rem;
     margin: 0;
@@ -151,11 +163,17 @@ const TextContainer = styled.div`
     font-size: 2rem;
     margin-left: 70px;
   }
-
+  @media (max-width: 1100px) {
+    flex: 0;
+  }
   @media (max-width: 900px) {
     svg {
       margin-left: -2px;
     }
+  }
+  @media screen and (max-width: 1000px) and (orientation: landscape) {
+    flex: 1;
+    margin-top: 0;
   }
 `
 const CenterIcon = styled.div`
@@ -164,50 +182,44 @@ const CenterIcon = styled.div`
 `
 
 const ImgContainer = styled.div`
+  flex: 1;
   z-index: 6;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 1100px) {
+    flex: 0;
+  }
+  @media screen and (max-width: 1000px) and (orientation: landscape) {
+    flex: 1;
+  }
 `
 const Img = styled.img`
   width: 500px;
   height: 500px;
-  position: absolute;
-  right: 0;
   @media (max-width: 900px) {
     width: 400px;
     height: 400px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   @media (max-width: 450px) {
     width: 300px;
     height: 300px;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   @media (max-width: 300px) {
     width: 250px;
     height: 250px;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   @media (min-height: 1200px) and (min-width: 760px) {
     width: 550px;
     height: 550px;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   @media (min-height: 1200px) and (min-width: 1000px) {
     width: 650px;
     height: 650px;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  }
+  @media screen and (max-width: 1000px) and (orientation: landscape) {
+    width: 300px;
+    height: 300px;
   }
 `
 const Orange = styled.span`
