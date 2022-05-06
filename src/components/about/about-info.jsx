@@ -51,7 +51,7 @@ function AboutInfo() {
           </Shape>
           <Title>Intuitivo</Title>
           <Text>Interfaces simples de</Text>
-          <Text> usar e intuitivas</Text>
+          <Text>usar e intuitivas</Text>
         </IconTextContainer>
       </Wrapper>
     </Container>

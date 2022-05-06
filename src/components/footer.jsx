@@ -11,28 +11,42 @@ function Footer() {
   const [ref, inView] = useInView({ triggerOnce: true })
   const [ref1, inView1] = useInView({ triggerOnce: true })
   return (
-    <Container ref={ref} inView={inView} id='contact'>
-      <Contact />
-      <RedesAndroid />
-      <Author id='Contacto' ref={ref1} inView={inView1}>
-        Desarrollo
-        <a
-          target='_blank'
-          rel='noreferrer'
-          href='https://github.com/Francisco-07'
-        >
-          {' '}
-          <MdKeyboardArrowRight /> Francisco Garciarena
-        </a>
-      </Author>
-    </Container>
+    <>
+      <Container ref={ref} inView={inView} id='contact'>
+        <Clip />
+        <Contact />
+        <RedesAndroid />
+        <Author id='Contacto' ref={ref1} inView={inView1}>
+          Desarrollo
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://github.com/Francisco-07'
+          >
+            {' '}
+            <MdKeyboardArrowRight /> Francisco Garciarena
+          </a>
+        </Author>
+      </Container>
+    </>
   )
 }
 
 const Container = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
+  background-color: #0d203d;
+  position: relative;
 `
+const Clip = styled.div`
+  position: absolute;
+  top: -2px;
+  width: 100vw;
+  height: 300px;
+  clip-path: polygon(50% 0, 100% 0, 50% 17%, 0 0);
+  background-color: #0a192f;
+`
+
 const Author = styled.p`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
