@@ -46,9 +46,14 @@ a {
     font-size: 13px;
   }
 }
+@media (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
 
 @media (max-width: 300px) {
   html {
-    font-size: 10px;
+    font-size: 9px;
   }
 }

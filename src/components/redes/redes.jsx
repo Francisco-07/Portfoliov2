@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import vars from '../../utils'
+import { colors } from '../../utils'
 
 // ICONOS
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
@@ -67,11 +67,10 @@ const RedesList = styled.ul`
   }
   & svg {
     font-size: 1.5rem;
-    transition: all 0.5s;
     &:hover {
       cursor: pointer;
-      color: ${vars.colors.lightOrange};
-      transform: translateY(-3px);
+      color: ${colors.lightOrange};
+      transform: translateY(-1px);
     }
   }
   &::after {
@@ -80,7 +79,7 @@ const RedesList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${vars.colors.primary};
+    background-color: ${colors.primary};
   }
 `
 

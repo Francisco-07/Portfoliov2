@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import data from '../../data'
-import vars from '../../utils'
+import { colors } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -82,6 +82,7 @@ const BoxOne = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
   z-index: 5;
+  font-size: 1.1rem;
 `
 const BoxTwo = styled.div`
   width: 50%;
@@ -139,7 +140,7 @@ const Icons = styled.div`
     cursor: pointer;
     font-size: 1.2rem;
     &:hover {
-      color: ${vars.colors.lightOrange};
+      color: ${colors.lightOrange};
     }
   }
 `

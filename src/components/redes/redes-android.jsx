@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import vars from '../../utils'
+import { colors } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -71,7 +71,7 @@ const RedesList = styled.ul`
     font-size: 2.8rem;
     &:hover {
       cursor: pointer;
-      color: ${vars.colors.lightOrange};
+      color: ${colors.lightOrange};
     }
   }
 `

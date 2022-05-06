@@ -6,7 +6,7 @@ import ProjectsAndroid from './projects-android'
 function Work() {
   return (
     <>
-      <Container id='proyectos'>
+      <Container id='work'>
         <SectionsTitle>PROYECTOS</SectionsTitle>
         <Projects />
         <ProjectsAndroid />

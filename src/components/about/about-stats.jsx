@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import data from '../../data'
-import vars from '../../utils'
+import { colors } from '../../utils'
 
 function Stats() {
   const { ref, inView } = useInView({
@@ -67,8 +67,8 @@ const Wrapper = styled.div`
 
 const OuterBar = styled.div`
   width: 50vw;
-  background-color: ${vars.colors.primary};
-  color: ${vars.colors.secondary};
+  background-color: ${colors.primary};
+  color: ${colors.secondary};
   display: flex;
   justify-content: space-between;
   margin-bottom: 1.25rem;
@@ -81,7 +81,7 @@ const OuterBar = styled.div`
 
 const BarEmpty = styled.div`
   flex: 0.75;
-  background: ${vars.colors.primary};
+  background: ${colors.primary};
   display: flex;
   @media (max-width: 900px) {
     flex: 0.7;
@@ -90,16 +90,17 @@ const BarEmpty = styled.div`
 const BarFilled = styled.div`
   width: ${({ inView, percent }) => (inView ? `${percent}%` : '0%')};
   transition: all 2.7s;
-  background: ${vars.colors.lightOrange};
+  background: ${colors.lightOrange};
   transition-delay: ${(props) => props.delay}s;
 `
 
 const Tech = styled.div`
   flex: 0.25;
+  white-space: nowrap;
   text-align: center;
-  color: ${vars.colors.primary};
+  color: ${colors.primary};
   font-size: 1.1rem;
-  background-color: ${vars.colors.darkOrange};
+  background-color: ${colors.darkOrange};
   @media (max-width: 900px) {
     flex: 0.3;
   }

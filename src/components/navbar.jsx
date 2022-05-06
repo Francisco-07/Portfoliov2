@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
-import vars from '../utils'
+import { colors } from '../utils'
 
 // ICONOS
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -17,13 +17,13 @@ function Navbar() {
         <Blur />
         <MenuWrapper>
           {/* <Resume>Curriculum</Resume> */}
-          <Items href='#about' onClick={() => setIsOpen(!isOpen)}>
+          <Items href='#about' onClick={() => setIsOpen(false)}>
             Sobre mi
           </Items>
-          <Items href='#proyectos' onClick={() => setIsOpen(!isOpen)}>
+          <Items href='#work' onClick={() => setIsOpen(false)}>
             Proyectos
           </Items>
-          <Items href='#contacto' onClick={() => setIsOpen(!isOpen)}>
+          <Items href='#contact' onClick={() => setIsOpen(false)}>
             Contacto
           </Items>
         </MenuWrapper>
@@ -41,7 +41,7 @@ const Container = styled.div`
   align-items: center;
   padding: 0 2rem;
   height: 50px;
-  background-color: ${vars.colors.secondary};
+  background-color: ${colors.secondary};
   z-index: 999;
 `
 
@@ -70,7 +70,7 @@ const MenuWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: ${vars.colors.secondary};
+    background-color: ${colors.secondary};
     width: 70vw;
     height: 100vh;
   }
@@ -90,7 +90,7 @@ const Blur = styled.div`
 //   padding: 0.2rem;
 //   margin-left: 0.6rem;
 //   background-color: white;
-//   color: ${vars.colors.secondary};
+//   color: ${colors.secondary};
 // `
 
 const Items = styled.a`

@@ -10,7 +10,7 @@ function Footer() {
   const [ref, inView] = useInView({ triggerOnce: true })
   const [ref1, inView1] = useInView({ triggerOnce: true })
   return (
-    <Container ref={ref} inView={inView} id='contacto'>
+    <Container ref={ref} inView={inView} id='contact'>
       <Contact />
       <RedesAndroid />
       <Author id='Contacto' ref={ref1} inView={inView1}>
@@ -34,7 +34,7 @@ const Container = styled.div`
 `
 const Author = styled.p`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transition: all 3s;
+  transition: all 1s;
   padding: 40px;
   margin-bottom: 0;
   height: 100%;

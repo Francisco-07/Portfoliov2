@@ -56,7 +56,7 @@ const projects = [
     inView: 'inView1',
     alt: 'test',
     title: 'Test App',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolores doloremque tempora iure velit ex quisquam cum saepe maiores laboriosam laborum omnis, quam harum optio unde modi architecto odit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolores doloremque tempora iure velit, sit amet consectetur adipisicing elit.',
   },
   {
     key: 2,
@@ -76,7 +76,7 @@ const projects = [
     inView: 'inView2',
     alt: 'test',
     title: 'Test App',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolores doloremque tempora iure velit ex quisquam cum saepe maiores laboriosam laborum omnis, quam harum optio unde modi architecto odit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolores doloremque tempora iure velit, sit amet consectetur adipisicing elit.',
   },
   {
     key: 3,
@@ -96,7 +96,7 @@ const projects = [
     inView: 'inView3',
     alt: 'test',
     title: 'Test App',
-    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolores doloremque tempora iure velit ex quisquam cum saepe maiores laboriosam laborum omnis, quam harum optio unde modi architecto odit.Lorem ipsum dolor sit amet consectetur adipisicing elit.',
+    text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolores doloremque tempora iure velit, sit amet consectetur adipisicing elit.',
   },
 ]
 

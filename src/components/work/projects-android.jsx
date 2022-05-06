@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import vars from '../../utils'
+import { colors } from '../../utils'
 import data from '../../data'
 import { useInView } from 'react-intersection-observer'
 
@@ -61,7 +61,7 @@ const AndroidBox = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
-  width: 74%;
+  width: 350px;
   height: 330px;
   display: flex;
   flex-direction: column;
@@ -69,6 +69,10 @@ const AndroidBox = styled.div`
   align-items: flex-start;
   margin-bottom: 1.5rem;
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  @media (max-width: 400px) {
+    width: 90%;
+    height: 300px;
+  }
 `
 
 const AndroidTech = styled.div`
@@ -97,7 +101,7 @@ const Icons = styled.div`
     cursor: pointer;
     font-size: 1.7rem;
     &:hover {
-      color: ${vars.colors.secondary};
+      color: ${colors.secondary};
     }
   }
 `

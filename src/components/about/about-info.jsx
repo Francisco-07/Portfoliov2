@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import vars from '../../utils'
+import { colors } from '../../utils'
 // iconos
 import { FiMonitor } from 'react-icons/fi'
 import { GiSmartphone } from 'react-icons/gi'
@@ -75,7 +75,7 @@ const Wrapper = styled.div`
   gap: 1.25rem;
   & svg {
     font-size: 3rem;
-    color: ${vars.colors.secondary};
+    color: ${colors.secondary};
   }
   @media (max-width: 900px) {
     flex-direction: column;
@@ -90,33 +90,23 @@ const IconTextContainer = styled.div`
   flex: 1;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transform: ${({ inView }) => (inView ? 'rotateX(0)' : 'rotateX(90deg)')};
-  transition: all 0.6s;
+  transition: all 1.1s;
   transition-delay: ${(props) => props.delay}s; ;
 `
 
 const Title = styled.p`
   text-align: center;
-  color: ${vars.colors.primary};
+  color: ${colors.primary};
   font-size: 1.2rem;
 `
 
 const Text = styled.p`
   text-align: center;
-  color: ${vars.colors.primary};
+  color: ${colors.primary};
   font-size: 1rem;
   margin-top: 0;
   margin-bottom: 1px;
-  @media (max-width: 1100px) {
-    display: none;
-  }
-  @media (min-height: 1200px) and (min-width: 1000px) {
-    display: none;
-  }
-
-  @media (min-height: 1200px) and (min-width: 1500px) {
-    width: 320px;
-    display: block;
-  }
+  white-space: nowrap;
 `
 
 const Shape = styled.div`
@@ -132,7 +122,7 @@ const Shape = styled.div`
   );
   width: 100px;
   height: 100px;
-  background-color: ${vars.colors.primary};
+  background-color: ${colors.primary};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -150,7 +140,7 @@ const Responsive = styled.div`
   );
   width: 100px;
   height: 100px;
-  background-color: ${vars.colors.primary};
+  background-color: ${colors.primary};
   display: flex;
   justify-content: center;
   align-items: center;

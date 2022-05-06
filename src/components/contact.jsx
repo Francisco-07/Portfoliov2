@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import SectionsTitle from './titles'
-import vars from '../utils'
+import { colors } from '../utils'
 import { useInView } from 'react-intersection-observer'
 
 function Contact() {
@@ -75,14 +75,14 @@ const Text = styled.textarea`
 `
 const Btn = styled.button`
   padding: 0.7rem;
-  background-color: ${vars.colors.secondary};
+  background-color: ${colors.secondary};
   border: none;
   align-self: flex-end;
   color: white;
   margin-top: 1rem;
   border: 2px solid white;
   &:hover {
-    color: ${vars.colors.lightOrange};
-    border: 2px solid ${vars.colors.lightOrange};
+    color: ${colors.lightOrange};
+    border: 2px solid ${colors.lightOrange};
   }
 `

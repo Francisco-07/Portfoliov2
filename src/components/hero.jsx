@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import vars from '../utils'
+import { colors } from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import { useInView } from 'react-intersection-observer'
@@ -47,12 +47,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
-  @media screen and (max-width: 1000px) and (orientation: landscape) {
+  height: 90vh;
+  @media screen and (max-width: 1000px) and (max-height: 500px) and (orientation: landscape) {
     margin-top: 0;
-  }
-  @media (max-width: 900px) {
-    margin-top: 60px;
   }
 `
 
@@ -61,13 +58,11 @@ const Wrapper = styled.div`
   height: 90vh;
   display: flex;
   justify-content: flex-start;
-  @media (max-width: 900px) {
-    height: 80vh;
-  }
   @media (max-width: 1100px) {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    height: 70vh;
   }
   @media (min-height: 1200px) and (min-width: 760px) {
     flex-direction: column;
@@ -148,20 +143,22 @@ const TextContainer = styled.div`
   flex: 1;
   margin-top: 50px;
   position: relative;
+  white-space: nowrap;
   h1 {
-    font-size: 2.4rem;
+    font-size: 3rem;
     margin: 0;
   }
   h2 {
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin: 0;
   }
   h3 {
-    font-size: 1.4rem;
+    font-size: 2rem;
+
     margin: 0;
   }
   svg {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-left: 70px;
   }
   @media (max-width: 1100px) {
@@ -230,7 +227,7 @@ const Img = styled.img`
   }
 `
 const Orange = styled.span`
-  color: ${vars.colors.lightOrange};
+  color: ${colors.lightOrange};
 `
 
 export default Hero
