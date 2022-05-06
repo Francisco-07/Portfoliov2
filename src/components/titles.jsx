@@ -38,9 +38,6 @@ const LineaLeft = styled.div`
   transition: all 0.4s;
   transition-delay: 0.3s;
   bottom: 50px;
-  @media (min-height: 1100px) and (min-width: 1000px) {
-    top: 120px;
-  }
 `
 const LineaRight = styled.div`
   position: absolute;
@@ -53,9 +50,6 @@ const LineaRight = styled.div`
   transition-delay: 0.3s;
   bottom: 50px;
   margin-left: -1px;
-  @media (min-height: 1100px) and (min-width: 1000px) {
-    top: 120px;
-  }
 `
 const Title = styled.h2`
   color: ${colors.primary};

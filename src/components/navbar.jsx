@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import React, { useState } from 'react'
-import { colors } from '../utils'
+import { colors, device } from '../utils'
 
 // ICONOS
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -47,7 +47,7 @@ const Container = styled.div`
 
 const Menu = styled.div`
   font-size: 1.2rem;
-  @media (max-width: 900px) {
+  @media ${device.laptop} {
     display: flex;
     position: fixed;
     width: 100vw;
@@ -66,7 +66,7 @@ const MenuWrapper = styled.div`
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  @media (max-width: 900px) {
+  @media ${device.laptop} {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -77,7 +77,7 @@ const MenuWrapper = styled.div`
 `
 const Blur = styled.div`
   display: none;
-  @media (max-width: 900px) {
+  @media ${device.laptop} {
     backdrop-filter: blur(1.8px);
     display: flex;
     width: 30vw;
@@ -103,7 +103,7 @@ const Items = styled.a`
 `
 const Hamburger = styled.div`
   display: none;
-  @media (max-width: 900px) {
+  @media ${device.laptop} {
     display: flex;
     z-index: 11;
     & svg {

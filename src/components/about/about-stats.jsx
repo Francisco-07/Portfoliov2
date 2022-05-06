@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import data from '../../data'
-import { colors } from '../../utils'
+import { stats } from '../../data'
+import { colors, device } from '../../utils'
 
 function Stats() {
   const { ref, inView } = useInView({
@@ -27,16 +27,16 @@ function Stats() {
           </About>
 
           <Estadisticas inView={inView}>
-            {data.estadisticas.map((stats) => (
-              <OuterBar key={stats.key}>
-                <Tech>{stats.tech}</Tech>
+            {stats.map((data) => (
+              <OuterBar key={data.key}>
+                <Tech>{data.tech}</Tech>
                 <BarEmpty>
                   <BarFilled
-                    percent={stats.percent}
-                    delay={stats.delay}
+                    percent={data.percent}
+                    delay={data.delay}
                     inView={inView}
                   >
-                    <Percent>{stats.percent + '%'}</Percent>
+                    <Percent>{data.percent + '%'}</Percent>
                   </BarFilled>
                 </BarEmpty>
               </OuterBar>
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   width: 80vw;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     flex-direction: column;
   }
 `
@@ -74,18 +74,15 @@ const OuterBar = styled.div`
   margin-bottom: 1.25rem;
   position: relative;
   font-size: 1.25rem;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     width: 90vw;
   }
 `
 
 const BarEmpty = styled.div`
-  flex: 0.75;
+  flex: 0.7;
   background: ${colors.primary};
   display: flex;
-  @media (max-width: 900px) {
-    flex: 0.7;
-  }
 `
 const BarFilled = styled.div`
   width: ${({ inView, percent }) => (inView ? `${percent}%` : '0%')};
@@ -95,15 +92,12 @@ const BarFilled = styled.div`
 `
 
 const Tech = styled.div`
-  flex: 0.25;
+  flex: 0.3;
   white-space: nowrap;
   text-align: center;
   color: ${colors.primary};
   font-size: 1.1rem;
   background-color: ${colors.darkOrange};
-  @media (max-width: 900px) {
-    flex: 0.3;
-  }
 `
 const Percent = styled.span`
   position: absolute;
@@ -139,7 +133,7 @@ const Text = styled.p`
   width: 65%;
   text-align: center;
   font-size: 1.1rem;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     width: 90%;
   }
 `

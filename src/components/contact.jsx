@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import SectionsTitle from './titles'
-import { colors } from '../utils'
+import { colors, device } from '../utils'
 import { useInView } from 'react-intersection-observer'
 
 function Contact() {
@@ -54,10 +54,10 @@ const DataInputs = styled.input`
   margin-bottom: 0.6rem;
   border-style: none;
   outline: none;
-  @media (max-width: 450px) {
+  @media ${device.mobileL} {
     width: 280px;
   }
-  @media (max-width: 300px) {
+  @media ${device.mobileS} {
     width: 250px;
   }
 `
@@ -66,10 +66,10 @@ const Text = styled.textarea`
   height: 150px;
   resize: none;
   outline: none;
-  @media (max-width: 450px) {
+  @media ${device.mobileL} {
     width: 280px;
   }
-  @media (max-width: 300px) {
+  @media ${device.mobileS} {
     width: 250px;
   }
 `

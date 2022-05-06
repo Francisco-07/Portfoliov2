@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../utils'
+import { colors, device } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -47,7 +47,7 @@ function RedesAndroid() {
 
 const Container = styled.div`
   display: none;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     display: flex;
     justify-content: center;
     margin-top: 4rem;

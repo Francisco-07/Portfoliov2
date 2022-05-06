@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { colors } from '../../utils'
-import data from '../../data'
+import { colors, device } from '../../utils'
+import { projects } from '../../data'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -17,16 +17,16 @@ function ProjectsAndroid() {
 
   return (
     <>
-      {data.projects.map((info, i) => (
-        <Container key={info.key} ref={refArray[i]} inView={viewArray[i]}>
+      {projects.map((data, i) => (
+        <Container key={data.key} ref={refArray[i]} inView={viewArray[i]}>
           <AndroidBox>
-            <AndroidTitle>{info.title}</AndroidTitle>
-            <AndroidText>{info.text}</AndroidText>
+            <AndroidTitle>{data.title}</AndroidTitle>
+            <AndroidText>{data.text}</AndroidText>
             <AndroidTech>
-              <div>{info.tech1}</div>
-              <div>{info.tech2}</div>
-              <div>{info.tech3}</div>
-              <div>{info.tech4}</div>
+              <div>{data.tech1}</div>
+              <div>{data.tech2}</div>
+              <div>{data.tech3}</div>
+              <div>{data.tech4}</div>
             </AndroidTech>
             <Icons>
               <FiGithub />
@@ -41,7 +41,7 @@ function ProjectsAndroid() {
 const Container = styled.div`
   display: none;
 
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     opacity: ${({ inView }) => (inView ? '1' : '0')};
     transform: ${({ inView }) =>
       inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
@@ -69,7 +69,7 @@ const AndroidBox = styled.div`
   align-items: flex-start;
   margin-bottom: 1.5rem;
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  @media (max-width: 400px) {
+  @media ${device.mobileL} {
     width: 90%;
     height: 300px;
   }

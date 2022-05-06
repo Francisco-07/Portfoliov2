@@ -1,11 +1,8 @@
 import styled, { keyframes } from 'styled-components'
-import { colors } from '../utils'
+import { colors, device } from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
-import { AiOutlineArrowDown } from 'react-icons/ai'
-import { useInView } from 'react-intersection-observer'
 
 function Hero() {
-  const { ref, inView } = useInView({ triggerOnce: false })
   return (
     <>
       <Container>
@@ -25,11 +22,6 @@ function Hero() {
           </TextContainer>
           <ImgContainer>
             <Img src='/assets/asd.png' alt='Imgn generica' />
-            <Arrow ref={ref} inView={inView}>
-              <a href='#about'>
-                <AiOutlineArrowDown />
-              </a>
-            </Arrow>
           </ImgContainer>
         </Wrapper>
       </Container>
@@ -48,83 +40,20 @@ const Container = styled.div`
   justify-content: center;
   width: 100vw;
   height: 90vh;
-  @media screen and (max-width: 1000px) and (max-height: 500px) and (orientation: landscape) {
-    margin-top: 0;
-  }
 `
 
 const Wrapper = styled.div`
   width: 80%;
   height: 90vh;
   display: flex;
-  justify-content: flex-start;
-  @media (max-width: 1100px) {
+  justify-content: center;
+  @media ${device.laptop} {
     flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
-    height: 70vh;
+    align-items: center;
   }
-  @media (min-height: 1200px) and (min-width: 760px) {
-    flex-direction: column;
-  }
-
-  @media (min-height: 1200px) and (min-width: 760px) {
-    width: 60%;
-    height: 80%;
-    flex-direction: column;
-  }
-  @media (min-height: 1200px) and (min-width: 1000px) {
-    width: 60%;
-    height: 70%;
-    flex-direction: row;
-  }
-  @media (max-height: 400px) and (max-width: 1000px) {
-    flex-direction: row;
-  }
-`
-const Arrow = styled.div`
-  display: none;
-  @media (min-height: 1200px) and (min-width: 760px) {
-    display: flex;
+  @media ${device.desktop} {
     justify-content: center;
-    align-items: flex-end;
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    height: 40px;
-    z-index: 30;
-    & svg {
-      font-size: 50px;
-      opacity: ${({ inView }) => (inView ? '1' : '0')};
-      transform: ${({ inView }) =>
-        inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
-      transition: all 0.4s;
-      transition-delay: 0.3s;
-    }
-  }
-  @media (min-height: 800px) and (max-height: 900px) and (max-width: 500px) {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    position: absolute;
-    bottom: 200px;
-    left: 0;
-    right: 0;
-    height: 40px;
-    z-index: 30;
-    & svg {
-      font-size: 50px;
-      opacity: ${({ inView }) => (inView ? '1' : '0')};
-      transform: ${({ inView }) =>
-        inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
-      transition: all 0.4s;
-      transition-delay: 0.3s;
-    }
-  }
-
-  @media (min-height: 1200px) and (min-width: 1000px) {
-    display: none;
   }
 `
 
@@ -140,8 +69,6 @@ const Block = styled.div`
 `
 
 const TextContainer = styled.div`
-  flex: 1;
-  margin-top: 50px;
   position: relative;
   white-space: nowrap;
   h1 {
@@ -161,18 +88,11 @@ const TextContainer = styled.div`
     font-size: 2.2rem;
     margin-left: 70px;
   }
-  @media (max-width: 1100px) {
-    flex: 0;
-  }
-
-  @media (max-width: 900px) {
+  @media ${device.mobileL} {
     svg {
-      margin-left: -2px;
+      font-size: 2.2rem;
+      margin-left: 0px;
     }
-  }
-  @media screen and (max-width: 1000px) and (orientation: landscape) {
-    flex: 1;
-    margin-top: 0;
   }
 `
 const CenterIcon = styled.div`
@@ -181,49 +101,33 @@ const CenterIcon = styled.div`
 `
 
 const ImgContainer = styled.div`
-  flex: 1;
   z-index: 6;
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 1100px) {
-    flex: 0;
-  }
-
-  @media screen and (max-width: 1000px) and (orientation: landscape) {
-    flex: 1;
-  }
 `
 const Img = styled.img`
   width: 500px;
   height: 500px;
-  @media (max-width: 1100px) {
-    width: 400px;
-    height: 400px;
+  @media ${device.desktop} {
+    width: 800px;
+    height: 800px;
   }
-  @media (max-width: 900px) {
-    width: 400px;
-    height: 400px;
+  @media ${device.laptop} {
+    width: 470px;
+    height: 470px;
   }
-  @media (max-width: 450px) {
-    width: 300px;
-    height: 300px;
+  @media ${device.mobileL} {
+    width: 390px;
+    height: 370px;
   }
-  @media (max-width: 300px) {
+  @media ${device.mobileM} {
+    width: 340px;
+    height: 340px;
+  }
+  @media ${device.mobileS} {
     width: 250px;
-    height: 250px;
-  }
-  @media (min-height: 1200px) and (min-width: 760px) {
-    width: 550px;
-    height: 550px;
-  }
-  @media (min-height: 1200px) and (min-width: 1000px) {
-    width: 650px;
-    height: 650px;
-  }
-  @media screen and (max-width: 1000px) and (orientation: landscape) {
-    width: 250px;
-    height: 250px;
+    height: 350px;
   }
 `
 const Orange = styled.span`

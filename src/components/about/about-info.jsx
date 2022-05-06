@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { colors } from '../../utils'
+import { colors, device } from '../../utils'
 // iconos
 import { FiMonitor } from 'react-icons/fi'
 import { GiSmartphone } from 'react-icons/gi'
@@ -61,7 +61,7 @@ function AboutInfo() {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     display: none;
   }
 `
@@ -77,8 +77,8 @@ const Wrapper = styled.div`
     font-size: 3rem;
     color: ${colors.secondary};
   }
-  @media (max-width: 900px) {
-    flex-direction: column;
+  @media ${device.desktop} {
+    width: 60%;
   }
 `
 

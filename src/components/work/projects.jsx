@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import data from '../../data'
-import { colors } from '../../utils'
+import { projects } from '../../data'
+import { colors, device } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -18,30 +18,30 @@ function Projects() {
   return (
     <>
       <Container>
-        {data.projects.map((info, i) => (
-          <Wrapper ref={refArray[i]} key={info.key} direction={info.direction}>
+        {projects.map((data, i) => (
+          <Wrapper ref={refArray[i]} key={data.key} direction={data.direction}>
             <BoxOne inView={viewArray[i]}>
-              <Title directionTitle={info.directionTitle}>{info.title}</Title>
+              <Title directionTitle={data.directionTitle}>{data.title}</Title>
               <Info
                 inView={viewArray[i]}
-                boxLeft={info.directionBoxLeft}
-                boxRight={info.directionBoxRight}
+                boxLeft={data.directionBoxLeft}
+                boxRight={data.directionBoxRight}
               >
-                {info.text}
+                {data.text}
               </Info>
-              <Tech directionTech={info.directionTech}>
-                <div>{info.tech1}</div>
-                <div>{info.tech2}</div>
-                <div>{info.tech3}</div>
-                <div>{info.tech4}</div>
+              <Tech directionTech={data.directionTech}>
+                <div>{data.tech1}</div>
+                <div>{data.tech2}</div>
+                <div>{data.tech3}</div>
+                <div>{data.tech4}</div>
               </Tech>
-              <Icons directionIcons={info.icons}>
+              <Icons directionIcons={data.icons}>
                 <FiGithub />
                 <BsBoxArrowUpRight />
               </Icons>
             </BoxOne>
             <BoxTwo inView={viewArray[i]}>
-              <Img alt={info.alt} src={info.img} />
+              <Img alt={data.alt} src={data.img} />
             </BoxTwo>
           </Wrapper>
         ))}
@@ -56,7 +56,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-bottom: 70px;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     display: none;
   }
 `
@@ -68,27 +68,31 @@ const Wrapper = styled.div`
   position: relative;
   flex-direction: ${(props) => props.direction};
   margin-bottom: 25px;
-
-  @media (min-height: 1200px) and (min-width: 1200px) {
-    width: 65%;
-  }
-  @media (min-height: 1200px) and (min-width: 2200px) {
-    width: 55%;
+  @media ${device.desktop} {
+    width: 60%;
   }
 `
 
 const BoxOne = styled.div`
   width: 50%;
+  height: 360px;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
   z-index: 5;
   font-size: 1.1rem;
+  @media ${device.desktop} {
+    height: 500px;
+  }
 `
 const BoxTwo = styled.div`
   width: 50%;
+  height: 360px;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
   z-index: 2;
+  @media ${device.desktop} {
+    height: 500px;
+  }
 `
 
 const Title = styled.h2`
@@ -116,11 +120,14 @@ const Tech = styled.div`
   margin-top: 180px;
   flex-direction: ${(props) => props.directionTech};
   justify-content: ${(props) => props.directionTech};
+  @media ${device.desktop} {
+    margin-top: 300px;
+  }
 `
 
 const Img = styled.img`
   width: 100%;
-  height: 300px;
+  height: 100%;
   object-fit: cover;
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;

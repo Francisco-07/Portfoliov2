@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import RedesAndroid from './redes/redes-android'
 import Contact from './contact'
 import { useInView } from 'react-intersection-observer'
+import { device } from '../utils'
 
 // ICONOS
 import { MdKeyboardArrowRight } from 'react-icons/md'
@@ -58,7 +59,7 @@ const Author = styled.p`
       font-size: 2.1rem;
     }
   }
-  @media (max-width: 900px) {
+  @media ${device.laptop} {
     text-align: center;
     margin-top: 0px;
   }

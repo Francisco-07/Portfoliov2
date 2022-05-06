@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../utils'
+import { colors, device } from '../../utils'
 
 // ICONOS
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
@@ -50,7 +50,7 @@ const Container = styled.div`
   left: 40px;
   right: auto;
   z-index: 11;
-  @media (max-width: 900px) {
+  @media ${device.tablet} {
     display: none;
   }
 `

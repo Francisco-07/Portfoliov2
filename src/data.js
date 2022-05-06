@@ -1,4 +1,4 @@
-const estadisticas = [
+const stats = [
   {
     tech: 'HTML',
     percent: 85,
@@ -100,6 +100,4 @@ const projects = [
   },
 ]
 
-const data = { estadisticas, projects }
-
-export default data
+export { projects, stats }
