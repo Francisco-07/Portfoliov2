@@ -47,6 +47,7 @@ const Container = styled.div`
       inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
     transition: all 0.5s;
     margin-top: 1.25rem;
+    padding-bottom: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
