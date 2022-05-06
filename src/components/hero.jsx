@@ -44,13 +44,19 @@ const Wrapper = styled.div`
   height: 90vh;
   display: flex;
   justify-content: center;
+  @media ${device.desktop} {
+    justify-content: center;
+  }
   @media ${device.laptop} {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
-  @media ${device.desktop} {
+  @media ${device.mobileL} {
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    height: 80vh;
   }
 `
 
