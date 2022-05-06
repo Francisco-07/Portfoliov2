@@ -25,6 +25,7 @@ const device = {
   laptop: `(max-width: ${size.laptop})`,
   laptopL: `(max-width: ${size.laptopL})`,
   desktop: `(min-width: ${size.desktop})`,
+  landscape: 'only screen and (max-height: 500px) and (orientation: landscape)',
 }
 
 export { device, colors }

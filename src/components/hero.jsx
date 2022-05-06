@@ -37,6 +37,9 @@ const Container = styled.div`
   justify-content: center;
   width: 100vw;
   height: 90vh;
+  @media ${device.landscape} {
+    height: 100%;
+  }
 `
 
 const Wrapper = styled.div`
@@ -51,6 +54,10 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+  }
+  @media ${device.landscape} {
+    flex-direction: column;
+    height: 100%;
   }
   @media ${device.mobileL} {
     flex-direction: column;
@@ -136,6 +143,10 @@ const Img = styled.img`
   @media ${device.mobileS} {
     width: 250px;
     height: 350px;
+  }
+  @media ${device.landscape} {
+    width: 300px;
+    height: 300px;
   }
 `
 const Orange = styled.span`
