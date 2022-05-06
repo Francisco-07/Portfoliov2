@@ -1,12 +1,14 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { colors, device } from '../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
+import { useInView } from 'react-intersection-observer'
 
 function Hero() {
+  const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <>
       <Container>
-        <Wrapper>
+        <Wrapper ref={ref}>
           <TextContainer>
             <h2>
               <Orange>HOLA,</Orange>
@@ -18,21 +20,16 @@ function Hero() {
               <FiArrowDownRight />
               <h3>FRONT-END DEVELOPER</h3>
             </CenterIcon>
-            <Block />
+            <Block inView={inView} />
           </TextContainer>
           <ImgContainer>
-            <Img src='/assets/asd.png' alt='Imgn generica' />
+            <Img inView={inView} src='/assets/asd.png' alt='Imgn generica' />
           </ImgContainer>
         </Wrapper>
       </Container>
     </>
   )
 }
-
-const block = keyframes`
- 0% { transform: translate(0px, -200px); }
- 100% {  transform: translate(0px, 0px);}
- `
 
 const Container = styled.div`
   margin-top: 60px;
@@ -63,8 +60,9 @@ const Block = styled.div`
   height: 200px;
   position: absolute;
   z-index: 5;
-  animation-name: ${block};
-  animation-duration: 1.5s;
+  transform: ${({ inView }) =>
+    inView ? 'translate(0px, 0px);' : 'translate(0px, -200px);'};
+  transition: all 1s;
   animation-iteration-count: 1;
 `
 
@@ -109,6 +107,10 @@ const ImgContainer = styled.div`
 const Img = styled.img`
   width: 500px;
   height: 500px;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transform: ${({ inView }) =>
+    inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
+  transition: all 1s;
   @media ${device.desktop} {
     width: 800px;
     height: 800px;
