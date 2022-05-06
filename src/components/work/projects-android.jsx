@@ -46,8 +46,7 @@ const Container = styled.div`
     transform: ${({ inView }) =>
       inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
     transition: all 0.5s;
-    margin-top: 1.25rem;
-    padding-bottom: 100px;
+    margin-bottom: 1.55rem;
     display: flex;
     justify-content: center;
     align-items: center;

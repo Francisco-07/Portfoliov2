@@ -40,7 +40,10 @@ const Container = styled.div`
 `
 const Clip = styled.div`
   position: absolute;
+
   top: -2px;
+  left: 50%;
+  transform: translate(-50%, 0);
   width: 100vw;
   height: 300px;
   clip-path: polygon(50% 0, 100% 0, 50% 17%, 0 0);

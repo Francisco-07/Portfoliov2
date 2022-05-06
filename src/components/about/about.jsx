@@ -16,11 +16,9 @@ function About() {
 }
 
 const Container = styled.div`
-  background-color: #0d203d;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-bottom: 50px;
 `
 
 export default About
