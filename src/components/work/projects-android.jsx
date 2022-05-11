@@ -1,40 +1,32 @@
 import styled from 'styled-components'
 import { colors, device } from '../../utils'
-import { projects } from '../../data'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 
-function ProjectsAndroid() {
-  const [ref1, inView1] = useInView({ triggerOnce: true })
-  const [ref2, inView2] = useInView({ triggerOnce: true })
-  const [ref3, inView3] = useInView({ triggerOnce: true })
-
-  const refArray = [ref1, ref2, ref3]
-  const viewArray = [inView1, inView2, inView3]
+function ProjectsAndroid(props) {
+  const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
     <>
-      {projects.map((data, i) => (
-        <Container key={data.key} ref={refArray[i]} inView={viewArray[i]}>
-          <AndroidBox>
-            <AndroidTitle>{data.title}</AndroidTitle>
-            <AndroidText>{data.text}</AndroidText>
-            <AndroidTech>
-              <div>{data.tech1}</div>
-              <div>{data.tech2}</div>
-              <div>{data.tech3}</div>
-              <div>{data.tech4}</div>
-            </AndroidTech>
-            <Icons>
-              <FiGithub />
-              <BsBoxArrowUpRight />
-            </Icons>
-          </AndroidBox>
-        </Container>
-      ))}
+      <Container ref={ref} inView={inView}>
+        <AndroidBox>
+          <AndroidTitle>{props.title}</AndroidTitle>
+          <AndroidText>{props.text}</AndroidText>
+          <AndroidTech>
+            <div>{props.tech1}</div>
+            <div>{props.tech2}</div>
+            <div>{props.tech3}</div>
+            <div>{props.tech4}</div>
+          </AndroidTech>
+          <Icons>
+            <FiGithub />
+            <BsBoxArrowUpRight />
+          </Icons>
+        </AndroidBox>
+      </Container>
     </>
   )
 }

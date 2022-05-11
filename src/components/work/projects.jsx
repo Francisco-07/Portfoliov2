@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { projects } from '../../data'
 import { colors, device } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
@@ -7,44 +6,37 @@ import { useInView } from 'react-intersection-observer'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 
-function Projects() {
-  const [ref1, inView1] = useInView({ triggerOnce: true })
-  const [ref2, inView2] = useInView({ triggerOnce: true })
-  const [ref3, inView3] = useInView({ triggerOnce: true })
-
-  const refArray = [ref1, ref2, ref3]
-  const viewArray = [inView1, inView2, inView3]
+function Projects(props) {
+  const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
     <>
       <Container>
-        {projects.map((data, i) => (
-          <Wrapper ref={refArray[i]} key={data.key} direction={data.direction}>
-            <BoxOne inView={viewArray[i]}>
-              <Title directionTitle={data.directionTitle}>{data.title}</Title>
-              <Info
-                inView={viewArray[i]}
-                boxLeft={data.directionBoxLeft}
-                boxRight={data.directionBoxRight}
-              >
-                {data.text}
-              </Info>
-              <Tech directionTech={data.directionTech}>
-                <div>{data.tech1}</div>
-                <div>{data.tech2}</div>
-                <div>{data.tech3}</div>
-                <div>{data.tech4}</div>
-              </Tech>
-              <Icons directionIcons={data.icons}>
-                <FiGithub />
-                <BsBoxArrowUpRight />
-              </Icons>
-            </BoxOne>
-            <BoxTwo inView={viewArray[i]}>
-              <Img alt={data.alt} src={data.img} />
-            </BoxTwo>
-          </Wrapper>
-        ))}
+        <Wrapper ref={ref} key={props.key} direction={props.direction}>
+          <BoxOne inView={inView}>
+            <Title directionTitle={props.directionTitle}>{props.title}</Title>
+            <Info
+              inView={inView}
+              boxLeft={props.directionBoxLeft}
+              boxRight={props.directionBoxRight}
+            >
+              {props.text}
+            </Info>
+            <Tech directionTech={props.directionTech}>
+              <div>{props.tech1}</div>
+              <div>{props.tech2}</div>
+              <div>{props.tech3}</div>
+              <div>{props.tech4}</div>
+            </Tech>
+            <Icons directionIcons={props.icons}>
+              <FiGithub />
+              <BsBoxArrowUpRight />
+            </Icons>
+          </BoxOne>
+          <BoxTwo inView={inView}>
+            <Img alt={props.alt} src={props.img} />
+          </BoxTwo>
+        </Wrapper>
       </Container>
     </>
   )
@@ -55,7 +47,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-bottom: 100px;
+  margin-bottom: 40px;
   @media ${device.tablet} {
     display: none;
   }

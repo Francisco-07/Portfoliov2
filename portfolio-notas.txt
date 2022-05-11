@@ -1,0 +1,5 @@
+falta
+menu hamburguesa con animacion.
+agregar react mail
+imagenes e info de los proyectos cuando esten listos
+revisar el codigo

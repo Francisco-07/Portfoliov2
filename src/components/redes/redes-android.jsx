@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors, device } from '../../utils'
 import { useInView } from 'react-intersection-observer'
+import { redes } from '../../data'
 
 // ICONOS
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
@@ -8,37 +9,21 @@ import { FiGithub } from 'react-icons/fi'
 
 function RedesAndroid() {
   const [ref, inView] = useInView({ triggerOnce: true })
+  const IconsArray = [AiOutlineLinkedin, FiGithub, AiOutlineInstagram]
   return (
     <>
       <Container ref={ref} inView={inView}>
         <RedesList>
-          <li>
-            <a
-              rel='noreferrer'
-              href='https://www.linkedin.com/in/francisco-garciarena/'
-              target='_blank'
-            >
-              <AiOutlineLinkedin />
-            </a>
-          </li>
-          <li>
-            <a
-              rel='noreferrer'
-              href='https://github.com/Francisco-07/'
-              target='_blank'
-            >
-              <FiGithub />
-            </a>
-          </li>
-          <li>
-            <a
-              rel='noreferrer'
-              href='https://www.instagram.com/fran_garciarena/'
-              target='_blank'
-            >
-              <AiOutlineInstagram />
-            </a>
-          </li>
+          {redes.map((data, i) => {
+            const Icons = IconsArray[i]
+            return (
+              <li>
+                <a rel='noreferrer' target='_blank' href={data.href}>
+                  <Icons />
+                </a>
+              </li>
+            )
+          })}
         </RedesList>
       </Container>
     </>

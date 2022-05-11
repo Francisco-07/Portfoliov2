@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import { colors, device } from '../../utils'
+import { about } from '../../data'
 // iconos
-import { FiMonitor } from 'react-icons/fi'
-import { GiSmartphone } from 'react-icons/gi'
+import { IconContext } from 'react-icons'
+import { DiResponsive } from 'react-icons/di'
 import { SiSpeedtest } from 'react-icons/si'
 import { BiRocket } from 'react-icons/bi'
 import { MdLightbulbOutline } from 'react-icons/md'
@@ -13,46 +14,35 @@ function AboutInfo() {
     /* Optional options */
     triggerOnce: true,
   })
+  const IconsArray = [
+    DiResponsive,
+    SiSpeedtest,
+    BiRocket,
+    MdLightbulbOutline,
+    DiResponsive,
+    DiResponsive,
+    DiResponsive,
+    DiResponsive,
+  ]
 
   return (
     <Container>
       <Wrapper>
-        <IconTextContainer ref={ref} inView={inView} delay={0.2}>
-          <Responsive>
-            <FiMonitor />
-            <GiSmartphone />
-          </Responsive>
-          <Title>Responsive</Title>
-          <Text>Funcionan en</Text>
-          <Text> cualquier dispositivo</Text>
-        </IconTextContainer>
-
-        <IconTextContainer inView={inView} delay={0.4}>
-          <Shape>
-            <SiSpeedtest />
-          </Shape>
-          <Title>Rapidas</Title>
-          <Text>Mis sitios son rapidos y</Text>
-          <Text>estan libres de lag</Text>
-        </IconTextContainer>
-
-        <IconTextContainer inView={inView} delay={0.6}>
-          <Shape>
-            <BiRocket />
-          </Shape>
-          <Title>Dinamico</Title>
-          <Text>Una mayor interaccion </Text>
-          <Text>y mejor experiencia</Text>
-        </IconTextContainer>
-
-        <IconTextContainer inView={inView} delay={0.8}>
-          <Shape>
-            <MdLightbulbOutline />
-          </Shape>
-          <Title>Intuitivo</Title>
-          <Text>Interfaces simples de</Text>
-          <Text>usar e intuitivas</Text>
-        </IconTextContainer>
+        {about.map((data, i) => {
+          const Icon = IconsArray[i]
+          return (
+            <IconTextContainer ref={ref} inView={inView} delay={data.delay}>
+              <Shape>
+                <IconContext.Provider value={{ size: data.size }}>
+                  <Icon />
+                </IconContext.Provider>
+              </Shape>
+              <Title>{data.title}</Title>
+              <Text>{data.text1}</Text>
+              <Text>{data.text2}</Text>
+            </IconTextContainer>
+          )
+        })}
       </Wrapper>
     </Container>
   )
@@ -126,27 +116,6 @@ const Shape = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
-const Responsive = styled.div`
-  clip-path: polygon(
-    20% 0%,
-    80% 0%,
-    100% 20%,
-    100% 80%,
-    80% 100%,
-    20% 100%,
-    0% 80%,
-    0% 20%
-  );
-  width: 100px;
-  height: 100px;
-  background-color: ${colors.primary};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  & svg {
-    font-size: 1.8rem;
-  }
 `
 
 export default AboutInfo

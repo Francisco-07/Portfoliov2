@@ -32,8 +32,55 @@ const stats = [
   {
     tech: 'MONGO DB',
     percent: 55,
-    delay: 1.3,
+    delay: 1.5,
     key: 6,
+  },
+]
+
+const about = [
+  {
+    key: 1,
+    size: '80px',
+    delay: 0.2,
+    title: 'Responsive',
+    text1: 'Funcionan en',
+    text2: 'cualquier dispositivo',
+  },
+  {
+    key: 2,
+    size: '40px',
+    delay: 0.4,
+    title: 'Rapidas',
+    text1: 'Mis sitios son rapidos y',
+    text2: 'estan libres de lag',
+  },
+  {
+    key: 3,
+    size: '40px',
+    delay: 0.6,
+    title: 'Dinamico',
+    text1: 'Una mayor interaccion',
+    text2: 'y mejor experiencia',
+  },
+  {
+    key: 4,
+    size: '40px',
+    delay: 0.8,
+    title: 'Intuitivo',
+    text1: 'Interfaces simples de',
+    text2: 'usar e intuitivas',
+  },
+]
+
+const redes = [
+  {
+    href: 'https://www.linkedin.com/in/francisco-garciarena/',
+  },
+  {
+    href: 'https://www.linkedin.com/in/francisco-garciarena/',
+  },
+  {
+    href: 'https://www.linkedin.com/in/francisco-garciarena/',
   },
 ]
 
@@ -100,4 +147,4 @@ const projects = [
   },
 ]
 
-export { projects, stats }
+export { projects, stats, about, redes }
