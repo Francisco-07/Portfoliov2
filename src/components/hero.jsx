@@ -84,16 +84,12 @@ const TextContainer = styled.div`
   white-space: nowrap;
   h1 {
     font-size: 3rem;
-    margin: 0;
   }
   h2 {
     font-size: 2.4rem;
-    margin: 0;
   }
   h3 {
     font-size: 2rem;
-
-    margin: 0;
   }
   svg {
     font-size: 2.2rem;

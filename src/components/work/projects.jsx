@@ -22,7 +22,7 @@ function Projects(props) {
             >
               {props.text}
             </Info>
-            <Tech directionTech={props.directionTech}>
+            <Tech direction={props.direction}>
               <div>{props.tech1}</div>
               <div>{props.tech2}</div>
               <div>{props.tech3}</div>
@@ -108,10 +108,9 @@ const Info = styled.p`
 `
 const Tech = styled.div`
   display: flex;
-  column-gap: 20px;
+  column-gap: 9px;
   margin-top: 180px;
-  flex-direction: ${(props) => props.directionTech};
-  justify-content: ${(props) => props.directionTech};
+  flex-direction: ${(props) => props.direction};
   @media ${device.desktop} {
     margin-top: 300px;
   }
@@ -119,7 +118,7 @@ const Tech = styled.div`
 
 const Img = styled.img`
   width: 100%;
-  height: 100%;
+  height: 85%;
   object-fit: cover;
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   border-radius: 4px;

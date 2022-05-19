@@ -1,26 +1,11 @@
 import Main from './layout/main'
-import styled, { keyframes } from 'styled-components'
+
 function App() {
   return (
     <>
-      <Fade>
-        <Main />
-      </Fade>
+      <Main />
     </>
   )
 }
-
-const fadeIn = keyframes`
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-`
-
-const Fade = styled.div`
-  animation: 1.1s ${fadeIn} ease-out;
-`
 
 export default App

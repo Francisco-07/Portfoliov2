@@ -3,6 +3,29 @@ html {
   scroll-behavior: smooth;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+input,
+select,
+textarea {
+  color: white;
+  padding-left: 7px;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+textarea:focus,
+input:focus {
+  color: white;
+}
+
 body {
   margin: 0;
   padding: 0;

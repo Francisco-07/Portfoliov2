@@ -14,16 +14,7 @@ function AboutInfo() {
     /* Optional options */
     triggerOnce: true,
   })
-  const IconsArray = [
-    DiResponsive,
-    SiSpeedtest,
-    BiRocket,
-    MdLightbulbOutline,
-    DiResponsive,
-    DiResponsive,
-    DiResponsive,
-    DiResponsive,
-  ]
+  const IconsArray = [DiResponsive, SiSpeedtest, BiRocket, MdLightbulbOutline]
 
   return (
     <Container>

@@ -33,14 +33,14 @@ function Navbar() {
 }
 
 const Container = styled.div`
+  width: 100vw;
+  height: 50px;
   position: fixed;
   display: flex;
-  top: 0;
-  width: 100vw;
   justify-content: flex-end;
   align-items: center;
+  top: 0;
   padding: 0 2rem;
-  height: 50px;
   background-color: ${colors.secondary};
   z-index: 999;
 `
@@ -56,9 +56,6 @@ const Menu = styled.div`
     transform: translate(0%, -50%);
     left: ${({ isOpen }) => (isOpen ? '0' : '100%')};
     transition: 0.2s ease-in-out;
-    padding: 0;
-    margin: 0;
-    gap: 0;
     z-index: 10;
   }
 `

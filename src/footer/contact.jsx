@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import SectionsTitle from './titles'
 import { colors, device } from '../utils'
 import { useInView } from 'react-intersection-observer'
+import SectionsTitle from '../components/titles'
 
 function Contact() {
   const [ref, inView] = useInView({ triggerOnce: true })
@@ -12,15 +12,15 @@ function Contact() {
         <Wrapper name='contact' method='POST' data-netlify='true' action='/'>
           <input type='hidden' name='form-name' value='contact' />
           <div>
-            <DataInputs type='text' name='Nombre' placeholder='Nombre' />
+            <DataInputs type='text' name='Nombre' placeholder='NOMBRE' />
           </div>
 
           <div>
-            <DataInputs type='email' name='email' placeholder='Email' />
+            <DataInputs type='email' name='email' placeholder='EMAIL' />
           </div>
 
           <div>
-            <Text name='Mensaje' placeholder='Mensaje'></Text>
+            <Text name='Mensaje' placeholder='MENSAJE'></Text>
           </div>
           <Btn type='submit'>ENVIAR</Btn>
         </Wrapper>
@@ -46,14 +46,19 @@ const Wrapper = styled.form`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: white;
 `
 
 const DataInputs = styled.input`
   width: 350px;
   height: 35px;
+  background-color: transparent;
   margin-bottom: 0.6rem;
-  border-style: none;
+  border: 1px solid white;
   outline: none;
+  ::placeholder {
+    color: white;
+  }
   @media ${device.mobileL} {
     width: 280px;
   }
@@ -64,8 +69,13 @@ const DataInputs = styled.input`
 const Text = styled.textarea`
   width: 350px;
   height: 150px;
+  background-color: transparent;
+  border: 1px solid white;
   resize: none;
   outline: none;
+  ::placeholder {
+    color: white;
+  }
   @media ${device.mobileL} {
     width: 280px;
   }

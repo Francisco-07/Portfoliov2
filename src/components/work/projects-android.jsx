@@ -93,7 +93,7 @@ const Icons = styled.div`
     cursor: pointer;
     font-size: 1.7rem;
     &:hover {
-      color: ${colors.secondary};
+      color: #71f5f2;
     }
   }
 `

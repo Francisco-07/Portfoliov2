@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import RedesAndroid from './redes/redes-android'
-import Contact from './contact'
 import { useInView } from 'react-intersection-observer'
 import { device } from '../utils'
 
 // ICONOS
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import RedesAndroid from '../components/redes/redes-android'
+import Contact from './contact'
 
 function Footer() {
   const [ref, inView] = useInView({ triggerOnce: true })
@@ -33,19 +33,18 @@ function Footer() {
 }
 
 const Container = styled.div`
+  position: relative;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
   background-color: #0d203d;
-  position: relative;
 `
 const Clip = styled.div`
+  width: 100vw;
+  height: 300px;
   position: absolute;
-
   top: -2px;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 100vw;
-  height: 300px;
   clip-path: polygon(50% 0, 100% 0, 50% 17%, 0 0);
   background-color: #0a192f;
 `
@@ -78,7 +77,7 @@ const Author = styled.p`
   }
   @media ${device.laptop} {
     text-align: center;
-    margin-top: 0px;
+    margin-top: 0;
   }
 `
 export default Footer
