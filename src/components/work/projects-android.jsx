@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, device } from '../../utils'
+import { device } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
