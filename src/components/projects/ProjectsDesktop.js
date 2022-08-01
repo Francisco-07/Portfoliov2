@@ -6,7 +6,7 @@ import { useInView } from 'react-intersection-observer'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 
-function Projects(props) {
+function ProjectsDesktop(props) {
   const [ref, inView] = useInView({ triggerOnce: true })
 
   return (
@@ -142,4 +142,4 @@ const Icons = styled.div`
     }
   }
 `
-export default Projects
+export default ProjectsDesktop

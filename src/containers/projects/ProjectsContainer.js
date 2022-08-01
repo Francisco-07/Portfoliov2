@@ -1,16 +1,16 @@
 import styled from 'styled-components'
-import SectionsTitle from '../titles'
-import Projects from './projects'
-import ProjectsAndroid from './projects-android'
+import SectionsTitles from '../../components/titles/SectionTitles'
+import ProjectsAndroid from '../../components/projects/ProjectsAndroid'
+import ProjectsDesktop from '../../components/projects/ProjectsDesktop'
 import { projects } from '../../data'
 
-function Work() {
+function ProjectsContainer() {
   return (
     <>
       <Container id='work'>
-        <SectionsTitle>PROYECTOS</SectionsTitle>
+        <SectionsTitles>PROYECTOS</SectionsTitles>
         {projects.map((info) => (
-          <Projects
+          <ProjectsDesktop
             key={info.key}
             title={info.title}
             text={info.text}
@@ -51,4 +51,4 @@ const Container = styled.div`
   flex-direction: column;
 `
 
-export default Work
+export default ProjectsContainer

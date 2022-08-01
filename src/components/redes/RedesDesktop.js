@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { colors, device } from '../../utils'
 import { redes } from '../../data'
 // ICONOS
@@ -6,7 +6,7 @@ import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
 import { FiGithub } from 'react-icons/fi'
 const IconsArray = [AiOutlineLinkedin, FiGithub, AiOutlineInstagram]
 
-function Redes() {
+function RedesDesktop() {
   return (
     <>
       <Container>
@@ -27,6 +27,18 @@ function Redes() {
   )
 }
 
+const opacity = keyframes`
+  0% {
+    opacity:0 ;
+  }
+  65% {
+    opacity:0 ;
+  }
+  100% {
+    opacity:1 ;
+  }
+`
+
 const Container = styled.div`
   width: 40px;
   position: fixed;
@@ -34,6 +46,7 @@ const Container = styled.div`
   left: 40px;
   right: auto;
   z-index: 11;
+  animation: 3s ${opacity};
   @media ${device.tablet} {
     display: none;
   }
@@ -66,4 +79,4 @@ const RedesList = styled.ul`
   }
 `
 
-export default Redes
+export default RedesDesktop

@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import { stats } from '../../data'
 import { colors, device } from '../../utils'
 
-function Stats() {
+function AboutStats() {
   const { ref, inView } = useInView({
     /* Optional options */
     triggerOnce: true,
@@ -17,13 +17,13 @@ function Stats() {
               alt='me'
               src='https://images.unsplash.com/photo-1497993950456-cdb57afd1cf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
             />
-            <Title ref={ref}>Quien soy?</Title>
-            <Text>
+            <h2 ref={ref}>Quien soy?</h2>
+            <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus quia voluptatem quo eum labore suscipit laboriosam
               culpa, fugiat cum voluptate atque magnam maiores nemo omnis
               eveniet.
-            </Text>
+            </p>
           </About>
 
           <Estadisticas inView={inView}>
@@ -109,6 +109,7 @@ const Percent = styled.span`
 const Image = styled.img`
   width: 200px;
   height: 200px;
+  object-fit: cover;
   clip-path: polygon(
     20% 0%,
     80% 0%,
@@ -126,23 +127,21 @@ const About = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   transition: all 0.4s;
   opacity: ${({ inView }) => (inView ? `1` : '0')};
-`
-const Text = styled.p`
-  width: 65%;
-  text-align: center;
-  font-size: 1.1rem;
-  @media ${device.tablet} {
-    width: 90%;
+  h2 {
+    font-size: 2rem;
+    margin: 1.25rem 0;
   }
-`
-const Title = styled.h2`
-  text-align: center;
-  font-size: 2rem;
-  margin: 0;
-  margin-bottom: 0.7rem;
-  margin-top: 1.25rem;
+  p {
+    width: 65%;
+    margin: 0;
+    font-size: 1.1rem;
+    @media ${device.tablet} {
+      width: 90%;
+    }
+  }
 `
 
 const Estadisticas = styled.div`
@@ -151,4 +150,4 @@ const Estadisticas = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
 `
 
-export default Stats
+export default AboutStats

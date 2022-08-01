@@ -28,9 +28,9 @@ function AboutInfo() {
                   <Icon />
                 </IconContext.Provider>
               </Shape>
-              <Title>{data.title}</Title>
-              <Text>{data.text1}</Text>
-              <Text>{data.text2}</Text>
+              <h2>{data.title}</h2>
+              <p>{data.text1}</p>
+              <p>{data.text2}</p>
             </IconTextContainer>
           )
         })}
@@ -48,12 +48,10 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
   width: 80%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.25rem;
   & svg {
     font-size: 3rem;
     color: ${colors.secondary};
@@ -68,26 +66,21 @@ const IconTextContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  flex: 1;
+  text-align: center;
+  white-space: nowrap;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transform: ${({ inView }) => (inView ? 'rotateX(0)' : 'rotateX(90deg)')};
   transition: all 1.1s;
-  transition-delay: ${(props) => props.delay}s; ;
-`
+  transition-delay: ${(props) => props.delay}s;
 
-const Title = styled.p`
-  text-align: center;
-  color: ${colors.primary};
-  font-size: 1.2rem;
-`
-
-const Text = styled.p`
-  text-align: center;
-  color: ${colors.primary};
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 1px;
-  white-space: nowrap;
+  h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+  }
+  p {
+    margin: 0;
+    font-size: 1.1rem;
+  }
 `
 
 const Shape = styled.div`

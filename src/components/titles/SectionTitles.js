@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { colors } from '../utils'
+import { colors } from '../../utils'
 
-function SectionsTitle(props) {
+function SectionsTitles(props) {
   const { ref, inView } = useInView({
     triggerOnce: true,
   })
@@ -54,10 +54,9 @@ const LineaRight = styled.div`
 const Title = styled.h2`
   color: ${colors.primary};
   text-align: center;
-  z-index: 100;
   font-size: 2rem;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.5s;
 `
 
-export default SectionsTitle
+export default SectionsTitles

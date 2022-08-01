@@ -1,16 +1,15 @@
 import styled from 'styled-components'
-import { colors, device } from '../utils'
+import { colors, device } from '../../utils'
 import { useInView } from 'react-intersection-observer'
-import SectionsTitle from '../components/titles'
+import SectionsTitles from '../titles/SectionTitles'
 
 function Contact() {
   const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <>
-      <SectionsTitle>CONTACTO</SectionsTitle>
+      <SectionsTitles>CONTACTO</SectionsTitles>
       <Container ref={ref} inView={inView}>
-        <Wrapper name='contact' method='POST' data-netlify='true' action='/'>
-          <input type='hidden' name='form-name' value='contact' />
+        <Wrapper>
           <div>
             <DataInputs type='text' name='Nombre' placeholder='NOMBRE' />
           </div>

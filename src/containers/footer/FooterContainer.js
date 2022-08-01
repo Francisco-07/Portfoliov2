@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { device } from '../utils'
+import { device } from '../../utils'
 
 // ICONOS
 import { MdKeyboardArrowRight } from 'react-icons/md'
-import RedesAndroid from '../components/redes/redes-android'
-import Contact from './contact'
+import RedesAndroid from '../../components/redes/RedesAndroid'
+import Contact from '../../components/footer/Contact'
 
-function Footer() {
+function FooterContainer() {
   const [ref, inView] = useInView({ triggerOnce: true })
   const [ref1, inView1] = useInView({ triggerOnce: true })
   return (
@@ -80,4 +80,4 @@ const Author = styled.p`
     margin-top: 0;
   }
 `
-export default Footer
+export default FooterContainer

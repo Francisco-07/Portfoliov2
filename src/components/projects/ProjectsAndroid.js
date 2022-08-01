@@ -12,20 +12,20 @@ function ProjectsAndroid(props) {
   return (
     <>
       <Container ref={ref} inView={inView}>
-        <AndroidBox>
-          <AndroidTitle>{props.title}</AndroidTitle>
-          <AndroidText>{props.text}</AndroidText>
-          <AndroidTech>
+        <Wrapper>
+          <h2>{props.title}</h2>
+          <p>{props.text}</p>
+          <Tech>
             <div>{props.tech1}</div>
             <div>{props.tech2}</div>
             <div>{props.tech3}</div>
             <div>{props.tech4}</div>
-          </AndroidTech>
+          </Tech>
           <Icons>
             <FiGithub />
             <BsBoxArrowUpRight />
           </Icons>
-        </AndroidBox>
+        </Wrapper>
       </Container>
     </>
   )
@@ -47,14 +47,15 @@ const Container = styled.div`
   }
 `
 
-const AndroidBox = styled.div`
+const Wrapper = styled.div`
   background: linear-gradient(rgba(235, 63, 5, 0.8), rgba(235, 63, 5, 0.8)),
     url('https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
+  padding: 1rem;
   width: 350px;
-  height: 330px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -65,29 +66,24 @@ const AndroidBox = styled.div`
     width: 90%;
     height: 300px;
   }
-`
-
-const AndroidTech = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 1.2rem;
-  margin-left: 1rem;
-  & div {
-    margin-right: 1rem;
+  h2 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.2rem;
   }
 `
-const AndroidTitle = styled.div`
-  font-size: 1.5rem;
-  margin-left: 1rem;
-`
-const AndroidText = styled.div`
+
+const Tech = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 1.2rem;
   font-size: 1.2rem;
-  margin-left: 1rem;
 `
+
 const Icons = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 1rem;
   column-gap: 1.2rem;
   & svg {
     cursor: pointer;

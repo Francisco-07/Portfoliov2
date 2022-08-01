@@ -1,37 +1,55 @@
-import styled from 'styled-components'
-import React, { useState } from 'react'
-import { colors, device } from '../utils'
+import styled, { keyframes } from 'styled-components'
+import { useState } from 'react'
+import { colors, device } from '../../utils'
 
 // ICONOS
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { ImCross } from 'react-icons/im'
+import { RiCloseLine } from 'react-icons/ri'
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <Container>
-      <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <ImCross /> : <GiHamburgerMenu />}
-      </Hamburger>
-      <Menu isOpen={isOpen}>
-        <Blur />
-        <MenuWrapper>
-          {/* <Resume>Curriculum</Resume> */}
-          <Items href='#about' onClick={() => setIsOpen(false)}>
-            Sobre mi
+    <>
+      <Container>
+        <Hamburger onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <RiCloseLine /> : <GiHamburgerMenu />}
+        </Hamburger>
+        <Menu isOpen={isOpen}>
+          <Blur />
+          <Items>
+            {/* <Resume>Curriculum</Resume> */}
+            <Item href='#about' onClick={() => setIsOpen(false)}>
+              Sobre mi
+            </Item>
+            <Item href='#work' onClick={() => setIsOpen(false)}>
+              Proyectos
+            </Item>
+            <Item href='#contact' onClick={() => setIsOpen(false)}>
+              Contacto
+            </Item>
           </Items>
-          <Items href='#work' onClick={() => setIsOpen(false)}>
-            Proyectos
-          </Items>
-          <Items href='#contact' onClick={() => setIsOpen(false)}>
-            Contacto
-          </Items>
-        </MenuWrapper>
-      </Menu>
-    </Container>
+        </Menu>
+      </Container>
+      <NavHeight />
+    </>
   )
 }
 
+const opacity = keyframes`
+  0% {
+    opacity:0 ;
+  }
+  65% {
+    opacity:0 ;
+  }
+  100% {
+    opacity:1 ;
+  }
+`
+
+const NavHeight = styled.div`
+  height: 50px;
+`
 const Container = styled.div`
   width: 100vw;
   height: 50px;
@@ -42,7 +60,7 @@ const Container = styled.div`
   top: 0;
   padding: 0 2rem;
   background-color: ${colors.secondary};
-  z-index: 999;
+  z-index: 800;
 `
 
 const Menu = styled.div`
@@ -59,10 +77,12 @@ const Menu = styled.div`
     z-index: 10;
   }
 `
-const MenuWrapper = styled.div`
+const Items = styled.div`
+  transition: opacity 4s;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  animation: 3s ${opacity};
   @media ${device.laptop} {
     flex-direction: column;
     align-items: center;
@@ -90,7 +110,7 @@ const Blur = styled.div`
 //   color: ${colors.secondary};
 // `
 
-const Items = styled.a`
+const Item = styled.a`
   cursor: pointer;
   border-left: 1px solid transparent;
   padding-left: 0.6rem;
@@ -105,6 +125,7 @@ const Hamburger = styled.div`
     z-index: 11;
     & svg {
       font-size: 1.5rem;
+      color: white;
     }
   }
 `

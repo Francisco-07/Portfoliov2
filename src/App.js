@@ -1,4 +1,4 @@
-import Main from './layout/main'
+import Main from './layout/Main'
 
 function App() {
   return (
