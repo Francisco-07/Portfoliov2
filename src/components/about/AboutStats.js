@@ -17,7 +17,7 @@ function AboutStats() {
               alt='me'
               src='https://images.unsplash.com/photo-1497993950456-cdb57afd1cf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
             />
-            <h2 ref={ref}>Quien soy?</h2>
+            <h2>Quien soy?</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Necessitatibus quia voluptatem quo eum labore suscipit laboriosam
@@ -26,7 +26,7 @@ function AboutStats() {
             </p>
           </About>
 
-          <Estadisticas inView={inView}>
+          <Estadisticas inView={inView} ref={ref}>
             {stats.map((data) => (
               <OuterBar key={data.key}>
                 <Tech>{data.tech}</Tech>

@@ -48,14 +48,17 @@ const opacity = keyframes`
 const reveal = keyframes`
   0% {
     opacity:0 ;
+    transform:translate(0px, 80px) ;
     clip-path: inset(100% 0 0 0);
   }
   70% {
     opacity:0 ;
+    transform:translate(0px, 80px) ;
     clip-path: inset(100% 0 0 0);
   }
   100% {
     opacity:1 ;
+    transform:translate(0px, 0px) ;
     clip-path: inset(0 0 0 0);
   }
 `
@@ -66,6 +69,7 @@ const Container = styled.div`
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
   @media ${device.landscape} {
     height: 100%;
   }
@@ -76,32 +80,17 @@ const Me = styled.div`
 
 const Wrapper = styled.div`
   width: 80%;
+  height: 70%;
   display: flex;
   flex-direction: column;
-  @media ${device.desktop} {
-    justify-content: center;
-  }
-  @media ${device.laptop} {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  @media ${device.landscape} {
-    flex-direction: column;
-    height: 100%;
-  }
-  @media ${device.mobileL} {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-  }
+  justify-content: space-evenly;
 `
 
 const Button = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
-  margin-top: 6rem;
+  margin-top: 4rem;
   animation: 3.3s ${opacity};
   svg {
     font-size: 3rem;
@@ -131,7 +120,7 @@ const TextContainer = styled.div`
   }
   svg {
     font-size: 2.2rem;
-    animation: 2.4s ${reveal};
+    animation: 2.8s ${reveal};
     margin-left: 70px;
     color: ${colors.lightOrange};
   }
@@ -152,28 +141,23 @@ const TextContainer = styled.div`
   }
   @media ${device.tablet} {
     h1 {
-      font-size: 3.8rem;
+      font-size: 3rem;
     }
 
     h3 {
-      font-size: 2.6rem;
-      letter-spacing: 3px;
+      font-size: 2rem;
     }
     svg {
-      font-size: 2.3rem;
-      margin-left: 70px;
+      font-size: 1.8rem;
+      margin-left: 0px;
       color: ${colors.lightOrange};
     }
   }
   @media ${device.mobileL} {
     display: flex;
     flex-direction: column;
-    align-items: center;
     h1 {
-      text-align: center;
-      transform: scale(1.5);
-      font-size: 2.6rem;
-      margin-bottom: 60px;
+      font-size: 3.6rem;
     }
 
     h3 {
