@@ -157,11 +157,11 @@ const TextContainer = styled.div`
     display: flex;
     flex-direction: column;
     h1 {
-      font-size: 3.6rem;
+      font-size: 3.4rem;
     }
 
     h3 {
-      font-size: 1.8rem;
+      font-size: 1.3rem;
     }
     svg {
       font-size: 1.3rem;
