@@ -59,7 +59,7 @@ const Container = styled.div`
   align-items: center;
   top: 0;
   padding: 0 2rem;
-  background-color: ${colors.secondary};
+  background-color: ${colors.blue};
   z-index: 800;
 `
 
@@ -87,7 +87,7 @@ const Items = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: ${colors.secondary};
+    background-color: ${colors.blue};
     width: 70vw;
     height: 100vh;
   }
