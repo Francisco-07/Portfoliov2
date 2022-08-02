@@ -42,6 +42,7 @@ function AboutInfo() {
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
   @media ${device.tablet} {
     display: none;
   }
@@ -54,7 +55,7 @@ const Wrapper = styled.div`
   width: 80%;
   & svg {
     font-size: 3rem;
-    color: ${colors.secondary};
+    color: ${colors.blue};
   }
   @media ${device.desktop} {
     width: 60%;
@@ -96,7 +97,7 @@ const Shape = styled.div`
   );
   width: 100px;
   height: 100px;
-  background-color: ${colors.primary};
+  background-color: ${colors.white};
   display: flex;
   justify-content: center;
   align-items: center;

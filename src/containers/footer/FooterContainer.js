@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { device } from '../../utils'
+import { device, colors } from '../../utils'
 
 // ICONOS
 import { MdKeyboardArrowRight } from 'react-icons/md'
@@ -13,7 +13,6 @@ function FooterContainer() {
   return (
     <>
       <Container ref={ref} inView={inView} id='contact'>
-        <Clip />
         <Contact />
         <RedesAndroid />
         <Author id='Contacto' ref={ref1} inView={inView1}>
@@ -23,7 +22,6 @@ function FooterContainer() {
             rel='noreferrer'
             href='https://github.com/Francisco-07'
           >
-            {' '}
             <MdKeyboardArrowRight /> Francisco Garciarena
           </a>
         </Author>
@@ -36,17 +34,7 @@ const Container = styled.div`
   position: relative;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
-  background-color: #0d203d;
-`
-const Clip = styled.div`
-  width: 100vw;
-  height: 300px;
-  position: absolute;
-  top: -2px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  clip-path: polygon(50% 0, 100% 0, 50% 17%, 0 0);
-  background-color: #0a192f;
+  background-color: ${colors.lightBlue};
 `
 
 const Author = styled.p`

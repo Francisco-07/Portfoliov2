@@ -18,13 +18,9 @@ function ProjectsContainer() {
             tech2={info.tech2}
             tech3={info.tech3}
             tech4={info.tech4}
-            directionBoxLeft={info.directionBoxLeft}
-            directionBoxRight={info.directionBoxRight}
-            directionTitle={info.directionTitle}
-            direction={info.direction}
-            icons={info.icons}
             alt={info.alt}
             img={info.img}
+            reverse={info.reverse}
           />
         ))}
         {projects.map((info) => (

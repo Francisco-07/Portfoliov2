@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import { colors } from '../../utils'
 const Loading = () => {
   return (
     <Loading1>
@@ -37,21 +38,21 @@ const Loading1 = styled.div`
   height: 0;
   width: 100%;
   position: absolute;
-  background: #0a192f;
+  background: ${colors.blue};
   animation: ${loading} 1200ms ease-in-out;
   transform: rotate(180deg);
 `
 const Loading2 = styled.div`
   width: 100%;
   height: 100%;
-  background: white;
+  background: ${colors.white};
   animation: ${loadingInner} 800ms ease-in-out;
 `
 const Loading3 = styled.div`
   width: 100%;
   height: 100%;
   animation: ${loadingInner} 1200ms ease;
-  background: #0a192f;
+  background: ${colors.blue};
 `
 
 export default Loading

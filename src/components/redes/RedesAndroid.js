@@ -56,7 +56,7 @@ const RedesList = styled.ul`
     font-size: 2.8rem;
     &:hover {
       cursor: pointer;
-      color: ${colors.lightOrange};
+      color: ${colors.red};
     }
   }
 `

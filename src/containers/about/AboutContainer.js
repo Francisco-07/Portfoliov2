@@ -8,8 +8,8 @@ function AboutContainer() {
     <>
       <Container id='about'>
         <SectionsTitles>SOBRE MI</SectionsTitles>
-        <AboutInfo />
         <AboutStats />
+        <AboutInfo />
       </Container>
     </>
   )

@@ -29,7 +29,7 @@ const Container = styled.div`
 
 const LineaLeft = styled.div`
   position: absolute;
-  background: ${colors.primary};
+  background: ${colors.white};
   height: 4px;
   width: 30px;
   margin-right: -1px;
@@ -41,7 +41,7 @@ const LineaLeft = styled.div`
 `
 const LineaRight = styled.div`
   position: absolute;
-  background: ${colors.primary};
+  background: ${colors.white};
   height: 4px;
   width: 30px;
   right: ${({ inView }) => (inView ? '50%' : '0')};
@@ -52,7 +52,7 @@ const LineaRight = styled.div`
   margin-left: -1px;
 `
 const Title = styled.h2`
-  color: ${colors.primary};
+  color: ${colors.white};
   text-align: center;
   font-size: 2rem;
   opacity: ${({ inView }) => (inView ? '1' : '0')};

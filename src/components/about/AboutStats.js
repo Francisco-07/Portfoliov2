@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import { stats } from '../../data'
 import { colors, device } from '../../utils'
-
 function AboutStats() {
   const { ref, inView } = useInView({
     /* Optional options */
@@ -67,7 +66,7 @@ const Wrapper = styled.div`
 
 const OuterBar = styled.div`
   width: 50vw;
-  background-color: ${colors.primary};
+  background-color: ${colors.white};
   color: ${colors.secondary};
   display: flex;
   justify-content: space-between;
@@ -81,13 +80,13 @@ const OuterBar = styled.div`
 
 const BarEmpty = styled.div`
   flex: 0.7;
-  background: ${colors.primary};
+  background: ${colors.white};
   display: flex;
 `
 const BarFilled = styled.div`
   width: ${({ inView, percent }) => (inView ? `${percent}%` : '0%')};
   transition: all 2.7s;
-  background: ${colors.lightOrange};
+  background: ${colors.red};
   transition-delay: ${(props) => props.delay}s;
 `
 
@@ -95,9 +94,9 @@ const Tech = styled.div`
   flex: 0.3;
   white-space: nowrap;
   text-align: center;
-  color: ${colors.primary};
+  color: ${colors.white};
   font-size: 1.1rem;
-  background-color: ${colors.darkOrange};
+  background-color: ${colors.darkRed};
 `
 const Percent = styled.span`
   position: absolute;

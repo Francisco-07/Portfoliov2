@@ -6,140 +6,126 @@ import { useInView } from 'react-intersection-observer'
 import { BsBoxArrowUpRight } from 'react-icons/bs'
 import { FiGithub } from 'react-icons/fi'
 
-function ProjectsDesktop(props) {
+const ProjectsDesktop = (props) => {
   const [ref, inView] = useInView({ triggerOnce: true })
-
   return (
-    <>
-      <Container>
-        <Wrapper ref={ref} key={props.key} direction={props.direction}>
-          <BoxOne inView={inView}>
-            <Title directionTitle={props.directionTitle}>{props.title}</Title>
-            <Info
-              inView={inView}
-              boxLeft={props.directionBoxLeft}
-              boxRight={props.directionBoxRight}
-            >
-              {props.text}
-            </Info>
-            <Tech direction={props.direction}>
-              <div>{props.tech1}</div>
-              <div>{props.tech2}</div>
-              <div>{props.tech3}</div>
-              <div>{props.tech4}</div>
-            </Tech>
-            <Icons directionIcons={props.icons}>
-              <FiGithub />
-              <BsBoxArrowUpRight />
-            </Icons>
-          </BoxOne>
-          <BoxTwo inView={inView}>
-            <Img alt={props.alt} src={props.img} />
-          </BoxTwo>
-        </Wrapper>
-      </Container>
-    </>
+    <Container>
+      <Wrapper ref={ref} reverse={props.reverse}>
+        <BoxInfo reverse={props.reverse} inView={inView}>
+          <h1>{props.title}</h1>
+          <p>{props.text}</p>
+          <Tech reverse={props.reverse}>
+            <div>{props.tech1}</div>
+            <div>{props.tech2}</div>
+            <div>{props.tech3}</div>
+            <div>{props.tech4}</div>
+          </Tech>
+          <Icons reverse={props.reverse}>
+            <FiGithub />
+            <BsBoxArrowUpRight />
+          </Icons>
+        </BoxInfo>
+        <BoxImg reverse={props.reverse} inView={inView}>
+          <img
+            src='https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+            alt='test'
+          />
+        </BoxImg>
+      </Wrapper>
+    </Container>
   )
 }
 
 const Container = styled.div`
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-  @media ${device.tablet} {
+  height: 350px;
+  margin-bottom: 3rem;
+  @media ${device.laptop} {
     display: none;
   }
 `
-
 const Wrapper = styled.div`
+  display: flex;
   width: 80%;
-  display: flex;
-  justify-content: space-between;
+  height: 100%;
   position: relative;
-  flex-direction: ${(props) => props.direction};
-  margin-bottom: 25px;
-  @media ${device.desktop} {
-    width: 60%;
-  }
+  flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
 `
-
-const BoxOne = styled.div`
+const BoxInfo = styled.div`
   width: 50%;
-  height: 360px;
-  opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transition: all 1s;
-  z-index: 5;
-  font-size: 1.1rem;
-  @media ${device.desktop} {
-    height: 500px;
-  }
-`
-const BoxTwo = styled.div`
-  width: 50%;
-  height: 360px;
-  opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transition: all 1s;
-  z-index: 2;
-  @media ${device.desktop} {
-    height: 500px;
-  }
-`
-
-const Title = styled.h2`
-  text-align: ${(props) => props.directionTitle};
-`
-const Info = styled.p`
-  background-color: #f08f30;
-  padding: 20px;
-  width: 550px;
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 4px;
-  position: absolute;
+  min-height: 300px;
+  text-align: ${({ reverse }) => (reverse ? 'end' : 'start')};
   z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
-  transform: ${({ inView }) =>
-    inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
-  transition: all 0.4s;
-  transition-delay: 0.5s;
-  left: ${(props) => props.boxLeft}px;
-  right: ${(props) => props.boxRight}px;
-`
-const Tech = styled.div`
-  display: flex;
-  column-gap: 9px;
-  margin-top: 180px;
-  flex-direction: ${(props) => props.direction};
-  @media ${device.desktop} {
-    margin-top: 300px;
-  }
-`
+  transition: all 1s;
+  transition-delay: 0.2s;
 
-const Img = styled.img`
-  width: 100%;
-  height: 85%;
-  object-fit: cover;
-  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
-  border-radius: 4px;
-  filter: grayscale(52%) sepia(56%) brightness(46%) hue-rotate(215deg);
-  &:hover {
-    filter: none;
+  p {
+    margin-left: ${({ reverse }) => (reverse ? '0' : '4rem')};
+    margin-right: ${({ reverse }) => (reverse ? '4rem' : '0')};
+    background-color: ${colors.red};
+    padding: 10px;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    opacity: ${({ inView }) => (inView ? '1' : '0')};
+    transform: ${({ inView }) =>
+      inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
+    transition: all 0.4s;
+    transition-delay: 0.7s;
   }
 `
-const Icons = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: ${(props) => props.directionIcons};
-  width: 100%;
-  margin-top: 1rem;
-  column-gap: 0.8rem;
-  & svg {
+const BoxImg = styled.div`
+  width: 50%;
+  height: 350px;
+  position: absolute;
+  left: ${({ reverse }) => (reverse ? '60px' : 'none')};
+  right: ${({ reverse }) => (reverse ? 'none' : '60px')};
+  z-index: 50;
+  border-radius: 4px;
+  opacity: ${({ inView }) => (inView ? '1' : '0')};
+  transition: all 1s;
+  transition-delay: 0.2s;
+  img {
     cursor: pointer;
-    font-size: 1.2rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    filter: grayscale(52%) sepia(56%) brightness(46%) hue-rotate(215deg);
     &:hover {
-      color: ${colors.lightOrange};
+      filter: none;
     }
   }
 `
+const Icons = styled.div`
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 15px;
+  justify-content: ${({ reverse }) => (reverse ? 'flex-end' : 'flex-start')};
+  svg {
+    cursor: pointer;
+    font-size: 1.3rem;
+    &:hover {
+      color: ${colors.red};
+    }
+  }
+`
+const Tech = styled.div`
+  display: flex;
+  justify-content: ${({ reverse }) => (reverse ? 'flex-end' : 'flex-start')};
+  gap: 5px;
+  div {
+    background-color: ${colors.green};
+    border-radius: 3px;
+    padding: 0 5px;
+    box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
+  }
+`
+
 export default ProjectsDesktop

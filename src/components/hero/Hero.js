@@ -1,11 +1,8 @@
 import styled, { keyframes } from 'styled-components'
 import { colors, device } from '../../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
-import { BsArrowDownSquare } from 'react-icons/bs'
-// import { useInView } from 'react-intersection-observer'
 
 function Hero() {
-  // const [ref, inView] = useInView({ triggerOnce: true })
   return (
     <>
       <Container>
@@ -18,15 +15,16 @@ function Hero() {
             <CenterIcon>
               <FiArrowDownRight />
               <h3>
-                FRONT<Orange>-</Orange>
+                FRONT<Red>-</Red>
                 END DEVELOPER
               </h3>
             </CenterIcon>
           </TextContainer>
+
           <Button>
-            <a href='#about'>
-              <BsArrowDownSquare />
-            </a>
+            <div>
+              <a href='#about'>SOBRE MI</a>
+            </div>
           </Button>
         </Wrapper>
       </Container>
@@ -49,12 +47,12 @@ const reveal = keyframes`
   0% {
     opacity:0 ;
     transform:translate(0px, 80px) ;
-    clip-path: inset(100% 0 0 0);
+    clip-path: inset(0 0 100% 0);
   }
   70% {
     opacity:0 ;
     transform:translate(0px, 80px) ;
-    clip-path: inset(100% 0 0 0);
+    clip-path: inset(0 0 100% 0);
   }
   100% {
     opacity:1 ;
@@ -83,25 +81,29 @@ const Wrapper = styled.div`
   height: 70%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 5rem 0;
 `
 
 const Button = styled.div`
   display: flex;
-  width: 100%;
   justify-content: center;
-  margin-top: 4rem;
-  animation: 3.3s ${opacity};
-  svg {
-    font-size: 3rem;
-    transition: all 0.3s;
-    &:hover {
-      transform: translatey(3px);
-    }
-  }
-  @media ${device.mobileL} {
-    svg {
-      font-size: 6rem;
+  animation: 4s ${opacity};
+  a {
+    outline: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 2px solid ${colors.red};
+    color: ${colors.white};
+    background-color: ${colors.red};
+    padding: 1rem 2rem;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px,
+      rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    :hover {
+      background: 0 0;
+      color: ${colors.red};
     }
   }
 `
@@ -111,18 +113,18 @@ const TextContainer = styled.div`
   h1 {
     font-size: 4.8rem;
     animation: 2.2s ${reveal};
+    letter-spacing: 2px;
   }
-
   h3 {
     font-size: 2.8rem;
     animation: 2.8s ${reveal};
-    letter-spacing: 3px;
+    letter-spacing: 2px;
   }
   svg {
     font-size: 2.2rem;
     animation: 2.8s ${reveal};
     margin-left: 70px;
-    color: ${colors.lightOrange};
+    color: ${colors.red};
   }
   @media ${device.laptop} {
     h1 {
@@ -135,8 +137,7 @@ const TextContainer = styled.div`
     }
     svg {
       font-size: 1.8rem;
-      margin-left: 70px;
-      color: ${colors.lightOrange};
+      color: ${colors.red};
     }
   }
   @media ${device.tablet} {
@@ -150,14 +151,16 @@ const TextContainer = styled.div`
     svg {
       font-size: 1.8rem;
       margin-left: 0px;
-      color: ${colors.lightOrange};
+      color: ${colors.red};
     }
   }
   @media ${device.mobileL} {
     display: flex;
     flex-direction: column;
+    align-items: center;
     h1 {
-      font-size: 3.4rem;
+      text-align: center;
+      font-size: 2.7rem;
     }
 
     h3 {
@@ -172,11 +175,11 @@ const TextContainer = styled.div`
 const CenterIcon = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 `
 
-const Orange = styled.span`
-  color: ${colors.lightOrange};
+const Red = styled.span`
+  color: ${colors.red};
 `
 
 export default Hero

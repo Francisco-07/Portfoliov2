@@ -1,9 +1,10 @@
 const colors = {
-  primary: '#fff',
-  secondary: '#0a192f',
-  lightOrange: '#F08F30',
-  darksOrange: '#F06A42',
-  darkOrange: '#eb3f05',
+  white: '#fff',
+  blue: '#0a192f',
+  lightBlue: '#0d203d',
+  green: '#04aa6d',
+  red: '#ff4742',
+  darkRed: '#ee7f53',
   black: '#111111',
 }
 

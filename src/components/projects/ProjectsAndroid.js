@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { device } from '../../utils'
+import { device, colors } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -33,7 +33,7 @@ function ProjectsAndroid(props) {
 const Container = styled.div`
   display: none;
 
-  @media ${device.tablet} {
+  @media ${device.laptop} {
     opacity: ${({ inView }) => (inView ? '1' : '0')};
     transform: ${({ inView }) =>
       inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
@@ -48,14 +48,14 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(235, 63, 5, 0.8), rgba(235, 63, 5, 0.8)),
+  background: linear-gradient(rgba(255, 71, 66, 0.8), rgba(255, 71, 66, 0.8)),
     url('https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
   padding: 1rem;
   width: 350px;
-  height: 300px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -77,8 +77,13 @@ const Wrapper = styled.div`
 const Tech = styled.div`
   display: flex;
   flex-wrap: wrap;
-  column-gap: 1.2rem;
+  gap: 5px;
   font-size: 1.2rem;
+  div {
+    background-color: ${colors.green};
+    border-radius: 3px;
+    padding: 0 5px;
+  }
 `
 
 const Icons = styled.div`
@@ -88,9 +93,6 @@ const Icons = styled.div`
   & svg {
     cursor: pointer;
     font-size: 1.7rem;
-    &:hover {
-      color: #71f5f2;
-    }
   }
 `
 export default ProjectsAndroid

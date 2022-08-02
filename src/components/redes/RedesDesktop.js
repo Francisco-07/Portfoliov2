@@ -66,7 +66,7 @@ const RedesList = styled.ul`
     font-size: 1.5rem;
     &:hover {
       cursor: pointer;
-      color: ${colors.lightOrange};
+      color: ${colors.red};
     }
   }
   &::after {
@@ -75,7 +75,7 @@ const RedesList = styled.ul`
     width: 1px;
     height: 90px;
     margin: 0 auto;
-    background-color: ${colors.primary};
+    background-color: ${colors.white};
   }
 `
 

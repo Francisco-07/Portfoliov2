@@ -55,6 +55,7 @@ const DataInputs = styled.input`
   margin-bottom: 0.6rem;
   border: 1px solid white;
   outline: none;
+  border-radius: 4px;
   ::placeholder {
     color: white;
   }
@@ -72,6 +73,7 @@ const Text = styled.textarea`
   border: 1px solid white;
   resize: none;
   outline: none;
+  border-radius: 4px;
   ::placeholder {
     color: white;
   }
@@ -82,16 +84,22 @@ const Text = styled.textarea`
     width: 250px;
   }
 `
+
 const Btn = styled.button`
-  padding: 0.7rem;
-  background-color: ${colors.secondary};
-  border: none;
+  outline: 0;
+  cursor: pointer;
   align-self: flex-end;
-  color: white;
-  margin-top: 1rem;
-  border: 2px solid white;
-  &:hover {
-    color: ${colors.lightOrange};
-    border: 2px solid ${colors.lightOrange};
+  border-radius: 6px;
+  border: 2px solid ${colors.green};
+  padding: 10px;
+  color: #fff;
+  background-color: ${colors.green};
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 1rem;
+  :hover {
+    background: 0 0;
+    color: ${colors.green};
   }
 `
