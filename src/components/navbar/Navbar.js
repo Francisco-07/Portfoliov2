@@ -48,7 +48,7 @@ const opacity = keyframes`
 `
 
 const NavHeight = styled.div`
-  height: 50px;
+  height: 100px;
 `
 const Container = styled.div`
   width: 100vw;
@@ -84,6 +84,7 @@ const Items = styled.div`
   gap: 1.5rem;
   animation: 3s ${opacity};
   @media ${device.laptop} {
+    animation: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -102,14 +103,6 @@ const Blur = styled.div`
   }
 `
 
-// const Resume = styled.a`
-//   cursor: pointer;
-//   padding: 0.2rem;
-//   margin-left: 0.6rem;
-//   background-color: white;
-//   color: ${colors.secondary};
-// `
-
 const Item = styled.a`
   cursor: pointer;
   border-left: 1px solid transparent;
@@ -123,6 +116,7 @@ const Hamburger = styled.div`
   @media ${device.laptop} {
     display: flex;
     z-index: 11;
+    animation: 3s ${opacity};
     & svg {
       font-size: 1.5rem;
       color: white;

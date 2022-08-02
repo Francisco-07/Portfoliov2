@@ -8,17 +8,22 @@ function Hero() {
       <Container>
         <Wrapper>
           <TextContainer>
-            <Me>
-              <h1>FRANCISCO</h1>
-              <h1>GARCIARENA</h1>
-            </Me>
-            <CenterIcon>
+            <h1>
+              <Text>
+                <span>FRANCISCO</span>
+                <Line />
+                <Ball />
+                <Ball2 />
+                <span>GARCIARENA</span>
+              </Text>
+            </h1>
+            <Subtitle>
               <FiArrowDownRight />
               <h3>
                 FRONT<Red>-</Red>
                 END DEVELOPER
               </h3>
-            </CenterIcon>
+            </Subtitle>
           </TextContainer>
 
           <Button>
@@ -43,6 +48,7 @@ const opacity = keyframes`
     opacity:1 ;
   }
 `
+
 const reveal = keyframes`
   0% {
     opacity:0 ;
@@ -64,6 +70,7 @@ const reveal = keyframes`
 const Container = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -72,17 +79,61 @@ const Container = styled.div`
     height: 100%;
   }
 `
-const Me = styled.div`
-  width: 80%;
-`
-
 const Wrapper = styled.div`
   width: 80%;
-  height: 70%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem 0;
+`
+const Line = styled.div`
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 5px;
+  background-color: white;
+  animation: 3s ${opacity};
+`
+const Ball = styled.div`
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 8px;
+  background-color: ${colors.blue};
+  animation: 3s ${opacity};
+`
+const Ball2 = styled.div`
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: ${colors.white};
+  animation: 3s ${opacity};
+`
+
+const Text = styled.span`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5rem 0;
+  gap: 4rem;
+
+  @media ${device.mobileL} {
+    align-items: center;
+    padding: 30px 30px;
+    background: linear-gradient(to right, white 8px, transparent 8px) 0 0,
+      linear-gradient(to left, white 8px, transparent 8px) 100% 100%,
+      linear-gradient(to bottom, white 8px, transparent 8px) 0 0,
+      linear-gradient(to top, white 8px, transparent 8px) 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    position: relative;
+  }
+
+  span {
+    animation: 2.2s ${reveal};
+  }
 `
 
 const Button = styled.div`
@@ -112,7 +163,6 @@ const TextContainer = styled.div`
   white-space: nowrap;
   h1 {
     font-size: 4.8rem;
-    animation: 2.2s ${reveal};
     letter-spacing: 2px;
   }
   h3 {
@@ -172,10 +222,10 @@ const TextContainer = styled.div`
     }
   }
 `
-const CenterIcon = styled.div`
+const Subtitle = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 4rem;
 `
 
 const Red = styled.span`
