@@ -87,6 +87,7 @@ const Wrapper = styled.div`
 const Line = styled.div`
   display: none;
   @media ${device.mobileL} {
+    display: block;
     content: '';
     position: absolute;
     width: 150px;
@@ -98,6 +99,7 @@ const Line = styled.div`
 const Ball = styled.div`
   display: none;
   @media ${device.mobileL} {
+    display: block;
     content: '';
     position: absolute;
     width: 30px;
@@ -109,6 +111,7 @@ const Ball = styled.div`
 const Ball2 = styled.div`
   display: none;
   @media ${device.mobileL} {
+    display: block;
     content: '';
     position: absolute;
     width: 8px;
