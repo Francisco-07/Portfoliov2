@@ -1,7 +1,7 @@
 import Contact from '../../components/footer/Contact'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { device, colors } from '../../utils'
+import { device } from '../../utils'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import RedesAndroid from '../../components/redes/RedesAndroid'
 

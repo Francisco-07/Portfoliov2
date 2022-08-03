@@ -52,6 +52,9 @@ const Wrapper = styled.div`
   height: 100%;
   position: relative;
   flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
+  @media ${device.desktop} {
+    width: 50%;
+  }
 `
 const BoxInfo = styled.div`
   width: 60%;
