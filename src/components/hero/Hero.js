@@ -87,7 +87,7 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   @media ${device.mobileL} {
-    align-items: center;
+    margin-top: 4rem;
   }
 `
 const Wrapper = styled.div`

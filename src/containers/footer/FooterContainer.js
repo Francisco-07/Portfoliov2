@@ -1,11 +1,9 @@
+import Contact from '../../components/footer/Contact'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import { device, colors } from '../../utils'
-
-// ICONOS
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import RedesAndroid from '../../components/redes/RedesAndroid'
-import Contact from '../../components/footer/Contact'
 
 function FooterContainer() {
   const [ref, inView] = useInView({ triggerOnce: true })
@@ -34,7 +32,6 @@ const Container = styled.div`
   position: relative;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
-  background-color: ${colors.lightBlue};
 `
 
 const Author = styled.p`
