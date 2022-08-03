@@ -8,7 +8,6 @@ import { FiGithub } from 'react-icons/fi'
 
 function ProjectsAndroid(props) {
   const [ref, inView] = useInView({ triggerOnce: true })
-
   return (
     <>
       <Container ref={ref} inView={inView}>
@@ -44,18 +43,19 @@ const Container = styled.div`
     align-items: center;
     width: 100%;
     flex-direction: column;
+    position: relative;
   }
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(255, 71, 66, 0.8), rgba(255, 71, 66, 0.8)),
+  background: linear-gradient(rgba(255, 71, 66, 0.7), rgba(255, 71, 66, 0.7)),
     url('https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
   padding: 1rem;
   width: 350px;
-  min-height: 300px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -79,6 +79,7 @@ const Tech = styled.div`
   flex-wrap: wrap;
   gap: 5px;
   font-size: 1.2rem;
+  text-transform: uppercase;
   div {
     background-color: ${colors.green};
     border-radius: 3px;
@@ -89,6 +90,7 @@ const Tech = styled.div`
 const Icons = styled.div`
   display: flex;
   align-items: center;
+  margin-top: 10px;
   column-gap: 1.2rem;
   & svg {
     cursor: pointer;

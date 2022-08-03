@@ -40,7 +40,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  height: 350px;
+  height: 300px;
   margin-bottom: 3rem;
   @media ${device.laptop} {
     display: none;
@@ -48,14 +48,14 @@ const Container = styled.div`
 `
 const Wrapper = styled.div`
   display: flex;
-  width: 80%;
+  width: 70%;
   height: 100%;
   position: relative;
   flex-direction: ${({ reverse }) => (reverse ? 'row-reverse' : 'row')};
 `
 const BoxInfo = styled.div`
-  width: 50%;
-  min-height: 300px;
+  width: 60%;
+  min-height: 250px;
   text-align: ${({ reverse }) => (reverse ? 'end' : 'start')};
   z-index: 100;
   display: flex;
@@ -81,7 +81,7 @@ const BoxInfo = styled.div`
 `
 const BoxImg = styled.div`
   width: 50%;
-  height: 350px;
+  height: 300px;
   position: absolute;
   left: ${({ reverse }) => (reverse ? '60px' : 'none')};
   right: ${({ reverse }) => (reverse ? 'none' : '60px')};
@@ -91,7 +91,6 @@ const BoxImg = styled.div`
   transition: all 1s;
   transition-delay: 0.2s;
   img {
-    cursor: pointer;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -119,7 +118,9 @@ const Icons = styled.div`
 const Tech = styled.div`
   display: flex;
   justify-content: ${({ reverse }) => (reverse ? 'flex-end' : 'flex-start')};
+  flex-wrap: wrap;
   gap: 5px;
+  text-transform: uppercase;
   div {
     background-color: ${colors.green};
     border-radius: 3px;

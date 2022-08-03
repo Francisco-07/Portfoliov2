@@ -3,5 +3,4 @@ menu hamburguesa con animacion.
 agregar react mail
 imagenes e info de los proyectos cuando esten listos
 revisar el codigo
-mejorar el codigo de la parte de proyectos escritorio
-imagen del hero ponerla abajo del todo del container y hacerla mas alta en mobile
+pop up de imagenes en los proyectos, boton info en android proyectos, revisar los titles

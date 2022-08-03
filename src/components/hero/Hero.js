@@ -13,7 +13,6 @@ function Hero() {
                 <span>FRANCISCO</span>
                 <Line />
                 <Ball />
-                <Ball2 />
                 <span>GARCIARENA</span>
               </Text>
             </h1>
@@ -46,6 +45,20 @@ const opacity = keyframes`
   }
   100% {
     opacity:1 ;
+  }
+`
+const frame = keyframes`
+  0% {
+    opacity:0 ;
+    transform:translate(0px, 50px); 
+  }
+  50% {
+    opacity:0 ;
+    transform:translate(0px, 50px); 
+  }
+  100% {
+    opacity:1 ;
+    transform:translate(0px, 0px); 
   }
 `
 
@@ -108,19 +121,6 @@ const Ball = styled.div`
     animation: 3s ${opacity};
   }
 `
-const Ball2 = styled.div`
-  display: none;
-  @media ${device.mobileL} {
-    display: block;
-    content: '';
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: ${colors.white};
-    animation: 3s ${opacity};
-  }
-`
 
 const Text = styled.span`
   width: 100%;
@@ -136,6 +136,7 @@ const Text = styled.span`
       linear-gradient(to left, white 8px, transparent 8px) 100% 100%,
       linear-gradient(to bottom, white 8px, transparent 8px) 0 0,
       linear-gradient(to top, white 8px, transparent 8px) 100% 100%;
+    animation: 2.4s ${frame};
     background-repeat: no-repeat;
     background-size: 20px 20px;
     position: relative;
@@ -235,7 +236,9 @@ const TextContainer = styled.div`
 const Subtitle = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 4rem;
+  @media ${device.mobileL} {
+    margin-top: 4rem;
+  }
 `
 
 const Red = styled.span`
