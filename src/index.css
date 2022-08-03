@@ -58,18 +58,6 @@ a {
   }
 }
 
-@media only screen and (max-height: 500px) and (orientation: landscape) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media only screen and (max-height: 350px) and (orientation: landscape) {
-  html {
-    font-size: 10px;
-  }
-}
-
 @media (max-width: 768px) {
   html {
     font-size: 13px;

@@ -70,13 +70,11 @@ const reveal = keyframes`
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
-  @media ${device.landscape} {
-    height: 100%;
+  @media ${device.mobileL} {
+    align-items: center;
   }
 `
 const Wrapper = styled.div`
@@ -87,29 +85,38 @@ const Wrapper = styled.div`
   gap: 5rem 0;
 `
 const Line = styled.div`
-  content: '';
-  position: absolute;
-  width: 150px;
-  height: 5px;
-  background-color: white;
-  animation: 3s ${opacity};
+  display: none;
+  @media ${device.mobileL} {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 5px;
+    background-color: white;
+    animation: 3s ${opacity};
+  }
 `
 const Ball = styled.div`
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 8px;
-  background-color: ${colors.blue};
-  animation: 3s ${opacity};
+  display: none;
+  @media ${device.mobileL} {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 8px;
+    background-color: ${colors.blue};
+    animation: 3s ${opacity};
+  }
 `
 const Ball2 = styled.div`
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: ${colors.white};
-  animation: 3s ${opacity};
+  display: none;
+  @media ${device.mobileL} {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: ${colors.white};
+    animation: 3s ${opacity};
+  }
 `
 
 const Text = styled.span`
@@ -117,9 +124,9 @@ const Text = styled.span`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4rem;
 
   @media ${device.mobileL} {
+    gap: 4rem;
     align-items: center;
     padding: 30px 30px;
     background: linear-gradient(to right, white 8px, transparent 8px) 0 0,
