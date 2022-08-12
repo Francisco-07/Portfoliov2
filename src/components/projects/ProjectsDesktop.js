@@ -114,7 +114,7 @@ const Icons = styled.div`
     cursor: pointer;
     font-size: 1.3rem;
     &:hover {
-      color: ${colors.red};
+      color: ${colors.green};
     }
   }
 `

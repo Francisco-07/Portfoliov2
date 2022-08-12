@@ -86,7 +86,7 @@ const BarEmpty = styled.div`
 const BarFilled = styled.div`
   width: ${({ inView, percent }) => (inView ? `${percent}%` : '0%')};
   transition: all 2.7s;
-  background: ${colors.red};
+  background: ${colors.aqua};
   transition-delay: ${(props) => props.delay}s;
 `
 
@@ -96,7 +96,7 @@ const Tech = styled.div`
   text-align: center;
   color: ${colors.white};
   font-size: 1.1rem;
-  background-color: ${colors.darkRed};
+  background-color: ${colors.green};
 `
 const Percent = styled.span`
   position: absolute;

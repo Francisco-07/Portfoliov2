@@ -1,11 +1,12 @@
 const colors = {
   white: '#fff',
   blue: '#0a192f',
-  lightBlue: '#0d203d',
+  lightBlue: '#32527b',
   green: '#04aa6d',
   red: '#ff4742',
   darkRed: '#ee7f53',
   black: '#111111',
+  aqua: '#05F79E',
 }
 
 const size = {
