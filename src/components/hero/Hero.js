@@ -11,8 +11,7 @@ function Hero() {
             <h1>
               <Text>
                 <span>FRANCISCO</span>
-                <Line />
-                <Ball />
+
                 <span>GARCIARENA</span>
               </Text>
             </h1>
@@ -24,12 +23,11 @@ function Hero() {
               </h3>
             </Subtitle>
           </TextContainer>
-
-          <Button>
-            <div>
-              <a href='#about'>SOBRE MI</a>
-            </div>
-          </Button>
+          <Center>
+            <a href='#about'>
+              <Button>SOBRE MI</Button>
+            </a>
+          </Center>
         </Wrapper>
       </Container>
     </>
@@ -96,30 +94,14 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5rem 0;
-`
-const Line = styled.div`
-  display: none;
   @media ${device.mobileL} {
-    display: block;
-    content: '';
-    position: absolute;
-    width: 150px;
-    height: 5px;
-    background-color: white;
-    animation: 3s ${opacity};
+    align-items: center;
   }
 `
-const Ball = styled.div`
-  display: none;
-  @media ${device.mobileL} {
-    display: block;
-    content: '';
-    position: absolute;
-    width: 30px;
-    height: 8px;
-    background-color: ${colors.blue};
-    animation: 3s ${opacity};
-  }
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
 `
 
 const Text = styled.span`
@@ -129,8 +111,8 @@ const Text = styled.span`
   justify-content: center;
 
   @media ${device.mobileL} {
-    gap: 4rem;
     align-items: center;
+    gap: 1rem;
     padding: 30px 30px;
     background: linear-gradient(to right, white 8px, transparent 8px) 0 0,
       linear-gradient(to left, white 8px, transparent 8px) 100% 100%,
@@ -148,25 +130,21 @@ const Text = styled.span`
 `
 
 const Button = styled.div`
-  display: flex;
-  justify-content: center;
   animation: 4s ${opacity};
-  a {
-    outline: 0;
-    cursor: pointer;
-    border-radius: 4px;
-    border: 2px solid ${colors.red};
-    color: ${colors.white};
-    background-color: ${colors.red};
-    padding: 1rem 2rem;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px,
-      rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
-    font-weight: 800;
-    font-size: 1.5rem;
-    :hover {
-      background: 0 0;
-      color: ${colors.red};
-    }
+  outline: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 2px solid ${colors.red};
+  color: ${colors.white};
+  background-color: ${colors.red};
+  padding: 1rem 2rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  :hover {
+    background: 0 0;
+    color: ${colors.red};
   }
 `
 

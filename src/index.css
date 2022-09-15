@@ -58,20 +58,3 @@ a {
     font-size: 14px;
   }
 }
-
-@media (max-width: 768px) {
-  html {
-    font-size: 13px;
-  }
-}
-@media (max-width: 425px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 320px) {
-  html {
-    font-size: 9px;
-  }
-}

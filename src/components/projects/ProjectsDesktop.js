@@ -15,10 +15,9 @@ const ProjectsDesktop = (props) => {
           <h1>{props.title}</h1>
           <p>{props.text}</p>
           <Tech reverse={props.reverse}>
-            <div>{props.tech1}</div>
-            <div>{props.tech2}</div>
-            <div>{props.tech3}</div>
-            <div>{props.tech4}</div>
+            {props.tech.map((tech) => {
+              return <div>{tech}</div>
+            })}
           </Tech>
           <Icons reverse={props.reverse}>
             <FiGithub />
@@ -26,10 +25,7 @@ const ProjectsDesktop = (props) => {
           </Icons>
         </BoxInfo>
         <BoxImg reverse={props.reverse} inView={inView}>
-          <img
-            src='https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
-            alt='test'
-          />
+          <img src={props.img} alt='test' />
         </BoxImg>
       </Wrapper>
     </Container>
@@ -83,7 +79,11 @@ const BoxInfo = styled.div`
   }
 `
 const BoxImg = styled.div`
-  width: 50%;
+  width: 500px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
   height: 300px;
   position: absolute;
   left: ${({ reverse }) => (reverse ? '60px' : 'none')};
@@ -96,7 +96,6 @@ const BoxImg = styled.div`
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     filter: grayscale(52%) sepia(56%) brightness(46%) hue-rotate(215deg);

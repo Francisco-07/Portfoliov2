@@ -13,11 +13,8 @@ function ProjectsContainer() {
           <ProjectsDesktop
             key={info.key}
             title={info.title}
+            tech={info.tech}
             text={info.text}
-            tech1={info.tech1}
-            tech2={info.tech2}
-            tech3={info.tech3}
-            tech4={info.tech4}
             alt={info.alt}
             img={info.img}
             reverse={info.reverse}
@@ -27,11 +24,8 @@ function ProjectsContainer() {
           <ProjectsAndroid
             key={info.key}
             title={info.title}
+            tech={info.tech}
             text={info.text}
-            tech1={info.tech1}
-            tech2={info.tech2}
-            tech3={info.tech3}
-            tech4={info.tech4}
             alt={info.alt}
             img={info.img}
           />

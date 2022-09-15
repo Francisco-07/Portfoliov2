@@ -12,16 +12,13 @@ function AboutStats() {
       <Container>
         <Wrapper>
           <About inView={inView}>
-            <Image
-              alt='me'
-              src='https://images.unsplash.com/photo-1497993950456-cdb57afd1cf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80'
-            />
+            <ImageContainer>
+              <Image />
+            </ImageContainer>
             <h2>Quien soy?</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Necessitatibus quia voluptatem quo eum labore suscipit laboriosam
-              culpa, fugiat cum voluptate atque magnam maiores nemo omnis
-              eveniet.
+              I'm a junior developer. As a developer I take on several different
+              projects creating mostly web applications.
             </p>
           </About>
 
@@ -105,10 +102,12 @@ const Percent = styled.span`
   color: #575757;
 `
 
-const Image = styled.img`
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+const ImageContainer = styled.div`
+  width: 250px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   clip-path: polygon(
     20% 0%,
     80% 0%,
@@ -119,6 +118,16 @@ const Image = styled.img`
     0% 80%,
     0% 20%
   );
+`
+
+const Image = styled.div`
+  width: 322px;
+  height: 322px;
+  background: linear-gradient(rgba(22, 250, 216, 0.2), rgba(22, 250, 216, 0.2)),
+    url('/assets/me.jpg');
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 `
 
 const About = styled.div`

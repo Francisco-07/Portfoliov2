@@ -11,14 +11,13 @@ function ProjectsAndroid(props) {
   return (
     <>
       <Container ref={ref} inView={inView}>
-        <Wrapper>
+        <Wrapper img={props.img}>
           <h2>{props.title}</h2>
           <p>{props.text}</p>
           <Tech>
-            <div>{props.tech1}</div>
-            <div>{props.tech2}</div>
-            <div>{props.tech3}</div>
-            <div>{props.tech4}</div>
+            {props.tech.map((tech) => {
+              return <div>{tech}</div>
+            })}
           </Tech>
           <Icons>
             <FiGithub />
@@ -48,14 +47,14 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(255, 71, 66, 0.7), rgba(255, 71, 66, 0.7)),
-    url('https://images.unsplash.com/photo-1530435460869-d13625c69bbf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+  background: linear-gradient(rgba(255, 71, 66, 0.6), rgba(255, 71, 66, 0.6)),
+    url(${(props) => props.img});
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
   padding: 1rem;
   width: 350px;
-  min-height: 200px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -64,13 +63,13 @@ const Wrapper = styled.div`
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   @media ${device.mobileL} {
     width: 90%;
-    height: 300px;
+    min-height: 300px;
   }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 `
 
