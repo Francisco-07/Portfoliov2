@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 import { about } from '../../data'
 // iconos
 import { IconContext } from 'react-icons'
@@ -42,7 +42,7 @@ function AboutInfo() {
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: ${size.large};
   @media ${device.tablet} {
     display: none;
   }
@@ -76,7 +76,7 @@ const IconTextContainer = styled.div`
 
   h2 {
     font-size: 1.4rem;
-    margin-bottom: 0.6rem;
+    margin-bottom: ${size.xsmall};
   }
   p {
     margin: 0;

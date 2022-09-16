@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { useState } from 'react'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 
 // ICONOS
 import { GiHamburgerMenu } from 'react-icons/gi'
@@ -50,7 +50,7 @@ const opacity = keyframes`
 const NavHeight = styled.div`
   height: 100px;
 `
-const Container = styled.div`
+const Container = styled.nav`
   width: 100vw;
   height: 50px;
   position: fixed;
@@ -58,7 +58,7 @@ const Container = styled.div`
   justify-content: flex-end;
   align-items: center;
   top: 0;
-  padding: 0 2rem;
+  padding: 0 ${size.medium};
   background-color: ${colors.blue};
   z-index: 800;
 `
@@ -81,7 +81,7 @@ const Items = styled.div`
   transition: opacity 4s;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: ${size.xmedium};
   animation: 3s ${opacity};
   @media ${device.laptop} {
     animation: none;

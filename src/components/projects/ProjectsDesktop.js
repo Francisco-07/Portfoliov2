@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -20,12 +20,16 @@ const ProjectsDesktop = (props) => {
             })}
           </Tech>
           <Icons reverse={props.reverse}>
-            <FiGithub />
-            <BsBoxArrowUpRight />
+            <a target='_blank' rel='noreferrer' href={props.linkRepo}>
+              <FiGithub />
+            </a>
+            <a target='_blank' rel='noreferrer' href={props.linkProject}>
+              <BsBoxArrowUpRight />
+            </a>
           </Icons>
         </BoxInfo>
         <BoxImg reverse={props.reverse} inView={inView}>
-          <img src={props.img} alt='test' />
+          <img src={props.img} alt={props.alt} />
         </BoxImg>
       </Wrapper>
     </Container>
@@ -37,7 +41,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   height: 300px;
-  margin-bottom: 3rem;
+  margin-bottom: ${size.large};
   @media ${device.laptop} {
     display: none;
   }
@@ -68,7 +72,7 @@ const BoxInfo = styled.div`
     margin-left: ${({ reverse }) => (reverse ? '0' : '4rem')};
     margin-right: ${({ reverse }) => (reverse ? '4rem' : '0')};
     background-color: ${colors.red};
-    padding: 10px;
+    padding: ${size.xsmall};
     box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
     border-radius: 4px;
     opacity: ${({ inView }) => (inView ? '1' : '0')};
@@ -81,7 +85,6 @@ const BoxInfo = styled.div`
 const BoxImg = styled.div`
   width: 500px;
   display: flex;
-
   justify-content: center;
   align-items: center;
   height: 300px;
@@ -105,9 +108,9 @@ const BoxImg = styled.div`
   }
 `
 const Icons = styled.div`
-  margin-top: 0.5rem;
+  margin-top: ${size.xsmall};
   display: flex;
-  gap: 15px;
+  gap: ${size.small};
   justify-content: ${({ reverse }) => (reverse ? 'flex-end' : 'flex-start')};
   svg {
     cursor: pointer;
@@ -121,12 +124,12 @@ const Tech = styled.div`
   display: flex;
   justify-content: ${({ reverse }) => (reverse ? 'flex-end' : 'flex-start')};
   flex-wrap: wrap;
-  gap: 5px;
+  gap: ${size.xsmall};
   text-transform: uppercase;
   div {
     background-color: ${colors.green};
     border-radius: 3px;
-    padding: 0 5px;
+    padding: 0 ${size.xsmall};
     box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   }
 `

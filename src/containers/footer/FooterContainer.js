@@ -1,7 +1,7 @@
-import Contact from '../../components/footer/Contact'
+import Contact from '../../components/contact/Contact'
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
-import { device } from '../../utils'
+import { device, size } from '../../utils'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 import RedesAndroid from '../../components/redes/RedesAndroid'
 
@@ -28,7 +28,7 @@ function FooterContainer() {
   )
 }
 
-const Container = styled.div`
+const Container = styled.footer`
   position: relative;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
@@ -37,11 +37,11 @@ const Container = styled.div`
 const Author = styled.p`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 1s;
-  padding: 40px;
+  padding: ${size.large};
   margin-bottom: 0;
   height: 100%;
   display: flex;
-  margin-top: 1.8rem;
+  margin-top: ${size.medium};
   font-size: 1.2rem;
   align-items: center;
   justify-content: center;

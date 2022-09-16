@@ -24,14 +24,20 @@ const stats = [
     key: 4,
   },
   {
-    tech: 'NODE JS',
-    percent: 55,
+    tech: 'NEXT',
+    percent: 75,
+    delay: 1.1,
+    key: 4,
+  },
+  {
+    tech: 'EXPRESS',
+    percent: 60,
     delay: 1.3,
     key: 5,
   },
   {
     tech: 'MONGO DB',
-    percent: 55,
+    percent: 60,
     delay: 1.5,
     key: 6,
   },
@@ -77,26 +83,16 @@ const redes = [
     href: 'https://www.linkedin.com/in/francisco-garciarena/',
   },
   {
-    href: 'https://www.linkedin.com/in/francisco-garciarena/',
+    href: 'https://github.com/Francisco-07',
   },
   {
-    href: 'https://www.linkedin.com/in/francisco-garciarena/',
+    href: 'https://www.instagram.com/fran_garciarena/',
   },
 ]
 
 const projects = [
   {
     key: 1,
-    tech: ['Styled Components', 'Next JS', 'Sanity cms', 'SWR'],
-    delay: '0.8',
-    img: '/assets/simpleblog.jpg',
-    alt: 'Simple Blog',
-    reverse: false,
-    title: 'Simple Blog',
-    text: 'A simple blog, made with next js for the frontend, sanity as a cms and SWR for the data fetching ',
-  },
-  {
-    key: 2,
     tech: [
       'CSS modules',
       'Express',
@@ -106,21 +102,38 @@ const projects = [
       'Mongo DB',
     ],
     delay: '1.3',
+    linkProject: 'https://shopeccommerce.herokuapp.com/',
+    linkRepo: 'https://github.com/Francisco-07/ecom-2',
     img: '/assets/ecom.jpg',
     alt: 'Ecommerce',
-    reverse: true,
+    reverse: false,
     title: 'Full Stack Ecommerce',
-    text: 'Full stack website, build with express and mongo for the backend, react as the frontend and redux as a state manager/managment. the site includes routing with react router, pagination, searchbox, top rated product slider, admin panel, admins can edit, delete or create products and users, manage orders',
+    text: 'Sitio full stack, hecho con Express, Mongo DB, JWT, React y Redux. El sitio incluye routing con React Router, paginación, panel de admin, registro, login.',
   },
   {
-    key: 3,
+    key: 2,
     tech: ['Styled Components', 'React', 'Sanity cms'],
     delay: '1.8',
+    linkProject: 'https://cmrlp.netlify.app/',
+    linkRepo: 'https://github.com/Francisco-07/CMR',
     img: '/assets/cmr.jpg',
     alt: 'cmr',
-    reverse: false,
+    reverse: true,
     title: 'CMR',
-    text: 'Responsive landing page made with React, Styled components, fully editable with sanity as a cms ',
+    text: 'Landing page hecha con React, styled components, completamente editable con Sanity.',
+  },
+
+  {
+    key: 3,
+    tech: ['Styled Components', 'Next JS', 'Sanity cms', 'SWR'],
+    delay: '0.8',
+    linkProject: 'https://nextblogsanity.netlify.app/',
+    linkRepo: 'https://github.com/Francisco-07/blog',
+    img: '/assets/simpleblog.jpg',
+    alt: 'Simple Blog',
+    reverse: false,
+    title: 'Simple Blog',
+    text: 'Un blog sencillo, front end hecho con Next Js, Sanity cms para editar el contenido y SWR para data fetching.',
   },
 ]
 

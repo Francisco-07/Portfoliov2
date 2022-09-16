@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { useInView } from 'react-intersection-observer'
 import { stats } from '../../data'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 function AboutStats() {
   const { ref, inView } = useInView({
     /* Optional options */
@@ -17,8 +17,8 @@ function AboutStats() {
             </ImageContainer>
             <h2>Quien soy?</h2>
             <p>
-              I'm a junior developer. As a developer I take on several different
-              projects creating mostly web applications.
+              Soy un desarrollador frontend junior. Como desarrollador me
+              especializo en proyectos centrados alrededor de aplicaciones web.
             </p>
           </About>
 
@@ -48,7 +48,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2.2rem;
+  margin-top: ${size.medium};
 `
 
 const Wrapper = styled.div`
@@ -67,7 +67,7 @@ const OuterBar = styled.div`
   color: ${colors.secondary};
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
+  margin-bottom: ${size.small};
   position: relative;
   font-size: 1.25rem;
   @media ${device.tablet} {
@@ -140,7 +140,7 @@ const About = styled.div`
   opacity: ${({ inView }) => (inView ? `1` : '0')};
   h2 {
     font-size: 2rem;
-    margin: 1.25rem 0;
+    margin: ${size.xmedium} 0;
   }
   p {
     width: 65%;
@@ -153,7 +153,7 @@ const About = styled.div`
 `
 
 const Estadisticas = styled.div`
-  margin-top: 2rem;
+  margin-top: ${size.medium};
   transition: all 1s;
   opacity: ${({ inView }) => (inView ? '1' : '0')};
 `

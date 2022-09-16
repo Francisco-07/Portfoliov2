@@ -10,6 +10,16 @@ const colors = {
 }
 
 const size = {
+  xsmall: '0.5rem',
+  small: '1rem',
+  xmedium: '1.5rem',
+  medium: '2rem',
+  xlarge: '2.5rem',
+  large: '3rem',
+  big: '4rem',
+}
+
+const viewport = {
   mobileS: '320px',
   mobileM: '375px',
   mobileL: '425px',
@@ -20,13 +30,13 @@ const size = {
 }
 
 const device = {
-  mobileS: `(max-width: ${size.mobileS})`,
-  mobileM: `(max-width: ${size.mobileM})`,
-  mobileL: `(max-width: ${size.mobileL})`,
-  tablet: `(max-width: ${size.tablet})`,
-  laptop: `(max-width: ${size.laptop})`,
-  laptopL: `(max-width: ${size.laptopL})`,
-  desktop: `(min-width: ${size.desktop})`,
+  mobileS: `(max-width: ${viewport.mobileS})`,
+  mobileM: `(max-width: ${viewport.mobileM})`,
+  mobileL: `(max-width: ${viewport.mobileL})`,
+  tablet: `(max-width: ${viewport.tablet})`,
+  laptop: `(max-width: ${viewport.laptop})`,
+  laptopL: `(max-width: ${viewport.laptopL})`,
+  desktop: `(min-width: ${viewport.desktop})`,
 }
 
-export { device, colors }
+export { device, colors, size }

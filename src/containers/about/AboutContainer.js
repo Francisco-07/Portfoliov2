@@ -15,7 +15,7 @@ function AboutContainer() {
   )
 }
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;

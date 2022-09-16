@@ -1,17 +1,42 @@
 import styled from 'styled-components'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 import SectionsTitles from '../titles/SectionTitles'
+import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
 
 function Contact() {
   const [ref, inView] = useInView({ triggerOnce: true })
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    emailjs
+      .sendForm(
+        'service_vj6zm5f',
+        'template_mznfflj',
+        form.current,
+        '4ZAOPuyoKRHimwgWd'
+      )
+      .then(
+        (result) => {
+          console.log(result.text)
+        },
+        (error) => {
+          console.log(error.text)
+        }
+      )
+    e.target.reset()
+  }
+
   return (
     <>
       <SectionsTitles>CONTACTO</SectionsTitles>
       <Container ref={ref} inView={inView}>
-        <Wrapper>
+        <Wrapper ref={form} onSubmit={sendEmail}>
           <div>
-            <DataInputs type='text' name='Nombre' placeholder='NOMBRE' />
+            <DataInputs type='text' name='nombre' placeholder='NOMBRE' />
           </div>
 
           <div>
@@ -19,9 +44,11 @@ function Contact() {
           </div>
 
           <div>
-            <Text name='Mensaje' placeholder='MENSAJE'></Text>
+            <Text name='mensaje' placeholder='MENSAJE'></Text>
           </div>
-          <Btn type='submit'>ENVIAR</Btn>
+          <Btn type='submit' value='Send'>
+            ENVIAR
+          </Btn>
         </Wrapper>
       </Container>
     </>
@@ -52,7 +79,7 @@ const DataInputs = styled.input`
   width: 350px;
   height: 35px;
   background-color: transparent;
-  margin-bottom: 0.6rem;
+  margin-bottom: ${size.xsmall};
   border: 1px solid white;
   outline: none;
   border-radius: 4px;
@@ -91,7 +118,7 @@ const Btn = styled.button`
   align-self: flex-end;
   border-radius: 6px;
   border: 2px solid ${colors.green};
-  padding: 10px;
+  padding: ${size.xsmall};
   color: #fff;
   background-color: ${colors.green};
   box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px,

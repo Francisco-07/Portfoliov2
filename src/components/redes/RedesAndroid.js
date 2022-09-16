@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 import { redes } from '../../data'
 
@@ -35,7 +35,7 @@ const Container = styled.div`
   @media ${device.tablet} {
     display: flex;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: ${size.big};
     opacity: ${({ inView }) => (inView ? '1' : '0')};
     transition: all 1s;
   }
@@ -50,7 +50,7 @@ const RedesList = styled.ul`
   margin: 0;
   padding: 0;
   li {
-    margin-bottom: 1.25rem;
+    margin-bottom: ${size.small};
   }
   & svg {
     font-size: 2.8rem;

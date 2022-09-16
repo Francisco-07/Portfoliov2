@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { device, colors } from '../../utils'
+import { device, colors, size } from '../../utils'
 import { useInView } from 'react-intersection-observer'
 
 // ICONOS
@@ -20,8 +20,12 @@ function ProjectsAndroid(props) {
             })}
           </Tech>
           <Icons>
-            <FiGithub />
-            <BsBoxArrowUpRight />
+            <a target='_blank' rel='noreferrer' href={props.linkRepo}>
+              <FiGithub />
+            </a>
+            <a target='_blank' rel='noreferrer' href={props.linkProject}>
+              <BsBoxArrowUpRight />
+            </a>
           </Icons>
         </Wrapper>
       </Container>
@@ -36,7 +40,7 @@ const Container = styled.div`
     transform: ${({ inView }) =>
       inView ? 'translate(0px, 0px);' : 'translate(0px, 50px);'};
     transition: all 0.5s;
-    margin-bottom: 1.55rem;
+    margin-bottom: ${size.xmedium};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,14 +56,14 @@ const Wrapper = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
-  padding: 1rem;
+  padding: ${size.small};
   width: 350px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  margin-bottom: 1.5rem;
+  margin-bottom: ${size.xmedium};
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   @media ${device.mobileL} {
     width: 90%;
@@ -76,21 +80,21 @@ const Wrapper = styled.div`
 const Tech = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: ${size.xsmall};
   font-size: 1.2rem;
   text-transform: uppercase;
   div {
     background-color: ${colors.green};
     border-radius: 3px;
-    padding: 0 5px;
+    padding: 0 ${size.xsmall};
   }
 `
 
 const Icons = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 10px;
-  column-gap: 1.2rem;
+  margin-top: ${size.small};
+  column-gap: ${size.small};
   & svg {
     cursor: pointer;
     font-size: 1.7rem;

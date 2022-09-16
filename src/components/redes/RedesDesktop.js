@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 import { redes } from '../../data'
 // ICONOS
 import { AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai'
@@ -60,7 +60,7 @@ const RedesList = styled.ul`
   margin: 0;
   padding: 0;
   li {
-    margin-bottom: 1.5rem;
+    margin-bottom: ${size.xmedium};
   }
   & svg {
     font-size: 1.5rem;

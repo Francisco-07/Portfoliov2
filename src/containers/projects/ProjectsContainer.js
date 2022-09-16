@@ -16,6 +16,8 @@ function ProjectsContainer() {
             tech={info.tech}
             text={info.text}
             alt={info.alt}
+            linkProject={info.linkProject}
+            linkRepo={info.linkRepo}
             img={info.img}
             reverse={info.reverse}
           />
@@ -27,6 +29,8 @@ function ProjectsContainer() {
             tech={info.tech}
             text={info.text}
             alt={info.alt}
+            linkProject={info.linkProject}
+            linkRepo={info.linkRepo}
             img={info.img}
           />
         ))}
@@ -35,7 +39,7 @@ function ProjectsContainer() {
   )
 }
 
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;

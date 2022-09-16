@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { colors, device } from '../../utils'
+import { colors, device, size } from '../../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
 
 function Hero() {
@@ -85,7 +85,7 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   @media ${device.mobileL} {
-    margin-top: 4rem;
+    margin-top: ${size.large};
   }
 `
 const Wrapper = styled.div`
@@ -93,7 +93,7 @@ const Wrapper = styled.div`
   height: 80%;
   display: flex;
   flex-direction: column;
-  gap: 5rem 0;
+  gap: ${size.big} 0;
   @media ${device.mobileL} {
     align-items: center;
   }
@@ -112,8 +112,8 @@ const Text = styled.span`
 
   @media ${device.mobileL} {
     align-items: center;
-    gap: 1rem;
-    padding: 30px 30px;
+    gap: ${size.small};
+    padding: ${size.xsmall};
     background: linear-gradient(to right, white 8px, transparent 8px) 0 0,
       linear-gradient(to left, white 8px, transparent 8px) 100% 100%,
       linear-gradient(to bottom, white 8px, transparent 8px) 0 0,
@@ -137,7 +137,7 @@ const Button = styled.div`
   border: 2px solid ${colors.red};
   color: ${colors.white};
   background-color: ${colors.red};
-  padding: 1rem 2rem;
+  padding: ${size.small} ${size.medium};
   box-shadow: rgba(0, 0, 0, 0.07) 0px 2px 4px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1.5px 0px;
   font-weight: 800;
@@ -162,7 +162,7 @@ const TextContainer = styled.div`
   svg {
     font-size: 2.2rem;
     animation: 2.8s ${reveal};
-    margin-left: 70px;
+    margin-left: ${size.big};
     color: ${colors.red};
   }
   @media ${device.laptop} {
@@ -215,7 +215,7 @@ const Subtitle = styled.div`
   display: flex;
   align-items: center;
   @media ${device.mobileL} {
-    margin-top: 4rem;
+    margin-top: ${size.big};
   }
 `
 
