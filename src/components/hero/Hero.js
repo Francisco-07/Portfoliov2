@@ -113,7 +113,7 @@ const Text = styled.span`
   @media ${device.mobileL} {
     align-items: center;
     gap: ${size.small};
-    padding: ${size.xsmall};
+    padding: ${size.medium};
     background: linear-gradient(to right, white 8px, transparent 8px) 0 0,
       linear-gradient(to left, white 8px, transparent 8px) 100% 100%,
       linear-gradient(to bottom, white 8px, transparent 8px) 0 0,
