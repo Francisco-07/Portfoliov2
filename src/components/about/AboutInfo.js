@@ -104,6 +104,8 @@ const Shape = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: ${size.small};
 `
 
 export default AboutInfo
