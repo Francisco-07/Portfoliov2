@@ -82,6 +82,9 @@ const IconTextContainer = styled.div`
     margin: 0;
     font-size: 1.1rem;
   }
+  svg {
+    color: ${colors.black};
+  }
 `
 
 const Shape = styled.div`

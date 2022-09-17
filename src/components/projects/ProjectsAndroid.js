@@ -12,7 +12,9 @@ function ProjectsAndroid(props) {
     <>
       <Container ref={ref} inView={inView}>
         <Wrapper>
-          <ImgContainer img={props.img}></ImgContainer>
+          <ImgContainer>
+            <img src={props.img} alt={props.title} />
+          </ImgContainer>
           <h2>{props.title}</h2>
           <p>{props.text}</p>
           <Tech>
@@ -52,7 +54,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(255, 71, 66, 0.8), rgba(255, 71, 66, 0.8));
+  background: linear-gradient(rgba(5, 247, 158, 0.6), rgba(5, 247, 158, 0.6));
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
@@ -76,17 +78,14 @@ const Wrapper = styled.div`
     font-size: 1.4rem;
   }
 `
-
 const ImgContainer = styled.div`
-  background: linear-gradient(rgba(255, 71, 66, 0.3), rgba(255, 71, 66, 0.3)),
-    url(${(props) => props.img});
-  background-position: center;
-  background-size: contain;
-  width: 100%;
-  min-height: 240px;
-  border-radius: 3px;
+  img {
+    width: 100%;
+    border-radius: 3px;
+  }
   margin-bottom: ${size.small};
 `
+
 const Tech = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -94,7 +93,7 @@ const Tech = styled.div`
   font-size: 1.2rem;
   text-transform: uppercase;
   div {
-    background-color: ${colors.blue};
+    background-color: ${colors.dark};
     border-radius: 3px;
     padding: 0 ${size.xsmall};
   }
