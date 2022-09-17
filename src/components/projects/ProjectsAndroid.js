@@ -11,7 +11,10 @@ function ProjectsAndroid(props) {
   return (
     <>
       <Container ref={ref} inView={inView}>
-        <Wrapper img={props.img}>
+        <Wrapper>
+          <ImgContainer>
+            <img src={props.img} alt={props.title} />
+          </ImgContainer>
           <h2>{props.title}</h2>
           <p>{props.text}</p>
           <Tech>
@@ -51,8 +54,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(255, 71, 66, 0.6), rgba(255, 71, 66, 0.6)),
-    url(${(props) => props.img});
+  background: ${colors.red};
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
@@ -77,6 +79,12 @@ const Wrapper = styled.div`
   }
 `
 
+const ImgContainer = styled.div`
+  img {
+    width: 100%;
+    border-radius: 3px;
+  }
+`
 const Tech = styled.div`
   display: flex;
   flex-wrap: wrap;
