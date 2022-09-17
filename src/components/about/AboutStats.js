@@ -99,7 +99,8 @@ const Percent = styled.span`
   position: absolute;
   font-size: 1.1rem;
   right: 0;
-  color: #575757;
+  color: gray;
+  font-weight: bold;
 `
 
 const ImageContainer = styled.div`
@@ -123,8 +124,7 @@ const ImageContainer = styled.div`
 const Image = styled.div`
   width: 322px;
   height: 322px;
-  background: linear-gradient(rgba(22, 250, 216, 0.2), rgba(22, 250, 216, 0.2)),
-    url('/assets/me.jpg');
+  background: url('/assets/me.jpg');
   background-size: cover;
   background-position: center;
   overflow: hidden;

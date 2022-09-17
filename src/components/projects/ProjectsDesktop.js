@@ -42,6 +42,7 @@ const Container = styled.div`
   justify-content: center;
   height: 300px;
   margin-bottom: ${size.large};
+  font-size: 1.1rem;
   @media ${device.laptop} {
     display: none;
   }

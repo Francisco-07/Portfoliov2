@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: 18px;
   scroll-behavior: smooth;
 }
 
@@ -32,7 +32,7 @@ body {
   padding: 0;
   background-color: #0a192f;
   color: white;
-  font-family: 'PT Serif';
+  font-family: 'MyFont';
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,4 +63,9 @@ a {
   html {
     font-size: 13px;
   }
+}
+@font-face {
+  font-family: 'MyFont';
+  src: local('NimbusSansNovusT-UltraLight'),
+    url('./fonts/NimbusSansNovusT-UltraLight.ttf') format('truetype');
 }
