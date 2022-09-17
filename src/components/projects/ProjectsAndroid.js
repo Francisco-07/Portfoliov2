@@ -54,7 +54,7 @@ const Container = styled.div`
 `
 
 const Wrapper = styled.div`
-  background: linear-gradient(rgba(5, 247, 158, 0.6), rgba(5, 247, 158, 0.6));
+  border: 1px solid ${colors.white};
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 4px;
@@ -82,6 +82,7 @@ const ImgContainer = styled.div`
   img {
     width: 100%;
     border-radius: 3px;
+    border: 1px solid ${colors.white};
   }
   margin-bottom: ${size.small};
 `
@@ -93,7 +94,7 @@ const Tech = styled.div`
   font-size: 1.2rem;
   text-transform: uppercase;
   div {
-    background-color: ${colors.dark};
+    border: 1px solid ${colors.white};
     border-radius: 3px;
     padding: 0 ${size.xsmall};
   }
