@@ -54,9 +54,6 @@ const Container = styled.div`
   overflow: hidden;
   margin-top: ${size.large};
   animation: 2.2s ${reveal} ease-in-out;
-  @media ${device.mobileL} {
-    margin-top: ${size.large};
-  }
 `
 const Wrapper = styled.div`
   width: 80%;
@@ -85,10 +82,10 @@ const Text = styled.span`
     align-items: center;
     gap: ${size.small};
     padding: ${size.medium};
-    background: linear-gradient(to right, white 8px, transparent 8px) 0 0,
-      linear-gradient(to left, white 8px, transparent 8px) 100% 100%,
-      linear-gradient(to bottom, white 8px, transparent 8px) 0 0,
-      linear-gradient(to top, white 8px, transparent 8px) 100% 100%;
+    background: linear-gradient(to right, white 3px, transparent 3px) 0 0,
+      linear-gradient(to left, white 3px, transparent 3px) 100% 100%,
+      linear-gradient(to bottom, white 3px, transparent 3px) 0 0,
+      linear-gradient(to top, white 3px, transparent 3px) 100% 100%;
 
     background-repeat: no-repeat;
     background-size: 20px 20px;

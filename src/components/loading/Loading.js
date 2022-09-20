@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components'
 import { colors } from '../../utils'
-const Loading = () => {
+const Loading = (props) => {
   return (
     <Loading1>
       <Loading2>
