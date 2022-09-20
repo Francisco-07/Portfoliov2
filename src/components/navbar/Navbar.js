@@ -30,7 +30,6 @@ function Navbar() {
           </Items>
         </Menu>
       </Container>
-      <NavHeight />
     </>
   )
 }

@@ -22,9 +22,11 @@ const Container = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 200px;
+  padding: 20px 20px;
+  position: relative;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3rem;
 `
 
 const LineaLeft = styled.div`
@@ -37,7 +39,7 @@ const LineaLeft = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
   transition-delay: 0.3s;
-  bottom: 50px;
+  bottom: 0;
 `
 const LineaRight = styled.div`
   position: absolute;
@@ -48,7 +50,7 @@ const LineaRight = styled.div`
   opacity: ${({ inView }) => (inView ? '1' : '0')};
   transition: all 0.4s;
   transition-delay: 0.3s;
-  bottom: 50px;
+  bottom: 0;
   margin-left: -1px;
 `
 const Title = styled.h2`

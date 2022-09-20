@@ -72,7 +72,10 @@ const BoxInfo = styled.div`
   p {
     margin-left: ${({ reverse }) => (reverse ? '0' : '4rem')};
     margin-right: ${({ reverse }) => (reverse ? '4rem' : '0')};
-    background-color: ${colors.red};
+    background: #ff416c; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff4b2b, #ff416c);
+    background: linear-gradient(to right, #ff4b2b, #ff416c);
+
     padding: ${size.xsmall};
     box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
     border-radius: 4px;
