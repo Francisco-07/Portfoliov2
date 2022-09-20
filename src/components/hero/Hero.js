@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { colors, device, size } from '../../utils'
 import { FiArrowDownRight } from 'react-icons/fi'
 import ShowDate from '../date/ShowDate'
@@ -33,18 +33,6 @@ function Hero() {
   )
 }
 
-const reveal = keyframes`
-  0% {
-    opacity:0 ;
-  }
-  70% {
-    opacity:0 ;
-  }
-  100% {
-    opacity:1 ;
-  }
-`
-
 const Container = styled.div`
   display: flex;
   justify-content: center;
@@ -53,7 +41,6 @@ const Container = styled.div`
   height: 100vh;
   overflow: hidden;
   margin-top: ${size.large};
-  animation: 2.2s ${reveal} ease-in-out;
 `
 const Wrapper = styled.div`
   width: 80%;

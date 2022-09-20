@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { colors, device, size } from '../../utils'
 import { redes } from '../../data'
 // ICONOS
@@ -27,18 +27,6 @@ function RedesDesktop() {
   )
 }
 
-const opacity = keyframes`
-  0% {
-    opacity:0 ;
-  }
-  65% {
-    opacity:0 ;
-  }
-  100% {
-    opacity:1 ;
-  }
-`
-
 const Container = styled.div`
   width: 40px;
   position: fixed;
@@ -46,7 +34,6 @@ const Container = styled.div`
   left: 40px;
   right: auto;
   z-index: 11;
-  animation: 3s ${opacity};
   @media ${device.tablet} {
     display: none;
   }

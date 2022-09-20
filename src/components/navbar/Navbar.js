@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { useState } from 'react'
 import { colors, device, size } from '../../utils'
 
@@ -34,18 +34,6 @@ function Navbar() {
   )
 }
 
-const opacity = keyframes`
-  0% {
-    opacity:0 ;
-  }
-  65% {
-    opacity:0 ;
-  }
-  100% {
-    opacity:1 ;
-  }
-`
-
 const Container = styled.nav`
   width: 100vw;
   height: 50px;
@@ -78,7 +66,7 @@ const Items = styled.div`
   display: flex;
   align-items: center;
   gap: ${size.xmedium};
-  animation: 3s ${opacity};
+
   @media ${device.laptop} {
     animation: none;
     flex-direction: column;
@@ -112,7 +100,7 @@ const Hamburger = styled.div`
   @media ${device.laptop} {
     display: flex;
     z-index: 11;
-    animation: 3s ${opacity};
+
     & svg {
       font-size: 1.5rem;
       color: white;
