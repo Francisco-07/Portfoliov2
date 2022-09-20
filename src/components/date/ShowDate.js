@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../utils'
+import { colors, device } from '../../utils'
 
 const ShowDate = () => {
   const date = Date().split(' ')
@@ -35,6 +35,9 @@ const Circle = styled.div`
   border: 1px solid gray;
   position: relative;
   &:hover {
+    border: 1px solid white;
+  }
+  @media ${device.mobileL} {
     border: 1px solid white;
   }
 `
