@@ -22,7 +22,12 @@ function AboutInfo() {
         {about.map((data, i) => {
           const Icon = IconsArray[i]
           return (
-            <IconTextContainer ref={ref} inView={inView} delay={data.delay}>
+            <IconTextContainer
+              ref={ref}
+              key={i}
+              inView={inView}
+              delay={data.delay}
+            >
               <Shape>
                 <IconContext.Provider value={{ size: data.size }}>
                   <Icon />

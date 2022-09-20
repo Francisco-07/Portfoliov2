@@ -9,9 +9,9 @@ function ProjectsContainer() {
     <>
       <Container id='work'>
         <SectionsTitles>PROYECTOS</SectionsTitles>
-        {projects.map((info) => (
+        {projects.map((info, i) => (
           <ProjectsDesktop
-            key={info.key}
+            key={i}
             title={info.title}
             tech={info.tech}
             text={info.text}
@@ -22,9 +22,9 @@ function ProjectsContainer() {
             reverse={info.reverse}
           />
         ))}
-        {projects.map((info) => (
+        {projects.map((info, i) => (
           <ProjectsAndroid
-            key={info.key}
+            key={i}
             title={info.title}
             tech={info.tech}
             text={info.text}

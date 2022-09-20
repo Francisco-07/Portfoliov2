@@ -18,8 +18,8 @@ function ProjectsAndroid(props) {
           <h2>{props.title}</h2>
           <p>{props.text}</p>
           <Tech>
-            {props.tech.map((tech) => {
-              return <div>{tech}</div>
+            {props.tech.map((tech, i) => {
+              return <div key={i}>{tech}</div>
             })}
           </Tech>
           <Icons>

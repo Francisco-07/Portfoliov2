@@ -15,8 +15,8 @@ const ProjectsDesktop = (props) => {
           <h1>{props.title}</h1>
           <p>{props.text}</p>
           <Tech reverse={props.reverse}>
-            {props.tech.map((tech) => {
-              return <div>{tech}</div>
+            {props.tech.map((tech, i) => {
+              return <div key={i}>{tech}</div>
             })}
           </Tech>
           <Icons reverse={props.reverse}>

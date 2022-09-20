@@ -23,8 +23,8 @@ function AboutStats() {
           </About>
 
           <Estadisticas inView={inView} ref={ref}>
-            {stats.map((data) => (
-              <OuterBar key={data.key}>
+            {stats.map((data, i) => (
+              <OuterBar key={i}>
                 <Tech>{data.tech}</Tech>
                 <BarEmpty>
                   <BarFilled

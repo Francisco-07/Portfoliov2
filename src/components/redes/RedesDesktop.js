@@ -14,7 +14,7 @@ function RedesDesktop() {
           {redes.map((data, i) => {
             const Icons = IconsArray[i]
             return (
-              <li>
+              <li key={i}>
                 <a rel='noreferrer' target='_blank' href={data.href}>
                   <Icons />
                 </a>

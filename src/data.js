@@ -45,7 +45,6 @@ const stats = [
 
 const about = [
   {
-    key: 1,
     size: '80px',
     delay: 0.2,
     title: 'Responsive',
@@ -53,7 +52,6 @@ const about = [
     text2: 'cualquier dispositivo',
   },
   {
-    key: 2,
     size: '40px',
     delay: 0.4,
     title: 'Rapidas',
@@ -61,7 +59,6 @@ const about = [
     text2: 'estan libres de lag',
   },
   {
-    key: 3,
     size: '40px',
     delay: 0.6,
     title: 'Dinamico',
@@ -69,7 +66,6 @@ const about = [
     text2: 'y mejor experiencia',
   },
   {
-    key: 4,
     size: '40px',
     delay: 0.8,
     title: 'Intuitivo',
@@ -92,7 +88,6 @@ const redes = [
 
 const projects = [
   {
-    key: 1,
     tech: [
       'CSS modules',
       'Express',
@@ -111,7 +106,6 @@ const projects = [
     text: 'Sitio full stack, hecho con Express, Mongo DB, JWT, React y Redux. El sitio incluye routing con React Router, paginación, panel de admin, registro, login.',
   },
   {
-    key: 2,
     tech: ['Styled Components', 'React', 'Sanity cms'],
     delay: '1.8',
     linkProject: 'https://cmrlp.netlify.app/',
@@ -124,7 +118,6 @@ const projects = [
   },
 
   {
-    key: 3,
     tech: ['Styled Components', 'Next JS', 'Sanity cms', 'SWR'],
     delay: '0.8',
     linkProject: 'https://nextblogsanity.netlify.app/',
