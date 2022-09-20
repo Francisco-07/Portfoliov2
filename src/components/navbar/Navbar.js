@@ -46,9 +46,6 @@ const opacity = keyframes`
   }
 `
 
-const NavHeight = styled.div`
-  height: 100px;
-`
 const Container = styled.nav`
   width: 100vw;
   height: 50px;
